@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 
 import withStyles from "@material-ui/core/styles/withStyles";
 
-import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -18,7 +17,6 @@ import Paper from "@material-ui/core/Paper";
 
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
-import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 
 class InfoArea extends React.Component {
 
