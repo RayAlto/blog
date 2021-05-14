@@ -23,7 +23,8 @@ class InfoArea extends React.Component {
   static propTypes = {
     infoTitle: PropTypes.string.isRequired,
     infoDetail: PropTypes.string.isRequired,
-    infoImage: PropTypes.string.isRequired,
+    infoImageUrl: PropTypes.string.isRequired,
+    infoImageAlt: PropTypes.string.isRequired,
     infoActions: PropTypes.array.isRequired,
     titleTypographyProps: PropTypes.object,
   };
@@ -31,7 +32,7 @@ class InfoArea extends React.Component {
   render() {
 
     const classes = this.props.classes;
-    const { infoTitle, infoDetail, infoImage, infoActions, titleTypographyProps } = this.props;
+    const { infoTitle, infoDetail, infoImageUrl, infoImageAlt, infoActions, titleTypographyProps } = this.props;
 
     const contentGrid = (
       <Card elevation={0} className={classes.contentCard}>
@@ -57,7 +58,7 @@ class InfoArea extends React.Component {
     );
 
     const imageGrid = (
-      <img className={classes.image} src={infoImage} alt="anime" />
+      <img className={classes.image} src={infoImageUrl} alt={infoImageAlt} />
     );
 
     return (
