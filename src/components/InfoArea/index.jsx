@@ -25,17 +25,19 @@ class InfoArea extends React.Component {
     infoDetail: PropTypes.string.isRequired,
     infoImage: PropTypes.string.isRequired,
     infoActions: PropTypes.array.isRequired,
+    titleTypographyProps: PropTypes.object,
   };
 
   render() {
 
     const classes = this.props.classes;
-    const { infoTitle, infoDetail, infoImage, infoActions } = this.props;
+    const { infoTitle, infoDetail, infoImage, infoActions, titleTypographyProps } = this.props;
 
     const contentGrid = (
       <Card elevation={0} className={classes.contentCard}>
         <CardHeader
           title={infoTitle}
+          titleTypographyProps={{ ...titleTypographyProps }}
         />
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">

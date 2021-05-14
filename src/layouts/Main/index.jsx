@@ -18,7 +18,8 @@ class Main extends React.Component {
       <main className={this.props.classes.content}>
         <div className={this.props.classes.toolbar} id="top-anchor" />
         <InfoArea
-          infoTitle="How to poop"
+          titleTypographyProps={{ variant: 'h1' }}
+          infoTitle="你算什么鸡脖？"
           infoDetail="This blog will show you the most morden way to poop"
           infoImage="https://www.rayalto.top/images/anime.png"
           infoActions={[<Button
