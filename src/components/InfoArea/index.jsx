@@ -41,7 +41,7 @@ class InfoArea extends React.Component {
           titleTypographyProps={{ ...titleTypographyProps }}
         />
         <CardContent>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography color="textSecondary" component="p">
             {infoDetail}
           </Typography>
         </CardContent>
