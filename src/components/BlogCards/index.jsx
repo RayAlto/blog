@@ -3,11 +3,10 @@ import PropTypes from "prop-types";
 
 import Grid from "@material-ui/core/Grid";
 
-import withStyles from "@material-ui/core/styles/withStyles";
-
 import BlogCard from "../../components/BlogCard";
+import GridWithRestriction from "../../components/GridWithRestriction";
 
-class BlogCards extends React.Component {
+export default class BlogCards extends React.Component {
 
   static propTypes = {
     blogs: PropTypes.array.isRequired,
@@ -18,7 +17,7 @@ class BlogCards extends React.Component {
     const blogs = this.props.blogs;
 
     return (
-      <Grid className={this.props.classes.blogCards} container spacing={3} alignItems="center" direction="row" justify="space-around">
+      <GridWithRestriction>
         {blogs.map((blog, index) => {
           return (
             <Grid item key={blog.title}>
@@ -26,20 +25,9 @@ class BlogCards extends React.Component {
             </Grid>
           )
         })}
-      </Grid>
+      </GridWithRestriction>
     );
 
   };
 
 }
-
-export default withStyles(theme => ({
-
-  blogCards: {
-    "& > *": {
-      width: "100%",
-      maxWidth: 510,
-    },
-  },
-
-}))(BlogCards);
