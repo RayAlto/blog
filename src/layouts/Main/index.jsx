@@ -2,12 +2,15 @@ import React from "react";
 
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import Divider from "@material-ui/core/Divider";
 
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 
 import withStyles from "@material-ui/core/styles/withStyles";
 
+import BlogCard from "../../components/BlogCard";
 import BlogSlice from "../../components/BlogSlice";
+import GridWithRestriction from "../../components/GridWithRestriction";
 import InfoArea from "../../components/InfoArea";
 
 class Main extends React.Component {
@@ -18,30 +21,26 @@ class Main extends React.Component {
       <main className={this.props.classes.content}>
         <div className={this.props.classes.toolbar} id="top-anchor" />
         <InfoArea
-          titleTypographyProps={{ variant: 'h1' }}
-          infoTitle="你算什么鸡脖？"
-          infoDetail="This blog will show you the most morden way to poop"
-          infoImageUrl="https://www.rayalto.top/images/anime.png"
-          infoImageAlt="anime"
-          infoActions={[<Button
-            color="primary"
-            endIcon={<ArrowForwardIcon />}
-            variant="text"
-            size="large"
-            href={"https://www.baidu.com"}
-          >
-            去看看
-          </Button>, <Button
-            color="primary"
-            endIcon={<ArrowForwardIcon />}
-            variant="text"
-            size="large"
-            href={"https://www.baidu.com"}
-          >
-            去看看
-          </Button>]}
+          titleTypographyProps={{ variant: 'h3', component: 'h1' }}
+          infoTitle="Ray_Alto 的个人主页"
+          infoDetail="部署了一些有趣的小项目，不定时分享一些我最近正在研究的东西，自闭社恐，技不如人，大放厥词。努力成为一个有营养的网站。"
+          infoImageUrl="https://www.rayalto.top/images/banner.png"
+          infoImageAlt=""
+          infoActions={[
+            <Button
+              color="primary"
+              endIcon={<ArrowForwardIcon />}
+              variant="text"
+              size="large"
+              href="https://www.baidu.com"
+            >
+              看看我的博客
+            </Button>
+          ]}
         />
-        <BlogSlice blogData={{
+        <Divider />
+        <Typography variant="h4" component="header" gutterBottom>有趣的项目</Typography>
+        {/* <BlogSlice blogData={{
           title: "How to poop",
           date: "September 14, 2016",
           url: "https://www.baidu.com",
@@ -56,8 +55,9 @@ class Main extends React.Component {
               text: "midden"
             }
           ]
-        }} />
-        <Typography paragraph>
+        }} /> */}
+
+        {/* <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
           facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
@@ -100,7 +100,7 @@ class Main extends React.Component {
         </Typography>
         <Typography paragraph>
           所谓我的网站还没建好，关键是我的网站还没建好需要如何写。 德谟克利特说过一句著名的话，节制使快乐增加并使享受加强。这句话把我们带到了一个新的维度去思考这个问题: 了解清楚我的网站还没建好到底是一种怎么样的存在，是解决一切问题的关键。 总结的来说， 那么， 了解清楚我的网站还没建好到底是一种怎么样的存在，是解决一切问题的关键。 一般来说， 对我个人而言，我的网站还没建好不仅仅是一个重大的事件，还可能会改变我的人生。 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 问题的关键究竟为何？ 现在，解决我的网站还没建好的问题，是非常非常重要的。 所以， 这样看来， 我的网站还没建好因何而发生？ 所谓我的网站还没建好，关键是我的网站还没建好需要如何写。 可是，即使是这样，我的网站还没建好的出现仍然代表了一定的意义。 赫尔普斯在不经意间这样说过，有时候读书是一种巧妙地避开思考的方法。带着这句话, 我们还要更加慎重的审视这个问题。
-        </Typography>
+        </Typography> */}
       </main>
     );
   }

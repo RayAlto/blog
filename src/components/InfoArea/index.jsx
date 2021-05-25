@@ -27,12 +27,17 @@ class InfoArea extends React.Component {
     infoImageAlt: PropTypes.string.isRequired,
     infoActions: PropTypes.array.isRequired,
     titleTypographyProps: PropTypes.object,
+    divider: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    divider: false,
   };
 
   render() {
 
     const classes = this.props.classes;
-    const { infoTitle, infoDetail, infoImageUrl, infoImageAlt, infoActions, titleTypographyProps } = this.props;
+    const { infoTitle, infoDetail, infoImageUrl, infoImageAlt, infoActions, titleTypographyProps, divider } = this.props;
 
     const contentGrid = (
       <Card elevation={0} className={classes.contentCard}>
@@ -46,7 +51,7 @@ class InfoArea extends React.Component {
           </Typography>
         </CardContent>
         <div className={classes.grow} />
-        <Divider />
+        {divider && <Divider />}
         <CardActions>
           {infoActions}
           <div className={classes.grow} />
