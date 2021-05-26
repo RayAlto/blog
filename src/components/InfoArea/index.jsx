@@ -108,7 +108,6 @@ class InfoArea extends React.Component {
 export default withStyles(theme => ({
 
   root: {
-    padding: theme.spacing(1),
     display: "block",
   },
 
