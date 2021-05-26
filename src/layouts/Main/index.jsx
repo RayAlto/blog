@@ -20,6 +20,7 @@ import JupyterLabImage500x300 from "../../images/jupyter@500x300.png";
 import Aria2Image500x300 from "../../images/aria2@500x300.png";
 import ScheduleImage500x300 from "../../images/schedule@500x300.png";
 import NoteImage500x300 from "../../images/note@500x300.png";
+import BannerImage1000x600 from "../../images/banner@1000x600.png";
 
 class Main extends React.Component {
 
@@ -32,7 +33,7 @@ class Main extends React.Component {
           titleTypographyProps={{ variant: 'h3', component: 'h1' }}
           infoTitle="Ray_Alto 的个人主页"
           infoDetail="部署了一些有趣的小项目，不定时分享一些我最近正在研究的东西，自闭社恐，技不如人，大放厥词。努力成为一个有营养的网站。"
-          infoImageUrl="https://www.rayalto.top/images/banner.png"
+          infoImageUrl={BannerImage1000x600}
           infoImageAlt=""
           infoActions={[
             <Button
