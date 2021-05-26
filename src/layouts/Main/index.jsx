@@ -14,6 +14,7 @@ import BlogSlice from "../../components/BlogSlice";
 import GridWithRestriction from "../../components/GridWithRestriction";
 import InfoArea from "../../components/InfoArea";
 import InfoCard from "../../components/InfoCard";
+import Header from "../../components/Header";
 
 import DrawioImage500x300 from "../../images/drawio@500x300.png";
 import JupyterLabImage500x300 from "../../images/jupyter@500x300.png";
@@ -48,8 +49,9 @@ class Main extends React.Component {
             </Button>
           ]}
         />
-        <Divider />
-        <Typography variant="h4" component="header" gutterBottom>有趣的项目</Typography>
+        <Header>
+          有趣的项目
+        </Header>
         <GridWithRestriction>
           <Grid item>
             <InfoCard
