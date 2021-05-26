@@ -1,16 +1,12 @@
 import React from "react";
 
-import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import Divider from "@material-ui/core/Divider";
 import Grid from "@material-ui/core/Grid";
 
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 
 import withStyles from "@material-ui/core/styles/withStyles";
 
-import BlogCard from "../../components/BlogCard";
-import BlogSlice from "../../components/BlogSlice";
 import GridWithRestriction from "../../components/GridWithRestriction";
 import InfoArea from "../../components/InfoArea";
 import InfoCard from "../../components/InfoCard";
@@ -49,7 +45,7 @@ class Main extends React.Component {
             </Button>
           ]}
         />
-        <Header>
+        <Header divider>
           有趣的项目
         </Header>
         <GridWithRestriction>
