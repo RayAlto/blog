@@ -73,7 +73,7 @@ class BlogSlice extends React.Component {
             <Checkbox color="secondary" checkedIcon={<FavoriteIcon />} icon={<FavoriteBorderIcon />} />
           </Tooltip>
         </CardActions>
-      </Card>
+      </Card >
     );
 
     const imageGrid = (
@@ -81,7 +81,7 @@ class BlogSlice extends React.Component {
     );
 
     return (
-      <Paper className={classes.root} elevation={0}>
+      <Paper className={classes.root}>
         <Hidden mdUp implementation="css">
           <Grid
             container
