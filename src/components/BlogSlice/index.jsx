@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { Link } from "react-router-dom";
+
 import withStyles from "@material-ui/core/styles/withStyles";
 
 import Avatar from "@material-ui/core/Avatar";
@@ -64,7 +66,8 @@ class BlogSlice extends React.Component {
             endIcon={<ArrowForwardIcon />}
             variant="text"
             size="large"
-            href={blogData.url}
+            component={Link}
+            to={blogData.url}
           >
             去看看
           </Button>
@@ -92,7 +95,7 @@ class BlogSlice extends React.Component {
             <Grid item className={classes.mobileGrid}>
               {contentGrid}
             </Grid>
-            <Grid item component="a" href="https://www.baidu.com" target="_blank" className={classes.mobileGrid}>
+            <Grid item component={Link} to={blogData.url} className={classes.mobileGrid}>
               {imageGrid}
             </Grid>
           </Grid>
@@ -107,7 +110,7 @@ class BlogSlice extends React.Component {
             <Grid item xs={12} sm={6}>
               {contentGrid}
             </Grid>
-            <Grid item xs={12} sm={6} component="a" href="https://www.baidu.com" target="_blank">
+            <Grid item xs={12} sm={6} component={Link} to={blogData.url} >
               {imageGrid}
             </Grid>
           </Grid>
