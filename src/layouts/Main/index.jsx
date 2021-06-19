@@ -24,8 +24,7 @@ class Main extends React.Component {
   render() {
 
     return (
-      <main className={this.props.classes.content}>
-        <div className={this.props.classes.toolbar} id="top-anchor" />
+      <div>
         <InfoArea
           titleTypographyProps={{ variant: 'h3', component: 'h1' }}
           infoTitle="Ray_Alto 的个人主页"
@@ -156,7 +155,7 @@ class Main extends React.Component {
         <Typography paragraph>
           所谓我的网站还没建好，关键是我的网站还没建好需要如何写。 德谟克利特说过一句著名的话，节制使快乐增加并使享受加强。这句话把我们带到了一个新的维度去思考这个问题: 了解清楚我的网站还没建好到底是一种怎么样的存在，是解决一切问题的关键。 总结的来说， 那么， 了解清楚我的网站还没建好到底是一种怎么样的存在，是解决一切问题的关键。 一般来说， 对我个人而言，我的网站还没建好不仅仅是一个重大的事件，还可能会改变我的人生。 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 问题的关键究竟为何？ 现在，解决我的网站还没建好的问题，是非常非常重要的。 所以， 这样看来， 我的网站还没建好因何而发生？ 所谓我的网站还没建好，关键是我的网站还没建好需要如何写。 可是，即使是这样，我的网站还没建好的出现仍然代表了一定的意义。 赫尔普斯在不经意间这样说过，有时候读书是一种巧妙地避开思考的方法。带着这句话, 我们还要更加慎重的审视这个问题。
         </Typography> */}
-      </main>
+      </div>
     );
   }
 }
@@ -168,15 +167,6 @@ export default withStyles(theme => ({
       width: "100%",
       maxWidth: 510,
     },
-  },
-
-  // necessary for content to be below app bar
-  toolbar: theme.mixins.toolbar,
-
-  content: {
-    backgroundColor: "white",
-    flexGrow: 1,
-    padding: theme.spacing(3),
   },
 
 }))(Main);
