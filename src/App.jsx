@@ -6,7 +6,7 @@ import { Switch, Route } from "react-router-dom";
 
 import TopBar from "./layouts/TopBar";
 import SideBar from "./layouts/SideBar";
-import Blog from "./layouts/Blog";
+import Blogs from "./layouts/Blogs";
 import Main from "./layouts/Main";
 import BackToTopButton from "./components/BackToTopButton";
 
@@ -21,7 +21,7 @@ class App extends React.Component {
         <div className={this.props.classes.content}>
           <div className={this.props.classes.toolbar} id="top-anchor" />
           <Switch>
-            <Route path="/blog" component={Blog} />
+            <Route path="/blogs" component={Blogs} />
             <Route path="/" component={Main} />
           </Switch>
         </div>

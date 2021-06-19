@@ -94,7 +94,7 @@ class SideBar extends React.Component {
             <ListItemIcon><HomeIcon /></ListItemIcon>
             <ListItemText primary="主页" />
           </ListItem>
-          <ListItem component={Link} to="/blog" button key="博客">
+          <ListItem component={Link} to="/blogs" button key="博客">
             <ListItemIcon><BlogIcon /></ListItemIcon>
             <ListItemText primary="博客" />
           </ListItem>

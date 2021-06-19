@@ -5,7 +5,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 
 import BlogSlice from "../../components/BlogSlice";
 
-class Blog extends React.Component {
+class Blogs extends React.Component {
 
   static propTypes = {
     // blogs: PropTypes.array.isRequired,
@@ -371,4 +371,4 @@ export default withStyles(theme => ({
     },
   },
 
-}))(Blog);
+}))(Blogs);
