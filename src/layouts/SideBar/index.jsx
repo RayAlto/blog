@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { Link } from "react-router-dom";
+
 import PubSub from "pubsub-js";
 
 import Collapse from "@material-ui/core/Collapse";
@@ -40,6 +42,7 @@ import WechatIcon from "../../icons/Wechat";
 
 import QQQrImage from "../../images/Qr-QQ.jpg";
 import WechatQrImage from "../../images/Qr-Wechat.png"
+import { nonEmptyArray } from "check-types";
 
 const drawerWidth = 270;
 
@@ -88,19 +91,19 @@ class SideBar extends React.Component {
             </ListSubheader>
           }
         >
-          <ListItem button key="主页">
+          <ListItem component={Link} to="/" button key="主页">
             <ListItemIcon><HomeIcon /></ListItemIcon>
             <ListItemText primary="主页" />
           </ListItem>
-          <ListItem button key="博客">
+          <ListItem component={Link} to="/blog" button key="博客">
             <ListItemIcon><BlogIcon /></ListItemIcon>
             <ListItemText primary="博客" />
           </ListItem>
-          <ListItem button key="笔记本">
+          <ListItem component={Link} to="/note" button key="笔记本">
             <ListItemIcon><NoteIcon /></ListItemIcon>
             <ListItemText primary="笔记本" />
           </ListItem>
-          <ListItem button key="课程表">
+          <ListItem component={Link} to="/schedule" button key="课程表">
             <ListItemIcon><ScheduleIcon /></ListItemIcon>
             <ListItemText primary="课程表" />
           </ListItem>
@@ -111,29 +114,29 @@ class SideBar extends React.Component {
           </ListItem>
           <Collapse in={this.state.showToolsList} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              <ListItem button key="JupyterLab" className={this.props.classes.nestedListItem}>
+              <ListItem component="a" href="https://jupyter.rayalto.top" target="_blank" button key="JupyterLab" className={this.props.classes.nestedListItem}>
                 <ListItemIcon><JupyterIcon /></ListItemIcon>
                 <ListItemText primary="JupyterLab" />
               </ListItem>
-              <ListItem button key="AriaNg" className={this.props.classes.nestedListItem}>
+              <ListItem component="a" href="https://aria2.rayalto.top" target="_blank" button key="AriaNg" className={this.props.classes.nestedListItem}>
                 <ListItemIcon><AriangIcon /></ListItemIcon>
                 <ListItemText primary="AriaNg" />
               </ListItem>
-              <ListItem button key="DrawIO" className={this.props.classes.nestedListItem}>
+              <ListItem component="a" href="https://drawio.rayalto.top" target="_blank" button key="DrawIO" className={this.props.classes.nestedListItem}>
                 <ListItemIcon><DrawioIcon /></ListItemIcon>
                 <ListItemText primary="DrawIO" />
               </ListItem>
             </List>
           </Collapse>
-          <ListItem button key="关于我">
+          <ListItem component={Link} to="/about" button key="关于我">
             <ListItemIcon><AboutIcon /></ListItemIcon>
             <ListItemText primary="关于我" />
           </ListItem>
-          <ListItem button key="社交">
+          <ListItem component={Link} to="/contact" button key="社交">
             <ListItemIcon><CommunicationIcon /></ListItemIcon>
             <ListItemText primary="社交" />
           </ListItem>
-          <ListItem button key="友链">
+          <ListItem component={Link} to="/friend" button key="友链">
             <ListItemIcon><LinkIcon /></ListItemIcon>
             <ListItemText primary="友链" />
           </ListItem>
