@@ -42,7 +42,6 @@ import WechatIcon from "../../icons/Wechat";
 
 import QQQrImage from "../../images/Qr-QQ.jpg";
 import WechatQrImage from "../../images/Qr-Wechat.png"
-import { nonEmptyArray } from "check-types";
 
 const drawerWidth = 270;
 
