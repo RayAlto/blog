@@ -2,7 +2,7 @@ import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { withStyles } from "@material-ui/core/styles";
 
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 import TopBar from "./layouts/TopBar";
 import SideBar from "./layouts/SideBar";
@@ -22,7 +22,8 @@ class App extends React.Component {
           <div className={this.props.classes.toolbar} id="top-anchor" />
           <Switch>
             <Route path="/blogs" component={Blogs} />
-            <Route path="/" component={Main} />
+            <Route exact path="/" component={Main} />
+            <Redirect to="/" />
           </Switch>
         </div>
         <BackToTopButton topElementId="top-anchor" />
