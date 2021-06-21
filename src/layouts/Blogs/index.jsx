@@ -362,7 +362,18 @@ class Blogs extends React.Component {
       <div className={this.props.classes.root}>
         <Switch>
           <Route exact path={`${currnetPath}/2021-3-12-1`}>
-            <Blog />
+            <Blog
+              title="😭我是彻底的失败者"
+              detail="😭我是彻底的失败者😭我是彻底的失败者😭我是彻底的失败者😭我是彻底的失败者😭我是彻底的失败者"
+              imageUrl="https://www.rayalto.top/images/music.png"
+              imageAlt="😭我是彻底的失败者"
+              tags={[
+                {
+                  text:"python",
+                  url:"https://www.python.org"
+                }
+              ]}
+            />
           </Route>
           <Route exact path={`${currnetPath}/`}>
             {blogs.map((blog, index) => {
