@@ -9,6 +9,7 @@ import SideBar from "./layouts/SideBar";
 import Blogs from "./layouts/Blogs";
 import Main from "./layouts/Main";
 import BackToTopButton from "./components/BackToTopButton";
+import GlobalImageDialog from "./components/GlobalImageDialog";
 
 class App extends React.Component {
 
@@ -27,10 +28,12 @@ class App extends React.Component {
           </Switch>
         </div>
         <BackToTopButton topElementId="top-anchor" />
+        <GlobalImageDialog />
       </main>
     );
-  }
-}
+  };
+
+};
 
 export default withStyles(theme => ({
 
