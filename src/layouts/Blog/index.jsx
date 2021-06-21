@@ -8,10 +8,10 @@ class Blog extends React.Component {
 
     return (
 
-      <MarkdownArticle md={`
+        <MarkdownArticle md={`
 # 😭我是彻底的失败者
 
-![anime](https://www.rayalto.top/images/anime.png "title text here")
+![music](https://www.rayalto.top/images/music.png "title text here")
 
 $$e=mc^2$$
 
@@ -38,10 +38,10 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 * [x] done
 
 `} />
-    )
+    );
 
-  }
+  };
 
-}
+};
 
 export default Blog;
