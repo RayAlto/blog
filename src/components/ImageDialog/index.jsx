@@ -21,7 +21,7 @@ export default class ImageDialog extends React.Component {
     return (
       <Dialog open={this.props.open} onClose={this.handleClose} onClick={this.handleClose}>
         <DialogTitle>{this.props.title}</DialogTitle>
-        <img src={this.props.src} alt={this.props.alt ? this.props.alt : undefined} />
+        <img src={this.props.src} alt={this.props?.alt} />
       </Dialog>
     )
   }
