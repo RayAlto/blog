@@ -10,7 +10,7 @@ import {
   OPEN_IMAGE_DIALOG,
 } from "../../constants/events";
 
-export default class ImageDialog extends React.Component {
+export default class GlobalImageDialog extends React.Component {
 
   state = {
     title: undefined,

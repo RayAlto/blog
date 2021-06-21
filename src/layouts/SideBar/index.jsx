@@ -1,6 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
-
 import { Link } from "react-router-dom";
 
 import PubSub from "pubsub-js";
@@ -34,7 +32,6 @@ import DrawioIcon from "@material-ui/icons/Brush";
 import GmailIcon from "@material-ui/icons/Email";
 
 import ICP from "../../components/ICP";
-import ImageDialog from "../../components/ImageDialog";
 
 import JupyterIcon from "../../icons/Jupyter";
 import QQIcon from "../../icons/QQ";
@@ -43,28 +40,16 @@ import WechatIcon from "../../icons/Wechat";
 import QQQrImage from "../../images/Qr-QQ.jpg";
 import WechatQrImage from "../../images/Qr-Wechat.png"
 
+import { OPEN_IMAGE_DIALOG } from "../../constants/events";
+
 const drawerWidth = 270;
 
 class SideBar extends React.Component {
 
-  static propTypes = {
-    window: PropTypes.func,
-  };
-
   state = {
     showSidebar: false,
     showToolsList: false,
-    showQQ: false,
-    showWechat: false,
   };
-
-  componentDidMount() {
-    PubSub.subscribe("toggle_sidebar", (_, toggle) => {
-      toggle ? this.toggleDrawer(toggle) : this.handleDrawerToggle();
-    });
-    PubSub.subscribe("close_imageDialog_QQ二维码", this.openQQDialog(false));
-    PubSub.subscribe("close_imageDialog_微信二维码", this.openWechatDialog(false));
-  }
 
   toggleDrawer = (toggle) => (event) => { this.setState({ showSidebar: toggle }); };
   handleDrawerToggle = () => { this.setState({ showSidebar: !this.state.showSidebar }); };
@@ -72,11 +57,20 @@ class SideBar extends React.Component {
   collapseToolsList = (collapse) => (event) => { this.setState({ showToolsList: !collapse }); };
   handleToolsListCollapse = () => { this.setState({ showToolsList: !this.state.showToolsList }); };
 
-  openQQDialog = (open) => (event) => { this.setState({ showQQ: open }); };
-  handleQQDialogOpen = () => { this.setState({ showQQ: !this.state.showQQ }); };
-
-  openWechatDialog = (open) => (event) => { this.setState({ showWechat: open }); };
-  handleWechatDialogOpen = () => { this.setState({ showWechat: !this.state.showWechat }); };
+  showQQ = () => {
+    PubSub.publish(OPEN_IMAGE_DIALOG, {
+      image: QQQrImage,
+      title: "扫描二维码",
+      alt: "QQ二维码",
+    });
+  };
+  showWechat = () => {
+    PubSub.publish(OPEN_IMAGE_DIALOG, {
+      image: WechatQrImage,
+      title: "扫描二维码",
+      alt: "微信二维码",
+    });
+  };
 
   render() {
 
@@ -157,17 +151,15 @@ class SideBar extends React.Component {
             <ListItemIcon><GmailIcon /></ListItemIcon>
             <ListItemText primary="tianjiayu668@gmail.com" />
           </ListItem>
-          <ListItem button onClick={this.handleQQDialogOpen} key="995010578">
+          <ListItem button onClick={this.showQQ} key="995010578">
             <ListItemIcon><QQIcon /></ListItemIcon>
             <ListItemText primary="995010578" />
           </ListItem>
-          <ListItem button onClick={this.handleWechatDialogOpen} key="Ray_Alto">
+          <ListItem button onClick={this.showWechat} key="Ray_Alto">
             <ListItemIcon><WechatIcon /></ListItemIcon>
             <ListItemText primary="Ray_Alto" />
           </ListItem>
         </List>
-        <ImageDialog title="扫描二维码" src={QQQrImage} alt="QQ二维码" open={this.state.showQQ} />
-        <ImageDialog title="扫描二维码" src={WechatQrImage} alt="微信二维码" open={this.state.showWechat} />
         <Divider />
         <ICP ipcLink="https://beian.miit.gov.cn/">辽ICP备19015832号</ICP>
       </div>
@@ -207,8 +199,8 @@ class SideBar extends React.Component {
         </Hidden>
       </nav>
     );
-  }
-}
+  };
+};
 
 export default withStyles(theme => ({
 
