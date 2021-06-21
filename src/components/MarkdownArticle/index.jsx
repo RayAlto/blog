@@ -21,7 +21,6 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
 import Divider from "@material-ui/core/Divider";
-import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
 
 export default class MarkdownArticle extends React.Component {
@@ -58,6 +57,7 @@ export default class MarkdownArticle extends React.Component {
       h5: ({ level, ...props }) => <Typography variant="h6" {...props} />,
       h6: ({ level, ...props }) => <Typography variant="h6" {...props} />,
       li: ({ index, ordered, checked, className, ...props }) => <Typography component="li" {...props} />,
+      img: ({ src, title, ...props }) => <CardMedia component="img" image={src} title={title} {...props} />,
     };
 
     const md = this.props.md;

@@ -11,6 +11,8 @@ class Blog extends React.Component {
       <MarkdownArticle md={`
 # 😭我是彻底的失败者
 
+![](https://www.rayalto.top/images/anime.png)
+
 $$e=mc^2$$
 
 Emphasis, aka italics, with *asterisks* or _underscores_.
