@@ -11,7 +11,7 @@ class Blog extends React.Component {
       <MarkdownArticle md={`
 # 😭我是彻底的失败者
 
-![](https://www.rayalto.top/images/anime.png)
+![anime](https://www.rayalto.top/images/anime.png "title text here")
 
 $$e=mc^2$$
 
