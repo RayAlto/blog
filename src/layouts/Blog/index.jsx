@@ -40,7 +40,7 @@ class Blog extends React.Component {
           infoImageUrl={imageUrl}
           infoImageAlt={imageAlt}
           infoActions={[
-            <Tags>
+            <Tags key="tags">
               {tags?.map((tag, index) => {
                 return <Tag key={tag.text} href={tag.url} title={tag.text} />
               })}
@@ -82,6 +82,22 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
 * [ ] to do
 * [x] done
+
+~~~c++
+#include "cpr/cpr.h"
+#include <iostream>
+
+int main(int argc, char const *argv[])
+{
+    cpr::Response r = cpr::Get(cpr::Url{"https://www.baidu.com"}, cpr::VerifySsl{false});
+    std::cout << r.url << std::endl;
+    std::cout << r.status_code << std::endl;
+    std::cout << r.header["content-type"] << std::endl;
+    std::cout << r.text << std::endl;
+    std::cout << r.error.message << std::endl;
+    return 0;
+}
+~~~
 
 `} />
       </div>
