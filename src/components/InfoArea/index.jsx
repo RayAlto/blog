@@ -19,6 +19,8 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 
+import MarkdownArticle from "../MarkdownArticle";
+
 class InfoArea extends React.Component {
 
   static propTypes = {
@@ -55,9 +57,7 @@ class InfoArea extends React.Component {
           titleTypographyProps={{ ...titleTypographyProps }}
         />
         <CardContent>
-          <Typography color="textSecondary" component="p">
-            {infoDetail}
-          </Typography>
+          <MarkdownArticle md={infoDetail} />
         </CardContent>
         <div className={classes.grow} />
         {divider && <Divider />}
