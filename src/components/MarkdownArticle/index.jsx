@@ -26,6 +26,8 @@ import Divider from "@material-ui/core/Divider";
 
 import Image from "../Image";
 
+import { sideBarWidth } from "../../layouts/SideBar"
+
 class MarkdownArticle extends React.Component {
 
   static propTypes = {
@@ -40,32 +42,38 @@ class MarkdownArticle extends React.Component {
       code({ node, inline, className, children, ...props }) {
         const match = /language-(\w+)/.exec(className || "")
         return !inline && match ? (
-          <SyntaxHighlighter customStyle={{}} codeTagProps={{ className: classes.code }} showLineNumbers style={materialLight} language={match[1]} children={String(children).replace(/\n$/, "")} {...props} />
+          <SyntaxHighlighter
+            showLineNumbers
+            style={materialLight}
+            language={match[1]}
+            children={String(children).replace(/\n$/, "")}
+            {...props}
+          />
         ) : (
           <code className={className} {...props}>{children}</code>
         )
       },
-      pre: ({ node, ...props }) => <div className={classes.code} {...props} />,
-      table: Table,
-      thead: TableHead,
-      tbody: TableBody,
-      tr: TableRow,
+      pre: ({ node, ...props }) => <div item className={classes.pre} {...props} />,
+      table: ({ node, ...props }) => <Table {...props} />,
+      thead: ({ node, ...props }) => <TableHead {...props} />,
+      tbody: ({ node, ...props }) => <TableBody {...props} />,
+      tr: ({ node, ...props }) => <TableRow {...props} />,
       th: ({ node, style, isHeader, ...props }) => <TableCell align={style?.textAlign}><Typography {...props} /></TableCell>,
       td: ({ node, style, isHeader, ...props }) => <TableCell align={style?.textAlign}><Typography {...props} /></TableCell>,
       input: ({ node, checked, disable, type, ...props }) => <FormControlLabel control={<Checkbox checked={checked} />} disabled label={props.children} />,
-      p: Typography,
-      a: Link,
-      hr: Divider,
-      h1: ({ node, level, ...props }) => <Typography variant="h3" gutterBottom {...props} />,
-      h2: ({ node, level, ...props }) => <Typography variant="h4" gutterBotton {...props} />,
-      h3: ({ node, level, ...props }) => <Typography variant="h5" gutterBotton {...props} />,
-      h4: ({ node, level, ...props }) => <Typography variant="h6" gutterBotton {...props} />,
-      h5: ({ node, level, ...props }) => <Typography variant="h6" gutterBotton {...props} />,
-      h6: ({ node, level, ...props }) => <Typography variant="h6" gutterBotton {...props} />,
+      p: ({ node, ...props }) => <Typography {...props} />,
+      a: ({ node, ...props }) => <Link {...props} />,
+      hr: ({ node, ...props }) => <Divider {...props} />,
+      h1: ({ node, level, ...props }) => <Typography variant="h3" component="h1" gutterBottom {...props} />,
+      h2: ({ node, level, ...props }) => <Typography variant="h4" component="h2" gutterBotton {...props} />,
+      h3: ({ node, level, ...props }) => <Typography variant="h5" component="h3" gutterBotton {...props} />,
+      h4: ({ node, level, ...props }) => <Typography variant="h6" component="h4" gutterBotton {...props} />,
+      h5: ({ node, level, ...props }) => <Typography variant="h6" component="h5" gutterBotton {...props} />,
+      h6: ({ node, level, ...props }) => <Typography variant="h6" component="h6" gutterBotton {...props} />,
       li: ({ node, index, ordered, checked, className, ...props }) => <Typography component="li" {...props} />,
       // img: ({ src, title, ...props }) => <CardMedia component="img" image={src} title={title} {...props} />,
       // img: ({ src, title, ...props }) => <Paper component="img" src={src} title={title} {...props} style={{ width: "100%", }} />
-      img: Image,
+      img: ({ node, ...props }) => <Image {...props} />,
     };
 
     const md = this.props.md;
@@ -80,14 +88,14 @@ class MarkdownArticle extends React.Component {
 
 export default withStyles(theme => ({
 
-  code: {
-    width: "100vw",
-    overflow: "hidden",
-    // overflow: "auto",
-    // "& > *": {
-    // width: "100%",
-    // overflow: "auto",
-    // }
+  pre: {
+
+    [theme.breakpoints.up("sm")]: {
+      width: `calc(100vw - ${sideBarWidth + theme.spacing(8.1)}px)`,
+    },
+
+    width: `calc(100vw - ${theme.spacing(6)}px)`,
+
   },
 
 }))(MarkdownArticle)
