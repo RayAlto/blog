@@ -42,7 +42,7 @@ import WechatQrImage from "../../images/Qr-Wechat.png"
 
 import { OPEN_IMAGE_DIALOG } from "../../constants/events";
 
-const drawerWidth = 270;
+export const sideBarWidth = 270;
 
 class SideBar extends React.Component {
 
@@ -206,7 +206,7 @@ export default withStyles(theme => ({
 
   drawer: {
     [theme.breakpoints.up("sm")]: {
-      width: drawerWidth,
+      width: sideBarWidth,
       flexShrink: 0,
     },
   },
@@ -215,7 +215,7 @@ export default withStyles(theme => ({
   toolbar: theme.mixins.toolbar,
 
   drawerPaper: {
-    width: drawerWidth,
+    width: sideBarWidth,
   },
 
   nestedListItem: {

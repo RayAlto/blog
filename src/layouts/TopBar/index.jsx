@@ -16,7 +16,7 @@ import HideOnScroll from "../../components/HideOnScroll";
 import WeiboIcon from "../../icons/Weibo";
 import BilibiliIcon from "../../icons/Bilibili";
 
-const drawerWidth = 260;
+import { sideBarWidth } from "../SideBar"
 
 class TopBar extends React.Component {
 
@@ -85,8 +85,8 @@ export default withStyles(theme => ({
 
   appBar: {
     [theme.breakpoints.up("sm")]: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
+      width: `calc(100% - ${sideBarWidth}px)`,
+      marginLeft: sideBarWidth,
     },
   },
 
