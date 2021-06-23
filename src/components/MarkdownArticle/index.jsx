@@ -3,30 +3,30 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import ReactMarkdown from "react-markdown";
-import Gfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { materialLight } from "react-syntax-highlighter/dist/esm/styles/prism";
-import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
-import rehypeRaw from "rehype-raw";
 import "katex/dist/katex.min.css";
+import rehypeKatex from "rehype-katex";
+import remarkMath from "remark-math";
+import rehypeRaw from "rehype-raw";
+import Gfm from "remark-gfm";
 
-import withStyles from "@material-ui/core/styles/withStyles";
-
+import Checkbox from "@material-ui/core/Checkbox"
+import Divider from "@material-ui/core/Divider";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Link from "@material-ui/core/Link";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Typography from "@material-ui/core/Typography";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
-import Link from "@material-ui/core/Link";
-import Divider from "@material-ui/core/Divider";
+
+import withStyles from "@material-ui/core/styles/withStyles";
 
 import Image from "../Image";
 
-import { sideBarWidth } from "../../layouts/SideBar"
+import { sideBarWidth } from "../../layouts/SideBar";
 
 class MarkdownArticle extends React.Component {
 
@@ -79,7 +79,12 @@ class MarkdownArticle extends React.Component {
     const md = this.props.md;
 
     return (
-      <ReactMarkdown components={components} remarkPlugins={[Gfm, remarkMath]} rehypePlugins={[rehypeKatex, rehypeRaw]} children={md} />
+      <ReactMarkdown
+        components={components}
+        remarkPlugins={[Gfm, remarkMath]}
+        rehypePlugins={[rehypeKatex, rehypeRaw]}
+        children={md}
+      />
     );
 
   };
@@ -98,4 +103,4 @@ export default withStyles(theme => ({
 
   },
 
-}))(MarkdownArticle)
+}))(MarkdownArticle);

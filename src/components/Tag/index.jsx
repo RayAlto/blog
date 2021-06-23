@@ -1,4 +1,5 @@
 import React from "react";
+
 import PropTypes from "prop-types";
 
 import Chip from "@material-ui/core/Chip";
@@ -12,8 +13,16 @@ export default class Tag extends React.Component {
 
   render() {
     return (
-      <Chip variant="outlined" color="primary" size="small" label={this.props.title} component="a" clickable {...this.props} />
+      <Chip
+        variant="outlined"
+        color="primary"
+        size="small"
+        label={this.props.title}
+        component="a"
+        clickable
+        {...this.props}
+      />
     );
   };
 
-}
+};

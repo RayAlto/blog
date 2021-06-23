@@ -1,11 +1,12 @@
 import React from "react";
+
 import PropTypes from "prop-types";
 
 import PubSub from "pubsub-js";
 
-import withStyles from "@material-ui/core/styles/withStyles";
-
 import Paper from "@material-ui/core/Paper";
+
+import withStyles from "@material-ui/core/styles/withStyles";
 
 import { OPEN_IMAGE_DIALOG } from "../../constants/events";
 

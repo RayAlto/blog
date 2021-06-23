@@ -1,7 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
 
-import withStyles from "@material-ui/core/styles/withStyles";
+import PropTypes from "prop-types";
 
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -9,14 +8,16 @@ import CardContent from "@material-ui/core/CardContent";
 import CardHeader from "@material-ui/core/CardHeader";
 import Checkbox from "@material-ui/core/Checkbox";
 import Divider from "@material-ui/core/Divider";
+import Grid from "@material-ui/core/Grid";
+import Hidden from "@material-ui/core/Hidden";
+import Paper from "@material-ui/core/Paper";
 import Tooltip from "@material-ui/core/Tooltip";
 import Typography from "@material-ui/core/Typography";
-import Hidden from "@material-ui/core/Hidden";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
 
-import FavoriteIcon from "@material-ui/icons/Favorite";
+import withStyles from "@material-ui/core/styles/withStyles";
+
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 
 class InfoArea extends React.Component {
 
@@ -36,8 +37,16 @@ class InfoArea extends React.Component {
 
   render() {
 
-    const classes = this.props.classes;
-    const { infoTitle, infoDetail, infoImageUrl, infoImageAlt, infoActions, titleTypographyProps, divider } = this.props;
+    const {
+      infoTitle,
+      infoDetail,
+      infoImageUrl,
+      infoImageAlt,
+      infoActions,
+      titleTypographyProps,
+      divider,
+      classes,
+    } = this.props;
 
     const contentGrid = (
       <Card elevation={0} className={classes.contentCard}>
@@ -56,7 +65,11 @@ class InfoArea extends React.Component {
           {infoActions}
           <div className={classes.grow} />
           <Tooltip title="いいね" arrow>
-            <Checkbox color="secondary" checkedIcon={<FavoriteIcon />} icon={<FavoriteBorderIcon />} />
+            <Checkbox
+              color="secondary"
+              checkedIcon={<FavoriteIcon />}
+              icon={<FavoriteBorderIcon />}
+            />
           </Tooltip>
         </CardActions>
       </Card>
@@ -103,7 +116,7 @@ class InfoArea extends React.Component {
 
   };
 
-}
+};
 
 export default withStyles(theme => ({
 
@@ -133,6 +146,6 @@ export default withStyles(theme => ({
   tags: {
     marginLeft: theme.spacing(1),
     marginBottom: theme.spacing(1),
-  }
+  },
 
 }))(InfoArea);

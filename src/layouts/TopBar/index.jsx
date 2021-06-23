@@ -6,17 +6,19 @@ import AppBar from "@material-ui/core/AppBar";
 import IconButton from "@material-ui/core/IconButton";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import MenuIcon from "@material-ui/icons/Menu";
+
 import GithubIcon from "@material-ui/icons/GitHub";
+import MenuIcon from "@material-ui/icons/Menu";
 import TwitterIcon from "@material-ui/icons/Twitter";
-import { withStyles } from "@material-ui/core/styles";
 
-// import SearchBox from "../../SearchBox";
+import withStyles from "@material-ui/core/styles/withStyles";
+
 import HideOnScroll from "../../components/HideOnScroll";
-import WeiboIcon from "../../icons/Weibo";
-import BilibiliIcon from "../../icons/Bilibili";
 
-import { sideBarWidth } from "../SideBar"
+import BilibiliIcon from "../../icons/Bilibili";
+import WeiboIcon from "../../icons/Weibo";
+
+import { sideBarWidth } from "../SideBar";
 
 class TopBar extends React.Component {
 
@@ -74,8 +76,9 @@ class TopBar extends React.Component {
         </AppBar>
       </HideOnScroll>
     );
-  }
-}
+  };
+
+};
 
 export default withStyles(theme => ({
 
@@ -84,17 +87,22 @@ export default withStyles(theme => ({
   },
 
   appBar: {
+
     [theme.breakpoints.up("sm")]: {
       width: `calc(100% - ${sideBarWidth}px)`,
       marginLeft: sideBarWidth,
     },
+
   },
 
   menuButton: {
+
     marginRight: theme.spacing(2),
+
     [theme.breakpoints.up("sm")]: {
       display: "none",
     },
+
   },
 
 }))(TopBar);

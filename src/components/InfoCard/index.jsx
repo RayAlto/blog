@@ -1,21 +1,22 @@
 import React from "react";
-import PropTypes from "prop-types";
 
-import withStyles from "@material-ui/styles/withStyles";
+import PropTypes from "prop-types";
 
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
+import Checkbox from "@material-ui/core/Checkbox";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Tooltip from "@material-ui/core/Tooltip";
-import Checkbox from "@material-ui/core/Checkbox";
+
+import withStyles from "@material-ui/styles/withStyles";
 
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
-import FavoriteIcon from "@material-ui/icons/Favorite";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 
 class InfoCard extends React.Component {
 
@@ -27,7 +28,13 @@ class InfoCard extends React.Component {
 
   render() {
 
-    const { link, image, title, classes, children } = this.props;
+    const {
+      link,
+      image,
+      title,
+      classes,
+      children
+    } = this.props;
 
     return (
       <Card>
@@ -47,18 +54,29 @@ class InfoCard extends React.Component {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary" endIcon={<ArrowForwardIcon />} href={link} target="_blank">
+          <Button
+            size="small"
+            color="primary"
+            endIcon={<ArrowForwardIcon />}
+            href={link}
+            target="_blank"
+          >
             去看看
           </Button>
           <div className={classes.grow} />
           <Tooltip title="いいね" arrow>
-            <Checkbox size="small" color="secondary" checkedIcon={<FavoriteIcon />} icon={<FavoriteBorderIcon />} />
+            <Checkbox
+              size="small"
+              color="secondary"
+              checkedIcon={<FavoriteIcon />}
+              icon={<FavoriteBorderIcon />}
+            />
           </Tooltip>
         </CardActions>
       </Card>
     );
 
-  }
+  };
 
 };
 

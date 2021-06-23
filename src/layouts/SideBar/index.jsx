@@ -1,44 +1,42 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import PubSub from "pubsub-js";
+
+import { Link } from "react-router-dom";
 
 import Collapse from "@material-ui/core/Collapse";
 import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
-import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Hidden from "@material-ui/core/Hidden";
 import List from "@material-ui/core/List";
-import ListSubheader from "@material-ui/core/ListSubheader";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+import ListSubheader from "@material-ui/core/ListSubheader";
+import withStyles from "@material-ui/core/styles/withStyles";
+import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Typography from "@material-ui/core/Typography";
 
-import withStyles from "@material-ui/core/styles/withStyles";
-
+import LinkIcon from "@material-ui/icons/Attachment";
+import BlogIcon from "@material-ui/icons/Book";
+import DrawioIcon from "@material-ui/icons/Brush";
+import AriangIcon from "@material-ui/icons/CloudDownload";
+import CommunicationIcon from "@material-ui/icons/Contacts";
+import ScheduleIcon from "@material-ui/icons/DateRange";
+import GmailIcon from "@material-ui/icons/Email";
+import NoteIcon from "@material-ui/icons/EventNote";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import HomeIcon from "@material-ui/icons/Home";
-import BlogIcon from "@material-ui/icons/Book";
-import NoteIcon from "@material-ui/icons/EventNote";
 import AboutIcon from "@material-ui/icons/Info";
-import CommunicationIcon from "@material-ui/icons/Contacts";
-import LinkIcon from "@material-ui/icons/Attachment";
-import ScheduleIcon from "@material-ui/icons/DateRange";
 import ToolsIcon from "@material-ui/icons/Widgets";
-import AriangIcon from "@material-ui/icons/CloudDownload";
-import DrawioIcon from "@material-ui/icons/Brush";
-import GmailIcon from "@material-ui/icons/Email";
 
 import ICP from "../../components/ICP";
-
 import JupyterIcon from "../../icons/Jupyter";
 import QQIcon from "../../icons/QQ";
 import WechatIcon from "../../icons/Wechat";
-
 import QQQrImage from "../../images/Qr-QQ.jpg";
-import WechatQrImage from "../../images/Qr-Wechat.png"
+import WechatQrImage from "../../images/Qr-Wechat.png";
 
 import { OPEN_IMAGE_DIALOG } from "../../constants/events";
 
@@ -199,16 +197,20 @@ class SideBar extends React.Component {
         </Hidden>
       </nav>
     );
+
   };
+
 };
 
 export default withStyles(theme => ({
 
   drawer: {
+
     [theme.breakpoints.up("sm")]: {
       width: sideBarWidth,
       flexShrink: 0,
     },
+
   },
 
   // necessary for content to be below app bar

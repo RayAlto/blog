@@ -93,7 +93,8 @@ class BlogCard extends React.Component {
         </CardActions>
       </Card>
     );
-  }
+
+  };
 
 };
 
@@ -108,7 +109,7 @@ export default withStyles(theme => ({
     paddingTop: "56.25%", // 16:9
     transition: "transform 0.2s ease",
 
-    "&:hover": {
+    "& : hover": {
       transform: `translateY(-${theme.spacing(0.5)}px)`,
     },
 

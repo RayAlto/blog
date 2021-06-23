@@ -1,15 +1,17 @@
 import React from "react";
+
+import { Redirect, Route, Switch } from "react-router-dom";
+
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { withStyles } from "@material-ui/core/styles";
 
-import { Switch, Route, Redirect } from "react-router-dom";
+import withStyles from "@material-ui/core/styles/withStyles";
 
-import TopBar from "./layouts/TopBar";
-import SideBar from "./layouts/SideBar";
-import Blogs from "./layouts/Blogs";
-import Main from "./layouts/Main";
 import BackToTopButton from "./components/BackToTopButton";
 import GlobalImageDialog from "./components/GlobalImageDialog";
+import Blogs from "./layouts/Blogs";
+import Main from "./layouts/Main";
+import SideBar from "./layouts/SideBar";
+import TopBar from "./layouts/TopBar";
 
 class App extends React.Component {
 
@@ -48,6 +50,6 @@ export default withStyles(theme => ({
     backgroundColor: "white",
     flexGrow: 1,
     padding: theme.spacing(3),
-  }
+  },
 
 }))(App);
