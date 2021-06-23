@@ -38,7 +38,11 @@ import WechatIcon from "../../icons/Wechat";
 import QQQrImage from "../../images/Qr-QQ.jpg";
 import WechatQrImage from "../../images/Qr-Wechat.png";
 
-import { OPEN_IMAGE_DIALOG } from "../../constants/events";
+import {
+  OPEN_IMAGE_DIALOG,
+  OPEN_SIDEBAR,
+  CLOSE_SIDEBAR,
+} from "../../constants/events";
 
 export const sideBarWidth = 270;
 
@@ -68,6 +72,15 @@ class SideBar extends React.Component {
       title: "扫描二维码",
       alt: "微信二维码",
     });
+  };
+
+  componentDidMount() {
+    PubSub.subscribe(OPEN_SIDEBAR, () => {
+      this.setState({ showSidebar: true });
+    });
+    PubSub.subscribe(CLOSE_SIDEBAR, () => {
+      this.setState({ showSidebar: false });
+    })
   };
 
   render() {

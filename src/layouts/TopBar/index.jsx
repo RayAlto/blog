@@ -20,6 +20,8 @@ import WeiboIcon from "../../icons/Weibo";
 
 import { sideBarWidth } from "../SideBar";
 
+import { OPEN_SIDEBAR } from "../../constants/events";
+
 class TopBar extends React.Component {
 
   render() {
@@ -32,7 +34,7 @@ class TopBar extends React.Component {
               color="inherit"
               aria-label="open drawer"
               edge="start"
-              onClick={event => PubSub.publish("toggle_sidebar")}
+              onClick={event => PubSub.publish(OPEN_SIDEBAR)}
             >
               <MenuIcon />
             </IconButton>
