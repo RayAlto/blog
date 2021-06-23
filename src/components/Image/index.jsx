@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import PubSub from "pubsub-js";
 
 import Paper from "@material-ui/core/Paper";
+import Tooltip from "@material-ui/core/Tooltip";
 
 import withStyles from "@material-ui/core/styles/withStyles";
 
@@ -33,7 +34,9 @@ class Image extends React.Component {
     const classes = this.props.classes;
 
     return (
-      <Paper component="img" src={src} title={title} alt={alt} className={classes.ratio} onClick={this.openPreview} />
+      <Tooltip title="单击图片以预览">
+        <Paper component="img" src={src} title={title} alt={alt} className={classes.ratio} onClick={this.openPreview} />
+      </Tooltip>
     );
 
   };
