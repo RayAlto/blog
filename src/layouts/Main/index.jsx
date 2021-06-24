@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
@@ -30,11 +32,12 @@ class Main extends React.Component {
           infoImageAlt=""
           infoActions={[
             <Button
+              component={Link}
+              to="/blogs"
               color="primary"
               endIcon={<ArrowForwardIcon />}
               variant="text"
               size="large"
-              href="https://www.baidu.com"
               key="看看我的博客"
             >
               看看我的博客
