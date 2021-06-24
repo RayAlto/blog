@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { Link } from "react-router-dom";
+
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
@@ -42,11 +44,17 @@ class BlogCard extends React.Component {
 
   static propTypes = {
     blogData: PropTypes.object.isRequired,
+    isRouteLink: PropTypes.bool.isRequired,
+  };
+
+  static defaultProps = {
+    isRouteLink: false,
   };
 
   render() {
 
     const blogData = this.props.blogData;
+    const isRouteLink = this.props.isRouteLink;
 
     return (
       <Card variant="outlined">
@@ -57,13 +65,25 @@ class BlogCard extends React.Component {
           title={blogData.title}
           subheader={blogData.date}
         />
-        <CardMedia
-          className={this.props.classes.media}
-          image={blogData.image.url}
-          title={blogData.image.title}
-          component="a"
-          href={blogData.url}
-        />
+        {
+          isRouteLink ? (
+            <CardMedia
+              className={this.props.classes.media}
+              image={blogData.image.url}
+              title={blogData.image.title}
+              component={Link}
+              to={blogData.url}
+            />
+          ) : (
+            <CardMedia
+              className={this.props.classes.media}
+              image={blogData.image.url}
+              title={blogData.image.title}
+              component="a"
+              href={blogData.url}
+            />
+          )
+        }
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
             {blogData.description}
@@ -80,16 +100,32 @@ class BlogCard extends React.Component {
           <Tooltip title="いいね" arrow>
             <Checkbox color="secondary" checkedIcon={<FavoriteIcon />} icon={<FavoriteBorderIcon />} />
           </Tooltip>
-          <Button
-            className={this.props.classes.detailButton}
-            color="primary" startIcon={<FullscreenIcon />}
-            variant="contained"
-            disableElevation
-            size="large"
-            href={blogData.url}
-          >
-            去看看
-          </Button>
+          {
+            isRouteLink ? (
+              <Button
+                className={this.props.classes.detailButton}
+                color="primary" startIcon={<FullscreenIcon />}
+                variant="contained"
+                disableElevation
+                size="large"
+                component={Link}
+                to={blogData.url}
+              >
+                去看看
+              </Button>
+            ) : (
+              <Button
+                className={this.props.classes.detailButton}
+                color="primary" startIcon={<FullscreenIcon />}
+                variant="contained"
+                disableElevation
+                size="large"
+                href={blogData.url}
+              >
+                去看看
+              </Button>
+            )
+          }
         </CardActions>
       </Card>
     );
