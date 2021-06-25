@@ -29,11 +29,11 @@ import Tags from "../../components/Tags";
 
 // {
 //   title: "How to poop",
-//     date: "September 14, 2016",
-//       url: "https://www.baidu.com",
-//         description: "This blog will show you the most morden way to poop.",
-//           image: {
-//     url: "https://www.rayalto.top/images/anime.png",
+//   date: "September 14, 2016",
+//   url: "https://www.baidu.com",
+//   description: "This blog will show you the most morden way to poop.",
+//     image: {
+//       url: "https://www.rayalto.top/images/anime.png",
 //       title: "poop music"
 //   },
 //   tags: [
@@ -48,12 +48,18 @@ class BlogSlice extends React.Component {
 
   static propTypes = {
     blogData: PropTypes.object.isRequired,
+    isRouteLink: PropTypes.bool.isRequired,
+  };
+
+  static defaultProps = {
+    isRouteLink: false,
   };
 
   render() {
 
     const classes = this.props.classes;
     const blogData = this.props.blogData;
+    const isRouteLink = this.props.isRouteLink;
 
     const contentGrid = (
       <Card elevation={0} className={classes.contentCard}>
@@ -79,16 +85,30 @@ class BlogSlice extends React.Component {
         </Tags>
         <Divider />
         <CardActions>
-          <Button
-            color="primary"
-            endIcon={<ArrowForwardIcon />}
-            variant="text"
-            size="large"
-            component={Link}
-            to={blogData.url}
-          >
-            去看看
-          </Button>
+          {
+            isRouteLink ? (
+              <Button
+                color="primary"
+                endIcon={<ArrowForwardIcon />}
+                variant="text"
+                size="large"
+                component={Link}
+                to={blogData.url}
+              >
+                去看看
+              </Button>
+            ) : (
+              <Button
+                color="primary"
+                endIcon={<ArrowForwardIcon />}
+                variant="text"
+                size="large"
+                href={blogData.url}
+              >
+                去看看
+              </Button>
+            )
+          }
           <div className={classes.grow} />
           <Tooltip title="いいね" arrow>
             <Checkbox color="secondary" checkedIcon={<FavoriteIcon />} icon={<FavoriteBorderIcon />} />

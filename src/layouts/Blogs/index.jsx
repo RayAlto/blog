@@ -369,8 +369,8 @@ class Blogs extends React.Component {
               imageAlt="😭我是彻底的失败者"
               tags={[
                 {
-                  text:"python",
-                  url:"https://www.python.org"
+                  text: "python",
+                  url: "https://www.python.org"
                 }
               ]}
             />
@@ -378,7 +378,7 @@ class Blogs extends React.Component {
           <Route exact path={`${currnetPath}/`}>
             {blogs.map((blog, index) => {
               return (
-                <BlogSlice blogData={blog} key={blog.title} />
+                <BlogSlice blogData={blog} key={blog.title} isRouteLink />
               )
             })}
           </Route>
