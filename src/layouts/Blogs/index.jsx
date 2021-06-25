@@ -375,14 +375,14 @@ class Blogs extends React.Component {
               ]}
             />
           </Route>
-          <Route exact path={`${currnetPath}/`}>
+          <Route exact path={currnetPath}>
             {blogs.map((blog, index) => {
               return (
                 <BlogSlice blogData={blog} key={blog.title} isRouteLink />
               )
             })}
           </Route>
-          <Redirect to={`${currnetPath}/`} />
+          <Redirect to={currnetPath} />
         </Switch>
       </div>
     )
