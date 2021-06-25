@@ -7,8 +7,9 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 import BackToTopButton from "./components/BackToTopButton";
-import GlobalImageDialog from "./components/GlobalImageDialog";
 import Blogs from "./layouts/Blogs";
+import GlobalImageDialog from "./components/GlobalImageDialog";
+import NoteIndex from "./layouts/NoteIndex";
 import Main from "./layouts/Main";
 import SideBar from "./layouts/SideBar";
 import TopBar from "./layouts/TopBar";
@@ -25,6 +26,7 @@ class App extends React.Component {
           <div className={this.props.classes.toolbar} id="top-anchor" />
           <Switch>
             <Route path="/blogs" component={Blogs} />
+            <Route path="/note" component={NoteIndex} />
             <Route exact path="/" component={Main} />
             <Redirect to="/" />
           </Switch>
