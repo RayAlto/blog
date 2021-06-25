@@ -2,6 +2,8 @@ import React from "react";
 
 import PropTypes from "prop-types";
 
+import { Link } from "react-router-dom";
+
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
@@ -24,6 +26,11 @@ class InfoCard extends React.Component {
     link: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
+    isRouteLink: PropTypes.bool.isRequired,
+  };
+
+  static defaultProps = {
+    isRouteLink: false,
   };
 
   render() {
@@ -33,36 +40,71 @@ class InfoCard extends React.Component {
       image,
       title,
       classes,
-      children
+      children,
+      isRouteLink,
     } = this.props;
 
     return (
       <Card>
-        <CardActionArea href={link} target="_blank">
-          <CardMedia
-            className={classes.media}
-            image={image}
-            title={title}
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              {title}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              {children}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
+        {
+          isRouteLink ? (
+            <CardActionArea component={Link} to={link}>
+              <CardMedia
+                className={classes.media}
+                image={image}
+                title={title}
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {title}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  {children}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          ) : (
+            <CardActionArea href={link} target="_blank">
+              <CardMedia
+                className={classes.media}
+                image={image}
+                title={title}
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {title}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  {children}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          )
+        }
         <CardActions>
-          <Button
-            size="small"
-            color="primary"
-            endIcon={<ArrowForwardIcon />}
-            href={link}
-            target="_blank"
-          >
-            去看看
-          </Button>
+          {
+            isRouteLink ? (
+              <Button
+                size="small"
+                color="primary"
+                endIcon={<ArrowForwardIcon />}
+                component={Link}
+                to={link}
+              >
+                去看看
+              </Button>
+            ) : (
+              <Button
+                size="small"
+                color="primary"
+                endIcon={<ArrowForwardIcon />}
+                href={link}
+                target="_blank"
+              >
+                去看看
+              </Button>
+            )
+          }
           <div className={classes.grow} />
           <Tooltip title="いいね" arrow>
             <Checkbox

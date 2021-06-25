@@ -79,7 +79,8 @@ class Main extends React.Component {
             <InfoCard
               title="课程表"
               image={ScheduleImage500x300}
-              link="https://www.baidu.com"
+              link="/schedule"
+              isRouteLink
             >
               原创爬虫项目。众所周知某说唱大学教务经常不对外网开放，趁着对外开放的时候每天爬取课程表数据就不怕不知道去哪上课了。
             </InfoCard>
@@ -88,7 +89,8 @@ class Main extends React.Component {
             <InfoCard
               title="笔记本"
               image={NoteImage500x300}
-              link="https://www.baidu.com"
+              link="/note"
+              isRouteLink
             >
               买不起Ipad，所以平时用键盘在JupyterLab上用MarkDown记数学以外的笔记，选择性地放在这里献丑。
             </InfoCard>
