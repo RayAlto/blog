@@ -44,6 +44,7 @@ class TopBar extends React.Component {
             <div className={this.props.classes.grow} />
             <IconButton
               href="https://space.bilibili.com/67047863"
+              rel="noopener noreferrer"
               target="_blank"
               aria-label="This is an icon button"
               color="inherit"
@@ -52,6 +53,7 @@ class TopBar extends React.Component {
             </IconButton>
             <IconButton
               href="https://weibo.com/RayAlto"
+              rel="noopener noreferrer"
               target="_blank"
               aria-label="This is an icon button"
               color="inherit"
@@ -60,6 +62,7 @@ class TopBar extends React.Component {
             </IconButton>
             <IconButton
               href="https://twitter.com/RayAlto1"
+              rel="noopener noreferrer"
               target="_blank"
               aria-label="This is an icon button"
               color="inherit"
@@ -69,6 +72,7 @@ class TopBar extends React.Component {
             <IconButton
               href="https://github.com/RayAlto"
               target="_blank"
+              rel="noopener noreferrer"
               aria-label="This is an icon button"
               color="inherit"
             >

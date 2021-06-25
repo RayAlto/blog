@@ -118,15 +118,15 @@ class SideBar extends React.Component {
           </ListItem>
           <Collapse in={this.state.showToolsList} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              <ListItem component="a" href="https://jupyter.rayalto.top" target="_blank" button key="JupyterLab" className={this.props.classes.nestedListItem}>
+              <ListItem component="a" href="https://jupyter.rayalto.top" target="_blank" rel="noopener noreferrer" button key="JupyterLab" className={this.props.classes.nestedListItem}>
                 <ListItemIcon><JupyterIcon /></ListItemIcon>
                 <ListItemText primary="JupyterLab" />
               </ListItem>
-              <ListItem component="a" href="https://aria2.rayalto.top" target="_blank" button key="AriaNg" className={this.props.classes.nestedListItem}>
+              <ListItem component="a" href="https://aria2.rayalto.top" target="_blank" rel="noopener noreferrer" button key="AriaNg" className={this.props.classes.nestedListItem}>
                 <ListItemIcon><AriangIcon /></ListItemIcon>
                 <ListItemText primary="AriaNg" />
               </ListItem>
-              <ListItem component="a" href="https://drawio.rayalto.top" target="_blank" button key="DrawIO" className={this.props.classes.nestedListItem}>
+              <ListItem component="a" href="https://drawio.rayalto.top" target="_blank" rel="noopener noreferrer" button key="DrawIO" className={this.props.classes.nestedListItem}>
                 <ListItemIcon><DrawioIcon /></ListItemIcon>
                 <ListItemText primary="DrawIO" />
               </ListItem>
@@ -158,7 +158,7 @@ class SideBar extends React.Component {
               欢迎来骚扰，如果你想的话可以问我一些问题，给我一些建议，跟我交个朋友，或者单纯跟我打个招呼。
             </Typography>
           </ListItem>
-          <ListItem button component="a" href="mailto:tianjiayu668@gmail.com" target="_blank" key="tianjiayu668@gmail.com">
+          <ListItem button component="a" href="mailto:tianjiayu668@gmail.com" target="_blank" rel="noopener noreferrer" key="tianjiayu668@gmail.com">
             <ListItemIcon><GmailIcon /></ListItemIcon>
             <ListItemText primary="tianjiayu668@gmail.com" />
           </ListItem>
