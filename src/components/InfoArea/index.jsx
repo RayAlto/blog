@@ -27,7 +27,7 @@ class InfoArea extends React.Component {
     infoDetail: PropTypes.string.isRequired,
     infoImageUrl: PropTypes.string.isRequired,
     infoImageAlt: PropTypes.string.isRequired,
-    infoActions: PropTypes.array.isRequired,
+    infoActions: PropTypes.array,
     titleTypographyProps: PropTypes.object,
     divider: PropTypes.bool,
     noCardActions: PropTypes.bool,
