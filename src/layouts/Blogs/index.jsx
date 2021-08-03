@@ -385,7 +385,7 @@ class Blogs extends React.Component {
           <Redirect to={currnetPath} />
         </Switch>
       </div>
-    )
+    );
   };
 
 }
