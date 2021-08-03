@@ -11,6 +11,7 @@ import Blogs from "./layouts/Blogs";
 import GlobalImageDialog from "./components/GlobalImageDialog";
 import NoteIndex from "./layouts/NoteIndex";
 import Main from "./layouts/Main";
+import Schedule from "./layouts/Schedule";
 import SideBar from "./layouts/SideBar";
 import TopBar from "./layouts/TopBar";
 
@@ -27,6 +28,7 @@ class App extends React.Component {
           <Switch>
             <Route path="/blogs" component={Blogs} />
             <Route path="/note" component={NoteIndex} />
+            <Route path="/schedule" component={Schedule} />
             <Route exact path="/" component={Main} />
             <Redirect to="/" />
           </Switch>
