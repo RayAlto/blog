@@ -45,6 +45,11 @@ class Schedule extends React.Component {
       ]
     };
 
+    const hitokotoData = {
+      text: "一举一动，都是承诺，会被另一个人看在眼里，记在心上的。",
+      from: "悬崖上的金鱼姬",
+      fromWho: "宫崎骏"
+    }
     return (
       <div>
         <InfoArea
@@ -92,7 +97,11 @@ class Schedule extends React.Component {
             </TableBody>
           </Table>
         </TableContainer>
+        <Typography>更新时间：{scheduleData.updateTimeStr}</Typography>
         <Divider className={classes.divider} />
+        <Typography component="h4" variant="h4" gutterBottom>每日一句</Typography>
+        <Typography>{hitokotoData.text}</Typography>
+        <Typography align="right">{`${hitokotoData.fromWho} - 《${hitokotoData.from}》`}</Typography>
       </div>
     );
   };
@@ -108,6 +117,7 @@ export default withStyles(theme => ({
 
   table: {
     marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(3),
   },
 
 }))(Schedule);
