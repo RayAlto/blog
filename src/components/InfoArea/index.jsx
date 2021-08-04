@@ -27,13 +27,15 @@ class InfoArea extends React.Component {
     infoDetail: PropTypes.string.isRequired,
     infoImageUrl: PropTypes.string.isRequired,
     infoImageAlt: PropTypes.string.isRequired,
-    infoActions: PropTypes.array.isRequired,
+    infoActions: PropTypes.array,
     titleTypographyProps: PropTypes.object,
     divider: PropTypes.bool,
+    noCardActions: PropTypes.bool,
   };
 
   static defaultProps = {
     divider: false,
+    noCardActions: false,
   };
 
   render() {
@@ -46,6 +48,7 @@ class InfoArea extends React.Component {
       infoActions,
       titleTypographyProps,
       divider,
+      noCardActions,
       classes,
     } = this.props;
 
@@ -60,17 +63,20 @@ class InfoArea extends React.Component {
         </CardContent>
         <div className={classes.grow} />
         {divider && <Divider />}
-        <CardActions>
-          {infoActions}
-          <div className={classes.grow} />
-          <Tooltip title="いいね" arrow>
-            <Checkbox
-              color="secondary"
-              checkedIcon={<FavoriteIcon />}
-              icon={<FavoriteBorderIcon />}
-            />
-          </Tooltip>
-        </CardActions>
+        {
+          !noCardActions &&
+          <CardActions>
+            {infoActions}
+            <div className={classes.grow} />
+            <Tooltip title="いいね" arrow>
+              <Checkbox
+                color="secondary"
+                checkedIcon={<FavoriteIcon />}
+                icon={<FavoriteBorderIcon />}
+              />
+            </Tooltip>
+          </CardActions>
+        }
       </Card>
     );
 

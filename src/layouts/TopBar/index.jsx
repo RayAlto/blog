@@ -8,10 +8,13 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 
 import GithubIcon from "@material-ui/icons/GitHub";
+import HomeIcon from '@material-ui/icons/Home';
 import MenuIcon from "@material-ui/icons/Menu";
 import TwitterIcon from "@material-ui/icons/Twitter";
 
 import withStyles from "@material-ui/core/styles/withStyles";
+
+import { Link } from "react-router-dom";
 
 import HideOnScroll from "../../components/HideOnScroll";
 
@@ -37,6 +40,16 @@ class TopBar extends React.Component {
               onClick={event => PubSub.publish(OPEN_SIDEBAR)}
             >
               <MenuIcon />
+            </IconButton>
+            <IconButton
+              className={this.props.classes.homeButton}
+              color="inherit"
+              aria-label="back to home"
+              edge="start"
+              component={Link}
+              to="/"
+            >
+              <HomeIcon />
             </IconButton>
             <Typography variant="h6" noWrap>
               RayAlto - 主页
@@ -110,5 +123,16 @@ export default withStyles(theme => ({
     },
 
   },
+
+  homeButton: {
+
+    marginRight: theme.spacing(2),
+    display: "none",
+
+    [theme.breakpoints.up("sm")]: {
+      display: "inline-flex",
+    },
+
+  }
 
 }))(TopBar);

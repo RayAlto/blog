@@ -8,6 +8,8 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Typography from "@material-ui/core/Typography";
 
+import { Helmet } from "react-helmet";
+
 import withStyles from "@material-ui/core/styles/withStyles";
 
 import Header from "../../components/Header";
@@ -44,29 +46,34 @@ class Notes extends React.Component {
     });
 
     return (
-      <Switch>
-        {/* {routes} */}
-        <Route exact path={`${currentPath}/001`}>
-          <Note />
-        </Route>
-        <Route exact path={currentPath}>
-          <Header>{notes.title}</Header>
-          <Typography gutterBottom>{notes.description}</Typography>
-          <Divider light />
-          <List>
-            {notes.noteList.map(note => {
-              return (
-                <ListItem component={Link} to={note.url} button key={`${note.url}-${note.title}`}>
-                  <ListItemText>
-                    {note.title}
-                  </ListItemText>
-                </ListItem>
-              )
-            })}
-          </List>
-        </Route>
-        <Redirect to={currentPath} />
-      </Switch>
+      <div>
+        <Helmet>
+          <title>RayAlto - 笔记 - JAVA</title>
+        </Helmet>
+        <Switch>
+          {/* {routes} */}
+          <Route exact path={`${currentPath}/001`}>
+            <Note />
+          </Route>
+          <Route exact path={currentPath}>
+            <Header>{notes.title}</Header>
+            <Typography gutterBottom>{notes.description}</Typography>
+            <Divider light />
+            <List>
+              {notes.noteList.map(note => {
+                return (
+                  <ListItem component={Link} to={note.url} button key={`${note.url}-${note.title}`}>
+                    <ListItemText>
+                      {note.title}
+                    </ListItemText>
+                  </ListItem>
+                )
+              })}
+            </List>
+          </Route>
+          <Redirect to={currentPath} />
+        </Switch>
+      </div>
     );
 
   };

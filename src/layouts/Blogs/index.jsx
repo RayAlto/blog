@@ -3,6 +3,8 @@ import React from "react";
 
 import { Switch, Route, Redirect } from "react-router-dom";
 
+import { Helmet } from "react-helmet";
+
 import withStyles from "@material-ui/core/styles/withStyles";
 
 import BlogSlice from "../../components/BlogSlice";
@@ -360,6 +362,9 @@ class Blogs extends React.Component {
 
     return (
       <div className={this.props.classes.root}>
+        <Helmet>
+          <title>RayAlto - 博客</title>
+        </Helmet>
         <Switch>
           <Route exact path={`${currnetPath}/2021-3-12-1`}>
             <Blog
@@ -385,7 +390,7 @@ class Blogs extends React.Component {
           <Redirect to={currnetPath} />
         </Switch>
       </div>
-    )
+    );
   };
 
 }

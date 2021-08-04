@@ -2,6 +2,8 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
+import { Helmet } from "react-helmet";
+
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
@@ -24,6 +26,9 @@ class Main extends React.Component {
   render() {
     return (
       <div>
+        <Helmet>
+          <title>RayAlto - 主页</title>
+        </Helmet>
         <InfoArea
           titleTypographyProps={{ variant: 'h3', component: 'h1' }}
           infoTitle="Ray_Alto 的个人主页"
