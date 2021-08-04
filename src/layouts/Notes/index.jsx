@@ -51,10 +51,7 @@ class Notes extends React.Component {
           <title>RayAlto - 笔记 - JAVA</title>
         </Helmet>
         <Switch>
-          {/* {routes} */}
-          <Route exact path={`${currentPath}/001`}>
-            <Note />
-          </Route>
+          {routes}
           <Route exact path={currentPath}>
             <Header>{notes.title}</Header>
             <Typography gutterBottom>{notes.description}</Typography>

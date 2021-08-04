@@ -69,7 +69,7 @@ class NoteIndex extends React.Component {
           <title>RayAlto - 笔记目录</title>
         </Helmet>
         <Switch>
-          <Route exact path={`${currentPath}/java`}>
+          <Route path={`${currentPath}/java`}>
             <Notes />
           </Route>
           <Route exact path={currentPath}>
