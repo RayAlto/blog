@@ -1,7 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
 
-import withStyles from "@material-ui/core/styles/withStyles";
+import PropTypes from "prop-types";
 
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -9,14 +8,17 @@ import CardContent from "@material-ui/core/CardContent";
 import CardHeader from "@material-ui/core/CardHeader";
 import Checkbox from "@material-ui/core/Checkbox";
 import Divider from "@material-ui/core/Divider";
-import Tooltip from "@material-ui/core/Tooltip";
-import Typography from "@material-ui/core/Typography";
-import Hidden from "@material-ui/core/Hidden";
 import Grid from "@material-ui/core/Grid";
+import Hidden from "@material-ui/core/Hidden";
 import Paper from "@material-ui/core/Paper";
+import Tooltip from "@material-ui/core/Tooltip";
 
-import FavoriteIcon from "@material-ui/icons/Favorite";
+import withStyles from "@material-ui/core/styles/withStyles";
+
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+
+import MarkdownArticle from "../MarkdownArticle";
 
 class InfoArea extends React.Component {
 
@@ -25,19 +27,30 @@ class InfoArea extends React.Component {
     infoDetail: PropTypes.string.isRequired,
     infoImageUrl: PropTypes.string.isRequired,
     infoImageAlt: PropTypes.string.isRequired,
-    infoActions: PropTypes.array.isRequired,
+    infoActions: PropTypes.array,
     titleTypographyProps: PropTypes.object,
     divider: PropTypes.bool,
+    noCardActions: PropTypes.bool,
   };
 
   static defaultProps = {
     divider: false,
+    noCardActions: false,
   };
 
   render() {
 
-    const classes = this.props.classes;
-    const { infoTitle, infoDetail, infoImageUrl, infoImageAlt, infoActions, titleTypographyProps, divider } = this.props;
+    const {
+      infoTitle,
+      infoDetail,
+      infoImageUrl,
+      infoImageAlt,
+      infoActions,
+      titleTypographyProps,
+      divider,
+      noCardActions,
+      classes,
+    } = this.props;
 
     const contentGrid = (
       <Card elevation={0} className={classes.contentCard}>
@@ -46,19 +59,24 @@ class InfoArea extends React.Component {
           titleTypographyProps={{ ...titleTypographyProps }}
         />
         <CardContent>
-          <Typography color="textSecondary" component="p">
-            {infoDetail}
-          </Typography>
+          <MarkdownArticle md={infoDetail} />
         </CardContent>
         <div className={classes.grow} />
         {divider && <Divider />}
-        <CardActions>
-          {infoActions}
-          <div className={classes.grow} />
-          <Tooltip title="いいね" arrow>
-            <Checkbox color="secondary" checkedIcon={<FavoriteIcon />} icon={<FavoriteBorderIcon />} />
-          </Tooltip>
-        </CardActions>
+        {
+          !noCardActions &&
+          <CardActions>
+            {infoActions}
+            <div className={classes.grow} />
+            <Tooltip title="いいね" arrow>
+              <Checkbox
+                color="secondary"
+                checkedIcon={<FavoriteIcon />}
+                icon={<FavoriteBorderIcon />}
+              />
+            </Tooltip>
+          </CardActions>
+        }
       </Card>
     );
 
@@ -103,7 +121,7 @@ class InfoArea extends React.Component {
 
   };
 
-}
+};
 
 export default withStyles(theme => ({
 
@@ -133,6 +151,6 @@ export default withStyles(theme => ({
   tags: {
     marginLeft: theme.spacing(1),
     marginBottom: theme.spacing(1),
-  }
+  },
 
 }))(InfoArea);

@@ -1,7 +1,8 @@
 import React from "react";
+
 import PropTypes from "prop-types";
 
-import withStyles from "@material-ui/core/styles/withStyles";
+import { Link } from "react-router-dom";
 
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -11,29 +12,54 @@ import CardContent from "@material-ui/core/CardContent";
 import CardHeader from "@material-ui/core/CardHeader";
 import Checkbox from "@material-ui/core/Checkbox";
 import Divider from "@material-ui/core/Divider";
+import Grid from "@material-ui/core/Grid";
+import Hidden from "@material-ui/core/Hidden";
+import Paper from "@material-ui/core/Paper";
 import Tooltip from "@material-ui/core/Tooltip";
 import Typography from "@material-ui/core/Typography";
-import Hidden from "@material-ui/core/Hidden";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
 
+import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
-import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 
-import Tags from "../../components/Tags";
+import withStyles from "@material-ui/core/styles/withStyles";
+
 import Tag from "../../components/Tag";
+import Tags from "../../components/Tags";
+
+// {
+//   title: "How to poop",
+//   date: "September 14, 2016",
+//   url: "https://www.baidu.com",
+//   description: "This blog will show you the most morden way to poop.",
+//     image: {
+//       url: "https://www.rayalto.top/images/anime.png",
+//       title: "poop music"
+//   },
+//   tags: [
+//     {
+//       url: "https://www.baidu.com",
+//       text: "midden"
+//     }
+//   ]
+// }
 
 class BlogSlice extends React.Component {
 
   static propTypes = {
     blogData: PropTypes.object.isRequired,
+    isRouteLink: PropTypes.bool.isRequired,
+  };
+
+  static defaultProps = {
+    isRouteLink: false,
   };
 
   render() {
 
     const classes = this.props.classes;
     const blogData = this.props.blogData;
+    const isRouteLink = this.props.isRouteLink;
 
     const contentGrid = (
       <Card elevation={0} className={classes.contentCard}>
@@ -59,15 +85,30 @@ class BlogSlice extends React.Component {
         </Tags>
         <Divider />
         <CardActions>
-          <Button
-            color="primary"
-            endIcon={<ArrowForwardIcon />}
-            variant="text"
-            size="large"
-            href={blogData.url}
-          >
-            去看看
-          </Button>
+          {
+            isRouteLink ? (
+              <Button
+                color="primary"
+                endIcon={<ArrowForwardIcon />}
+                variant="text"
+                size="large"
+                component={Link}
+                to={blogData.url}
+              >
+                去看看
+              </Button>
+            ) : (
+              <Button
+                color="primary"
+                endIcon={<ArrowForwardIcon />}
+                variant="text"
+                size="large"
+                href={blogData.url}
+              >
+                去看看
+              </Button>
+            )
+          }
           <div className={classes.grow} />
           <Tooltip title="いいね" arrow>
             <Checkbox color="secondary" checkedIcon={<FavoriteIcon />} icon={<FavoriteBorderIcon />} />
@@ -92,7 +133,7 @@ class BlogSlice extends React.Component {
             <Grid item className={classes.mobileGrid}>
               {contentGrid}
             </Grid>
-            <Grid item component="a" href="https://www.baidu.com" target="_blank" className={classes.mobileGrid}>
+            <Grid item component={Link} to={blogData.url} className={classes.mobileGrid}>
               {imageGrid}
             </Grid>
           </Grid>
@@ -107,7 +148,7 @@ class BlogSlice extends React.Component {
             <Grid item xs={12} sm={6}>
               {contentGrid}
             </Grid>
-            <Grid item xs={12} sm={6} component="a" href="https://www.baidu.com" target="_blank">
+            <Grid item xs={12} sm={6} component={Link} to={blogData.url} >
               {imageGrid}
             </Grid>
           </Grid>

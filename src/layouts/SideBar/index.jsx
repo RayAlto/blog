@@ -1,68 +1,57 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import PubSub from "pubsub-js";
+
+import { Link } from "react-router-dom";
 
 import Collapse from "@material-ui/core/Collapse";
 import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
-import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Hidden from "@material-ui/core/Hidden";
 import List from "@material-ui/core/List";
-import ListSubheader from "@material-ui/core/ListSubheader";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+import ListSubheader from "@material-ui/core/ListSubheader";
+import withStyles from "@material-ui/core/styles/withStyles";
+import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Typography from "@material-ui/core/Typography";
 
-import withStyles from "@material-ui/core/styles/withStyles";
-
+import LinkIcon from "@material-ui/icons/Attachment";
+import BlogIcon from "@material-ui/icons/Book";
+import DrawioIcon from "@material-ui/icons/Brush";
+import AriangIcon from "@material-ui/icons/CloudDownload";
+import CommunicationIcon from "@material-ui/icons/Contacts";
+import ScheduleIcon from "@material-ui/icons/DateRange";
+import GmailIcon from "@material-ui/icons/Email";
+import NoteIcon from "@material-ui/icons/EventNote";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import HomeIcon from "@material-ui/icons/Home";
-import BlogIcon from "@material-ui/icons/Book";
-import NoteIcon from "@material-ui/icons/EventNote";
 import AboutIcon from "@material-ui/icons/Info";
-import CommunicationIcon from "@material-ui/icons/Contacts";
-import LinkIcon from "@material-ui/icons/Attachment";
-import ScheduleIcon from "@material-ui/icons/DateRange";
 import ToolsIcon from "@material-ui/icons/Widgets";
-import AriangIcon from "@material-ui/icons/CloudDownload";
-import DrawioIcon from "@material-ui/icons/Brush";
-import GmailIcon from "@material-ui/icons/Email";
 
 import ICP from "../../components/ICP";
-import ImageDialog from "../../components/ImageDialog";
-
 import JupyterIcon from "../../icons/Jupyter";
 import QQIcon from "../../icons/QQ";
 import WechatIcon from "../../icons/Wechat";
-
 import QQQrImage from "../../images/Qr-QQ.jpg";
-import WechatQrImage from "../../images/Qr-Wechat.png"
+import WechatQrImage from "../../images/Qr-Wechat.png";
 
-const drawerWidth = 270;
+import {
+  OPEN_IMAGE_DIALOG,
+  OPEN_SIDEBAR,
+  CLOSE_SIDEBAR,
+} from "../../constants/events";
+
+export const sideBarWidth = 270;
 
 class SideBar extends React.Component {
-
-  static propTypes = {
-    window: PropTypes.func,
-  };
 
   state = {
     showSidebar: false,
     showToolsList: false,
-    showQQ: false,
-    showWechat: false,
   };
-
-  componentDidMount() {
-    PubSub.subscribe("toggle_sidebar", (_, toggle) => {
-      toggle ? this.toggleDrawer(toggle) : this.handleDrawerToggle();
-    });
-    PubSub.subscribe("close_imageDialog_QQ二维码", this.openQQDialog(false));
-    PubSub.subscribe("close_imageDialog_微信二维码", this.openWechatDialog(false));
-  }
 
   toggleDrawer = (toggle) => (event) => { this.setState({ showSidebar: toggle }); };
   handleDrawerToggle = () => { this.setState({ showSidebar: !this.state.showSidebar }); };
@@ -70,11 +59,29 @@ class SideBar extends React.Component {
   collapseToolsList = (collapse) => (event) => { this.setState({ showToolsList: !collapse }); };
   handleToolsListCollapse = () => { this.setState({ showToolsList: !this.state.showToolsList }); };
 
-  openQQDialog = (open) => (event) => { this.setState({ showQQ: open }); };
-  handleQQDialogOpen = () => { this.setState({ showQQ: !this.state.showQQ }); };
+  showQQ = () => {
+    PubSub.publish(OPEN_IMAGE_DIALOG, {
+      image: QQQrImage,
+      title: "扫描二维码",
+      alt: "QQ二维码",
+    });
+  };
+  showWechat = () => {
+    PubSub.publish(OPEN_IMAGE_DIALOG, {
+      image: WechatQrImage,
+      title: "扫描二维码",
+      alt: "微信二维码",
+    });
+  };
 
-  openWechatDialog = (open) => (event) => { this.setState({ showWechat: open }); };
-  handleWechatDialogOpen = () => { this.setState({ showWechat: !this.state.showWechat }); };
+  componentDidMount() {
+    PubSub.subscribe(OPEN_SIDEBAR, () => {
+      this.setState({ showSidebar: true });
+    });
+    PubSub.subscribe(CLOSE_SIDEBAR, () => {
+      this.setState({ showSidebar: false });
+    })
+  };
 
   render() {
 
@@ -88,19 +95,19 @@ class SideBar extends React.Component {
             </ListSubheader>
           }
         >
-          <ListItem button key="主页">
+          <ListItem component={Link} to="/" button key="主页">
             <ListItemIcon><HomeIcon /></ListItemIcon>
             <ListItemText primary="主页" />
           </ListItem>
-          <ListItem button key="博客">
+          <ListItem component={Link} to="/blogs" button key="博客">
             <ListItemIcon><BlogIcon /></ListItemIcon>
             <ListItemText primary="博客" />
           </ListItem>
-          <ListItem button key="笔记本">
+          <ListItem component={Link} to="/note" button key="笔记本">
             <ListItemIcon><NoteIcon /></ListItemIcon>
             <ListItemText primary="笔记本" />
           </ListItem>
-          <ListItem button key="课程表">
+          <ListItem component={Link} to="/schedule" button key="课程表">
             <ListItemIcon><ScheduleIcon /></ListItemIcon>
             <ListItemText primary="课程表" />
           </ListItem>
@@ -111,29 +118,29 @@ class SideBar extends React.Component {
           </ListItem>
           <Collapse in={this.state.showToolsList} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              <ListItem button key="JupyterLab" className={this.props.classes.nestedListItem}>
+              <ListItem component="a" href="https://jupyter.rayalto.top" target="_blank" rel="noopener noreferrer" button key="JupyterLab" className={this.props.classes.nestedListItem}>
                 <ListItemIcon><JupyterIcon /></ListItemIcon>
                 <ListItemText primary="JupyterLab" />
               </ListItem>
-              <ListItem button key="AriaNg" className={this.props.classes.nestedListItem}>
+              <ListItem component="a" href="https://aria2.rayalto.top" target="_blank" rel="noopener noreferrer" button key="AriaNg" className={this.props.classes.nestedListItem}>
                 <ListItemIcon><AriangIcon /></ListItemIcon>
                 <ListItemText primary="AriaNg" />
               </ListItem>
-              <ListItem button key="DrawIO" className={this.props.classes.nestedListItem}>
+              <ListItem component="a" href="https://drawio.rayalto.top" target="_blank" rel="noopener noreferrer" button key="DrawIO" className={this.props.classes.nestedListItem}>
                 <ListItemIcon><DrawioIcon /></ListItemIcon>
                 <ListItemText primary="DrawIO" />
               </ListItem>
             </List>
           </Collapse>
-          <ListItem button key="关于我">
+          <ListItem component={Link} to="/about" button key="关于我">
             <ListItemIcon><AboutIcon /></ListItemIcon>
             <ListItemText primary="关于我" />
           </ListItem>
-          <ListItem button key="社交">
+          <ListItem component={Link} to="/contact" button key="社交">
             <ListItemIcon><CommunicationIcon /></ListItemIcon>
             <ListItemText primary="社交" />
           </ListItem>
-          <ListItem button key="友链">
+          <ListItem component={Link} to="/friend" button key="友链">
             <ListItemIcon><LinkIcon /></ListItemIcon>
             <ListItemText primary="友链" />
           </ListItem>
@@ -151,21 +158,19 @@ class SideBar extends React.Component {
               欢迎来骚扰，如果你想的话可以问我一些问题，给我一些建议，跟我交个朋友，或者单纯跟我打个招呼。
             </Typography>
           </ListItem>
-          <ListItem button component="a" href="mailto:tianjiayu668@gmail.com" target="_blank" key="tianjiayu668@gmail.com">
+          <ListItem button component="a" href="mailto:tianjiayu668@gmail.com" target="_blank" rel="noopener noreferrer" key="tianjiayu668@gmail.com">
             <ListItemIcon><GmailIcon /></ListItemIcon>
             <ListItemText primary="tianjiayu668@gmail.com" />
           </ListItem>
-          <ListItem button onClick={this.handleQQDialogOpen} key="995010578">
+          <ListItem button onClick={this.showQQ} key="995010578">
             <ListItemIcon><QQIcon /></ListItemIcon>
             <ListItemText primary="995010578" />
           </ListItem>
-          <ListItem button onClick={this.handleWechatDialogOpen} key="Ray_Alto">
+          <ListItem button onClick={this.showWechat} key="Ray_Alto">
             <ListItemIcon><WechatIcon /></ListItemIcon>
             <ListItemText primary="Ray_Alto" />
           </ListItem>
         </List>
-        <ImageDialog title="扫描二维码" src={QQQrImage} alt="QQ二维码" open={this.state.showQQ} />
-        <ImageDialog title="扫描二维码" src={WechatQrImage} alt="微信二维码" open={this.state.showWechat} />
         <Divider />
         <ICP ipcLink="https://beian.miit.gov.cn/">辽ICP备19015832号</ICP>
       </div>
@@ -205,23 +210,27 @@ class SideBar extends React.Component {
         </Hidden>
       </nav>
     );
-  }
-}
+
+  };
+
+};
 
 export default withStyles(theme => ({
 
   drawer: {
+
     [theme.breakpoints.up("sm")]: {
-      width: drawerWidth,
+      width: sideBarWidth,
       flexShrink: 0,
     },
+
   },
 
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
 
   drawerPaper: {
-    width: drawerWidth,
+    width: sideBarWidth,
   },
 
   nestedListItem: {

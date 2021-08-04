@@ -1,11 +1,13 @@
 import React from "react";
+
 import PropTypes from "prop-types";
 
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import withStyles from "@material-ui/core/styles/withStyles";
-import Zoom from "@material-ui/core/Zoom";
 import Fab from "@material-ui/core/Fab";
+import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+import Zoom from "@material-ui/core/Zoom";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+
+import withStyles from "@material-ui/core/styles/withStyles";
 
 function ScrollTop(props) {
 
@@ -28,7 +30,8 @@ function ScrollTop(props) {
       </div>
     </Zoom>
   );
-}
+
+};
 
 class BackToTopButton extends React.Component {
 
@@ -43,9 +46,10 @@ class BackToTopButton extends React.Component {
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>
-    )
-  }
-}
+    );
+  };
+
+};
 
 export default withStyles(theme => ({
 
