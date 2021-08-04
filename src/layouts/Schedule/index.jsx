@@ -14,6 +14,8 @@ import Typography from "@material-ui/core/Typography";
 
 import withStyles from "@material-ui/core/styles/withStyles";
 
+import { Helmet } from "react-helmet";
+
 import InfoArea from "../../components/InfoArea";
 
 class Schedule extends React.Component {
@@ -52,6 +54,9 @@ class Schedule extends React.Component {
     }
     return (
       <div>
+        <Helmet>
+          <title>RayAlto - 课程表</title>
+        </Helmet>
         <InfoArea
           titleTypographyProps={{ variant: 'h3', component: 'h1' }}
           infoTitle="课程表"

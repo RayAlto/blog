@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 
 import { Switch, Route, Redirect } from "react-router-dom";
 
+import { Helmet } from "react-helmet";
+
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
@@ -64,35 +66,40 @@ class NoteIndex extends React.Component {
     });
 
     return (
-      <Switch>
-        <Route exact path={`${currentPath}/java`}>
-          <Notes />
-        </Route>
-        <Route exact path={currentPath}>
-          <Header>我的笔记</Header>
-          <Typography>基本都是在 JupyterLab 上写的笔记，选择性地放在这里献丑。</Typography>
-          <Divider className={classes.divider} />
-          <GridWithRestriction>
-            {
-              noteIndexes.map((noteIndex, index) => {
-                return (
-                  <Grid item>
-                    <InfoCard
-                      title={noteIndex.title}
-                      image={noteIndex.image}
-                      link={noteIndex.link}
-                      isRouteLink={noteIndex.isRouteLink}
-                    >
-                      {noteIndex.text}
-                    </InfoCard>
-                  </Grid>
-                )
-              })
-            }
-          </GridWithRestriction>
-        </Route>
-        <Redirect to={currentPath} />
-      </Switch>
+      <div>
+        <Helmet>
+          <title>RayAlto - 笔记目录</title>
+        </Helmet>
+        <Switch>
+          <Route exact path={`${currentPath}/java`}>
+            <Notes />
+          </Route>
+          <Route exact path={currentPath}>
+            <Header>我的笔记</Header>
+            <Typography>基本都是在 JupyterLab 上写的笔记，选择性地放在这里献丑。</Typography>
+            <Divider className={classes.divider} />
+            <GridWithRestriction>
+              {
+                noteIndexes.map((noteIndex, index) => {
+                  return (
+                    <Grid item>
+                      <InfoCard
+                        title={noteIndex.title}
+                        image={noteIndex.image}
+                        link={noteIndex.link}
+                        isRouteLink={noteIndex.isRouteLink}
+                      >
+                        {noteIndex.text}
+                      </InfoCard>
+                    </Grid>
+                  )
+                })
+              }
+            </GridWithRestriction>
+          </Route>
+          <Redirect to={currentPath} />
+        </Switch>
+      </div>
     );
 
   };

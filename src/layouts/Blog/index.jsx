@@ -2,6 +2,8 @@ import React from "react";
 
 import PropTypes from "prop-types";
 
+import { Helmet } from "react-helmet";
+
 import Divider from "@material-ui/core/Divider";
 import InfoArea from "../../components/InfoArea";
 import MarkdownArticle from "../../components/MarkdownArticle";
@@ -33,6 +35,9 @@ class Blog extends React.Component {
     return (
 
       <div>
+        <Helmet>
+          <title>😭我是彻底的失败者</title>
+        </Helmet>
         <InfoArea
           titleTypographyProps={{ variant: "h3", component: "h1" }}
           infoTitle={title}
