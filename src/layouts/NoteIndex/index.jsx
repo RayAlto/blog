@@ -1,7 +1,5 @@
 import React from "react";
 
-import PropTypes from "prop-types";
-
 import { Switch, Route, Redirect } from "react-router-dom";
 
 import Typography from "@material-ui/core/Typography";
@@ -24,7 +22,7 @@ class NoteIndex extends React.Component {
 
     const noteIndexes = [
       {
-        title: "JAVA",
+        title: "Java",
         image: "https://www.rayalto.top/api/imgs/java@500x300.png",
         link: "java",
         text: "Java 是一种广泛使用的计算机编程语言，拥有跨平台、面向对象、泛型编程的特性，广泛应用于企业级 Web 应用开发和移动应用开发。",
@@ -76,7 +74,7 @@ class NoteIndex extends React.Component {
             {
               noteIndexes.map((noteIndex, index) => {
                 return (
-                  <Grid item>
+                  <Grid item key={`${noteIndex.link}-${noteIndex.title}`}>
                     <InfoCard
                       title={noteIndex.title}
                       image={noteIndex.image}
