@@ -10,6 +10,7 @@ import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 
 import withStyles from "@material-ui/core/styles/withStyles";
 
+import Div from "../../components/Div";
 import GridWithRestriction from "../../components/GridWithRestriction";
 import Header from "../../components/Header";
 import InfoArea from "../../components/InfoArea";
@@ -25,7 +26,7 @@ class Main extends React.Component {
 
   render() {
     return (
-      <div>
+      <Div>
         <Helmet>
           <title>RayAlto - 主页</title>
         </Helmet>
@@ -101,7 +102,7 @@ class Main extends React.Component {
             </InfoCard>
           </Grid>
         </GridWithRestriction>
-      </div>
+      </Div>
     );
   };
 

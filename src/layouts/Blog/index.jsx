@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 
 import Divider from "@material-ui/core/Divider";
+import Div from "../../components/Div";
 import InfoArea from "../../components/InfoArea";
 import MarkdownArticle from "../../components/MarkdownArticle";
 
@@ -34,7 +35,7 @@ class Blog extends React.Component {
 
     return (
 
-      <div>
+      <Div>
         <Helmet>
           <title>😭我是彻底的失败者</title>
         </Helmet>
@@ -105,7 +106,7 @@ int main(int argc, char const *argv[])
 ~~~
 
 `} />
-      </div>
+      </Div>
     );
 
   };

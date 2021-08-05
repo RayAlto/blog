@@ -31,6 +31,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import AboutIcon from "@material-ui/icons/Info";
 import ToolsIcon from "@material-ui/icons/Widgets";
 
+import Div from "../../components/Div";
 import ICP from "../../components/ICP";
 import JupyterIcon from "../../icons/Jupyter";
 import QQIcon from "../../icons/QQ";
@@ -86,7 +87,7 @@ class SideBar extends React.Component {
   render() {
 
     const drawer = (
-      <div>
+      <Div>
         <div className={this.props.classes.toolbar} />
         <List
           subheader={
@@ -173,7 +174,7 @@ class SideBar extends React.Component {
         </List>
         <Divider />
         <ICP ipcLink="https://beian.miit.gov.cn/">辽ICP备19015832号</ICP>
-      </div>
+      </Div>
     );
 
     return (

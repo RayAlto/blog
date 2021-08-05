@@ -12,6 +12,7 @@ import { Helmet } from "react-helmet";
 
 import withStyles from "@material-ui/core/styles/withStyles";
 
+import Div from "../../components/Div";
 import Header from "../../components/Header";
 import Note from "../Note";
 
@@ -46,7 +47,7 @@ class Notes extends React.Component {
     });
 
     return (
-      <div>
+      <Div>
         <Helmet>
           <title>RayAlto - 笔记 - JAVA</title>
         </Helmet>
@@ -70,7 +71,7 @@ class Notes extends React.Component {
           </Route>
           <Redirect to={currentPath} />
         </Switch>
-      </div>
+      </Div>
     );
 
   };

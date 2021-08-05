@@ -7,6 +7,8 @@ import Typography from "@material-ui/core/Typography";
 
 import withStyles from "@material-ui/core/styles/withStyles";
 
+import Div from "../Div";
+
 class Header extends React.Component {
 
   static propTypes = {
@@ -32,10 +34,10 @@ class Header extends React.Component {
     );
 
     return divider ? (
-      <div className="header">
+      <Div>
         <Divider className={classes.divider} />
         {text}
-      </div>
+      </Div>
     ) : (
       text
     );
