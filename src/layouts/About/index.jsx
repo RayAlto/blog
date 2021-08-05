@@ -35,7 +35,7 @@ export default class About extends React.Component {
               image={CppImage500x300}
               link="https://en.cppreference.com"
             >
-              启蒙语言。第一本书看的是Stanley B.Lippman老师写的《Essential C++》，感觉是一个自由度很高的语言。我很喜欢。
+              启蒙语言。第一本书看的是Stanley B.Lippman老师写的《Essential C++》，Segment Fault 什么的最喜欢了，能遇到 Bus Error 就更好了。
             </InfoCard>
           </Grid>
           <Grid item>
@@ -44,7 +44,7 @@ export default class About extends React.Component {
               image={PythonImage500x300}
               link="https://www.python.org"
             >
-              接触到的第二个语言，看清华大学的慕课简单的学了一下。脚本语言，遇到需求首先想的不是怎么自己解决，而是去找其他大佬做好的，import什么的最喜欢了。
+              接触到的第二个语言，看清华大学的慕课简单的学了一下。脚本语言，遇到需求首先想的不是怎么自己解决，而是去找其他大佬做好的，平时只会写写 import 之类的。
             </InfoCard>
           </Grid>
           <Grid item>
@@ -53,7 +53,7 @@ export default class About extends React.Component {
               image={JavaImage500x300}
               link="https://openjdk.java.net"
             >
-              接触到的第三个语言，看官方的教程学了一些，这个语言给我的感觉很繁重，GUI 就是从 Swing 开始学的。
+              接触到的第三个语言，看官方的教程学了一些，这个语言给我的感觉很繁重，GUI 就是从 Swing 开始学的，写出的代码可以说又臭又长。
             </InfoCard>
           </Grid>
         </GridWithRestriction>
