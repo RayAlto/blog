@@ -9,6 +9,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import About from "./layouts/About";
 import BackToTopButton from "./components/BackToTopButton";
 import Blogs from "./layouts/Blogs";
+import Contact from "./layouts/Contact";
 import GlobalImageDialog from "./components/GlobalImageDialog";
 import NoteIndex from "./layouts/NoteIndex";
 import Main from "./layouts/Main";
@@ -31,6 +32,7 @@ class App extends React.Component {
             <Route path="/note" component={NoteIndex} />
             <Route path="/schedule" component={Schedule} />
             <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
             <Route exact path="/" component={Main} />
             <Redirect to="/" />
           </Switch>
