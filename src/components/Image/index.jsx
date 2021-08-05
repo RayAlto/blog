@@ -29,7 +29,6 @@ class Image extends React.Component {
   render() {
 
     const src = this.props.src;
-    const title = this.props.title;
     const alt = this.props.alt;
     const classes = this.props.classes;
 
