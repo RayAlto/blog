@@ -8,7 +8,7 @@ class GridWithRestriction extends React.Component {
 
   render() {
     return (
-      <Grid className={this.props.classes.blogCards} container spacing={3} alignItems="center" direction="row" justify="space-around">
+      <Grid className={this.props.classes.blogCards} container spacing={3} alignItems="baseline" direction="row" justify="space-around">
         {this.props.children}
       </Grid>
     );
@@ -21,8 +21,8 @@ export default withStyles(theme => ({
   blogCards: {
 
     "& > *": {
-      width: "100%",
       maxWidth: 510,
+      minWidth: 260,
     },
 
   },

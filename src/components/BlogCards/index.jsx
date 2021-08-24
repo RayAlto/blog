@@ -21,7 +21,7 @@ export default class BlogCards extends React.Component {
       <GridWithRestriction>
         {blogs.map((blog, index) => {
           return (
-            <Grid item key={blog.title}>
+            <Grid xs item key={blog.title}>
               <BlogCard blogData={blog} />
             </Grid>
           )

@@ -86,7 +86,7 @@ class NoteIndex extends React.Component {
               {
                 noteIndexes.map((noteIndex, index) => {
                   return (
-                    <Grid item key={`${noteIndex.link}-${noteIndex.title}`}>
+                    <Grid xs item key={`${noteIndex.link}-${noteIndex.title}`}>
                       <InfoCard
                         title={noteIndex.title}
                         image={noteIndex.image}

@@ -29,7 +29,7 @@ export default class About extends React.Component {
         />
         <Header divider>一知半解</Header>
         <GridWithRestriction>
-          <Grid item>
+          <Grid xs item>
             <InfoCard
               title="C++"
               image={CppImage500x300}
@@ -38,7 +38,7 @@ export default class About extends React.Component {
               启蒙语言。第一本书看的是Stanley B.Lippman老师写的《Essential C++》，Segment Fault 什么的最喜欢了，能遇到 Bus Error 就更好了。
             </InfoCard>
           </Grid>
-          <Grid item>
+          <Grid xs item>
             <InfoCard
               title="Python"
               image={PythonImage500x300}
@@ -47,7 +47,7 @@ export default class About extends React.Component {
               接触到的第二个语言，看清华大学的慕课简单的学了一下。脚本语言，遇到需求首先想的不是怎么自己解决，而是去找其他大佬做好的，平时只会写写 import 之类的。
             </InfoCard>
           </Grid>
-          <Grid item>
+          <Grid xs item>
             <InfoCard
               title="Java"
               image={JavaImage500x300}
