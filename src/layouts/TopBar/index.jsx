@@ -14,16 +14,19 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 
 import withStyles from "@material-ui/core/styles/withStyles";
 
-import { Link } from "react-router-dom";
-
+import { NextComposed as Link } from "../../components/Link";
 import HideOnScroll from "../../components/HideOnScroll";
 
 import BilibiliIcon from "../../icons/Bilibili";
 import WeiboIcon from "../../icons/Weibo";
 
-import { sideBarWidth } from "../SideBar";
+import {
+  SIDEBAR_WIDTH
+} from "../../constants/sizes";
 
-import { OPEN_SIDEBAR } from "../../constants/events";
+import {
+  OPEN_SIDEBAR
+} from "../../constants/events";
 
 class TopBar extends React.Component {
 
@@ -108,8 +111,8 @@ export default withStyles(theme => ({
   appBar: {
 
     [theme.breakpoints.up("sm")]: {
-      width: `calc(100% - ${sideBarWidth}px)`,
-      marginLeft: sideBarWidth,
+      width: `calc(100% - ${SIDEBAR_WIDTH}px)`,
+      marginLeft: SIDEBAR_WIDTH,
     },
 
   },

@@ -5,7 +5,7 @@ import SearchIcon from "@material-ui/icons/Search";
 
 import withStyles from "@material-ui/core/styles/withStyles";
 
-import { fade } from "@material-ui/core/styles";
+import { alpha } from "@material-ui/core/styles";
 
 class SearchBox extends React.Component {
 
@@ -35,10 +35,10 @@ export default withStyles(theme => ({
 
     position: "relative",
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
+    backgroundColor: alpha(theme.palette.common.white, 0.15),
 
     "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
+      backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
 
     marginRight: theme.spacing(2),

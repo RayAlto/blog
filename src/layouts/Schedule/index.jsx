@@ -1,7 +1,5 @@
 import React from "react"
 
-import ScheduleImage1000x600 from "../../images/schedule@1000x600.png"
-
 import Divider from "@material-ui/core/Divider";
 import Paper from "@material-ui/core/Paper";
 import Table from "@material-ui/core/Table";
@@ -14,9 +12,11 @@ import Typography from "@material-ui/core/Typography";
 
 import withStyles from "@material-ui/core/styles/withStyles";
 
-import { Helmet } from "react-helmet";
+import Head from 'next/head';
 
 import InfoArea from "../../components/InfoArea";
+
+import ScheduleImage1000x600 from "../../images/schedule@1000x600.png"
 
 class Schedule extends React.Component {
 
@@ -54,9 +54,9 @@ class Schedule extends React.Component {
     }
     return (
       <div>
-        <Helmet>
+        <Head>
           <title>RayAlto - 课程表</title>
-        </Helmet>
+        </Head>
         <InfoArea
           titleTypographyProps={{ variant: 'h3', component: 'h1' }}
           infoTitle="课程表"

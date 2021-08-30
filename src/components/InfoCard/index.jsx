@@ -2,7 +2,7 @@ import React from "react";
 
 import PropTypes from "prop-types";
 
-import { Link } from "react-router-dom";
+import { NextComposed as Link } from "../Link";
 
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -24,7 +24,10 @@ class InfoCard extends React.Component {
 
   static propTypes = {
     link: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    image: PropTypes.oneOfType([
+      PropTypes.string.isRequired,
+      PropTypes.object.isRequired,
+    ]),
     title: PropTypes.string.isRequired,
     isRouteLink: PropTypes.bool.isRequired,
   };
@@ -51,7 +54,7 @@ class InfoCard extends React.Component {
             <CardActionArea component={Link} to={link}>
               <CardMedia
                 className={classes.media}
-                image={image}
+                image={image.src || image}
                 title={title}
               />
               <CardContent>
@@ -67,7 +70,7 @@ class InfoCard extends React.Component {
             <CardActionArea href={link} target="_blank">
               <CardMedia
                 className={classes.media}
-                image={image}
+                image={image.src || image}
                 title={title}
               />
               <CardContent>

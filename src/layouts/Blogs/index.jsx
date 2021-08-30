@@ -1,14 +1,11 @@
 import React from "react";
-// import PropTypes from "prop-types";
 
-import { Switch, Route, Redirect } from "react-router-dom";
-
-import { Helmet } from "react-helmet";
+import Head from 'next/head';
 
 import withStyles from "@material-ui/core/styles/withStyles";
 
 import BlogSlice from "../../components/BlogSlice";
-import Blog from "../Blog";
+import Div from "../../components/Div";
 
 class Blogs extends React.Component {
 
@@ -19,6 +16,10 @@ class Blogs extends React.Component {
   render() {
 
     // const blogs = this.props.blogs;
+    const {
+      classes,
+    } = this.props;
+
     const currnetPath = "/blogs";
 
     const blogs = [
@@ -361,35 +362,16 @@ class Blogs extends React.Component {
     });
 
     return (
-      <div className={this.props.classes.root}>
-        <Helmet>
+      <Div>
+        <Head>
           <title>RayAlto - 博客</title>
-        </Helmet>
-        <Switch>
-          <Route exact path={`${currnetPath}/2021-3-12-1`}>
-            <Blog
-              title="😭我是彻底的失败者"
-              detail="😭我是彻底的失败者😭我是彻底的失败者😭我是彻底的失败者😭我是彻底的失败者😭我是彻底的失败者"
-              imageUrl="https://www.rayalto.top/images/music.png"
-              imageAlt="😭我是彻底的失败者"
-              tags={[
-                {
-                  text: "python",
-                  url: "https://www.python.org"
-                }
-              ]}
-            />
-          </Route>
-          <Route exact path={currnetPath}>
-            {blogs.map((blog, index) => {
-              return (
-                <BlogSlice blogData={blog} key={blog.title} isRouteLink />
-              )
-            })}
-          </Route>
-          <Redirect to={currnetPath} />
-        </Switch>
-      </div>
+        </Head>
+        {blogs.map((blog, index) => {
+          return (
+            <BlogSlice className={classes.slices} blogData={blog} key={blog.title} isRouteLink />
+          )
+        })}
+      </Div>
     );
   };
 
@@ -397,10 +379,8 @@ class Blogs extends React.Component {
 
 export default withStyles(theme => ({
 
-  root: {
-    "& > *": {
-      marginBottom: theme.spacing(2),
-    },
+  slices: {
+    marginBottom: theme.spacing(2),
   },
 
 }))(Blogs);

@@ -31,7 +31,7 @@ class Notes extends React.Component {
       ],
     };
 
-    const currentPath = "/note/java";
+    const currentPath = "/notes/java";
 
     notes.noteList.forEach(note => {
       note.url = `${currentPath}/${note.url}`;

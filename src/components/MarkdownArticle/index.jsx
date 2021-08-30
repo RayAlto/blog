@@ -2,16 +2,7 @@ import React from "react";
 
 import PropTypes from "prop-types";
 
-import ReactMarkdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { materialLight } from "react-syntax-highlighter/dist/esm/styles/prism";
-import "katex/dist/katex.min.css";
-import rehypeKatex from "rehype-katex";
-import remarkMath from "remark-math";
-import rehypeRaw from "rehype-raw";
-import Gfm from "remark-gfm";
-
-import Checkbox from "@material-ui/core/Checkbox"
+import Checkbox from "@material-ui/core/Checkbox";
 import Divider from "@material-ui/core/Divider";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Link from "@material-ui/core/Link";
@@ -24,9 +15,22 @@ import Typography from "@material-ui/core/Typography";
 
 import withStyles from "@material-ui/core/styles/withStyles";
 
-import Image from "../Image";
+import ReactMarkdown from "react-markdown";
 
-import { sideBarWidth } from "../../layouts/SideBar";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { materialLight } from "react-syntax-highlighter/dist/cjs/styles/prism";
+
+import rehypeKatex from "rehype-katex";
+import "katex/dist/katex.min.css";
+import rehypeRaw from "rehype-raw";
+import Gfm from "remark-gfm";
+import remarkMath from "remark-math";
+
+import {
+  SIDEBAR_WIDTH
+} from "../../constants/sizes";
+
+import Image from "../Image";
 
 class MarkdownArticle extends React.Component {
 
@@ -71,8 +75,6 @@ class MarkdownArticle extends React.Component {
       h5: ({ node, level, ...props }) => <Typography variant="h6" component="h5" gutterBotton {...props} />,
       h6: ({ node, level, ...props }) => <Typography variant="h6" component="h6" gutterBotton {...props} />,
       li: ({ node, index, ordered, checked, className, ...props }) => <Typography component="li" {...props} />,
-      // img: ({ src, title, ...props }) => <CardMedia component="img" image={src} title={title} {...props} />,
-      // img: ({ src, title, ...props }) => <Paper component="img" src={src} title={title} {...props} style={{ width: "100%", }} />
       img: ({ node, ...props }) => <Image {...props} />,
     };
 
@@ -96,7 +98,7 @@ export default withStyles(theme => ({
   pre: {
 
     [theme.breakpoints.up("sm")]: {
-      width: `calc(100vw - ${sideBarWidth + theme.spacing(8.1)}px)`,
+      width: `calc(100vw - ${SIDEBAR_WIDTH + theme.spacing(8.1)}px)`,
     },
 
     width: `calc(100vw - ${theme.spacing(6)}px)`,

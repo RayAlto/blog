@@ -18,7 +18,6 @@ export default class About extends React.Component {
   render() {
     return (
       <Div>
-        <div>About</div>
         <InfoArea
           infoTitle="关于我"
           titleTypographyProps={{ variant: 'h3', component: 'h1' }}

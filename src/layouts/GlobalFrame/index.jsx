@@ -1,33 +1,29 @@
 import React from "react";
 
-import { Redirect, Route, Switch } from "react-router-dom";
-
-import CssBaseline from "@material-ui/core/CssBaseline";
-
 import withStyles from "@material-ui/core/styles/withStyles";
 
-import About from "./layouts/About";
-import BackToTopButton from "./components/BackToTopButton";
-import Blogs from "./layouts/Blogs";
-import Contact from "./layouts/Contact";
-import GlobalImageDialog from "./components/GlobalImageDialog";
-import NoteIndex from "./layouts/NoteIndex";
-import Main from "./layouts/Main";
-import Schedule from "./layouts/Schedule";
-import SideBar from "./layouts/SideBar";
-import TopBar from "./layouts/TopBar";
+import BackToTopButton from "../../components/BackToTopButton";
+import GlobalImageDialog from "../../components/GlobalImageDialog";
+
+import SideBar from "../SideBar";
+import TopBar from "../TopBar";
 
 class App extends React.Component {
 
   render() {
+
+    const {
+      classes,
+      children,
+    } = this.props;
+
     return (
       <main className={this.props.classes.root}>
-        <CssBaseline />
         <TopBar />
         <SideBar />
         <div className={this.props.classes.content}>
           <div className={this.props.classes.toolbar} id="top-anchor" />
-          <Switch>
+          {/* <Switch>
             <Route path="/blogs" component={Blogs} />
             <Route path="/note" component={NoteIndex} />
             <Route path="/schedule" component={Schedule} />
@@ -35,12 +31,14 @@ class App extends React.Component {
             <Route path="/contact" component={Contact} />
             <Route exact path="/" component={Main} />
             <Redirect to="/" />
-          </Switch>
+          </Switch> */}
+          {children}
         </div>
         <BackToTopButton topElementId="top-anchor" />
         <GlobalImageDialog />
       </main>
     );
+
   };
 
 };

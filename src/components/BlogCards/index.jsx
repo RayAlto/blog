@@ -22,7 +22,7 @@ export default class BlogCards extends React.Component {
         {blogs.map((blog, index) => {
           return (
             <Grid xs item key={blog.title}>
-              <BlogCard blogData={blog} />
+              <BlogCard isRouteLink={blog.isRouteLink} blogData={blog} />
             </Grid>
           )
         })}

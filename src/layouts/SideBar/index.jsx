@@ -2,8 +2,6 @@ import React from "react";
 
 import PubSub from "pubsub-js";
 
-import { Link } from "react-router-dom";
-
 import Collapse from "@material-ui/core/Collapse";
 import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
@@ -33,9 +31,12 @@ import ToolsIcon from "@material-ui/icons/Widgets";
 
 import Div from "../../components/Div";
 import ICP from "../../components/ICP";
+import { NextComposed as Link } from "../../components/Link";
+
 import JupyterIcon from "../../icons/Jupyter";
 import QQIcon from "../../icons/QQ";
 import WechatIcon from "../../icons/Wechat";
+
 import QQQrImage from "../../images/Qr-QQ.jpg";
 import WechatQrImage from "../../images/Qr-Wechat.png";
 
@@ -45,7 +46,9 @@ import {
   CLOSE_SIDEBAR,
 } from "../../constants/events";
 
-export const sideBarWidth = 270;
+import {
+  SIDEBAR_WIDTH
+} from '../../constants/sizes';
 
 class SideBar extends React.Component {
 
@@ -104,7 +107,7 @@ class SideBar extends React.Component {
             <ListItemIcon><BlogIcon /></ListItemIcon>
             <ListItemText primary="博客" />
           </ListItem>
-          <ListItem component={Link} to="/note" button key="笔记本">
+          <ListItem component={Link} to="/notes" button key="笔记本">
             <ListItemIcon><NoteIcon /></ListItemIcon>
             <ListItemText primary="笔记本" />
           </ListItem>
@@ -184,7 +187,7 @@ class SideBar extends React.Component {
           <SwipeableDrawer
             variant="temporary"
             anchor="left"
-            swipeAreaWidth={30}
+            swipeAreaWidth={20}
             open={this.state.showSidebar}
             onOpen={this.toggleDrawer(true)}
             onClose={this.toggleDrawer(false)}
@@ -221,7 +224,7 @@ export default withStyles(theme => ({
   drawer: {
 
     [theme.breakpoints.up("sm")]: {
-      width: sideBarWidth,
+      width: SIDEBAR_WIDTH,
       flexShrink: 0,
     },
 
@@ -231,7 +234,7 @@ export default withStyles(theme => ({
   toolbar: theme.mixins.toolbar,
 
   drawerPaper: {
-    width: sideBarWidth,
+    width: SIDEBAR_WIDTH,
   },
 
   nestedListItem: {

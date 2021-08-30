@@ -34,7 +34,7 @@ class Image extends React.Component {
 
     return (
       <Tooltip title="单击图片以预览">
-        <Paper component="img" src={src} alt={alt} className={classes.ratio} onClick={this.openPreview} />
+        <Paper component="img" src={src.src || src} alt={alt} className={classes.ratio} onClick={this.openPreview} />
       </Tooltip>
     );
 

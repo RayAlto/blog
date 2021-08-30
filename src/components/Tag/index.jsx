@@ -2,7 +2,7 @@ import React from "react";
 
 import PropTypes from "prop-types";
 
-import { Link } from "react-router-dom";
+import { NextComposed as Link } from "../../components/Link";
 
 import Chip from "@material-ui/core/Chip";
 

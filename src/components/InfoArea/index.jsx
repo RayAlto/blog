@@ -25,7 +25,10 @@ class InfoArea extends React.Component {
   static propTypes = {
     infoTitle: PropTypes.string.isRequired,
     infoDetail: PropTypes.string.isRequired,
-    infoImageUrl: PropTypes.string.isRequired,
+    infoImageUrl: PropTypes.oneOfType([
+      PropTypes.string.isRequired,
+      PropTypes.object.isRequired,
+    ]),
     infoImageAlt: PropTypes.string.isRequired,
     infoActions: PropTypes.array,
     titleTypographyProps: PropTypes.object,
@@ -81,7 +84,7 @@ class InfoArea extends React.Component {
     );
 
     const imageGrid = (
-      <img className={classes.image} src={infoImageUrl} alt={infoImageAlt} />
+      <img className={classes.image} src={infoImageUrl.src || infoImageUrl} alt={infoImageAlt} />
     );
 
     return (

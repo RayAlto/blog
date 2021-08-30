@@ -8,7 +8,7 @@ class GridWithRestriction extends React.Component {
 
   render() {
     return (
-      <Grid className={this.props.classes.blogCards} container spacing={3} alignItems="baseline" direction="row" justify="space-around">
+      <Grid className={this.props.classes.blogCards} container spacing={3} alignItems="baseline" direction="row" justifyContent="space-around">
         {this.props.children}
       </Grid>
     );

@@ -2,7 +2,7 @@ import React from "react";
 
 import PropTypes from "prop-types";
 
-import { Helmet } from "react-helmet";
+import Head from 'next/head';
 
 import Divider from "@material-ui/core/Divider";
 import Div from "../../components/Div";
@@ -36,9 +36,9 @@ class Blog extends React.Component {
     return (
 
       <Div>
-        <Helmet>
+        <Head>
           <title>😭我是彻底的失败者</title>
-        </Helmet>
+        </Head>
         <InfoArea
           titleTypographyProps={{ variant: "h3", component: "h1" }}
           infoTitle={title}

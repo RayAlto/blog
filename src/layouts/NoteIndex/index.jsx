@@ -1,8 +1,6 @@
 import React from "react";
 
-import { Switch, Route, Redirect } from "react-router-dom";
-
-import { Helmet } from "react-helmet";
+import Head from 'next/head';
 
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
@@ -13,7 +11,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Header from "../../components/Header";
 import GridWithRestriction from "../../components/GridWithRestriction";
 import InfoCard from "../../components/InfoCard";
-import Notes from "../Notes";
+import Div from "../../components/Div";
 
 import javaImage500x300 from "../../images/java@500x300.png";
 import linuxImage500x300 from "../../images/linux@500x300.png";
@@ -25,7 +23,7 @@ class NoteIndex extends React.Component {
 
   render() {
 
-    const currentPath = "/note";
+    const currentPath = "/notes";
     const classes = this.props.classes;
 
     const noteIndexes = [
@@ -70,40 +68,32 @@ class NoteIndex extends React.Component {
     });
 
     return (
-      <div>
-        <Helmet>
+      <Div>
+        <Head>
           <title>RayAlto - 笔记目录</title>
-        </Helmet>
-        <Switch>
-          <Route path={`${currentPath}/java`}>
-            <Notes />
-          </Route>
-          <Route exact path={currentPath}>
-            <Header>我的笔记</Header>
-            <Typography>基本都是在 JupyterLab 上写的笔记，选择性地放在这里献丑。</Typography>
-            <Divider className={classes.divider} />
-            <GridWithRestriction>
-              {
-                noteIndexes.map((noteIndex, index) => {
-                  return (
-                    <Grid xs item key={`${noteIndex.link}-${noteIndex.title}`}>
-                      <InfoCard
-                        title={noteIndex.title}
-                        image={noteIndex.image}
-                        link={noteIndex.link}
-                        isRouteLink={noteIndex.isRouteLink}
-                      >
-                        {noteIndex.text}
-                      </InfoCard>
-                    </Grid>
-                  )
-                })
-              }
-            </GridWithRestriction>
-          </Route>
-          <Redirect to={currentPath} />
-        </Switch>
-      </div>
+        </Head>
+        <Header>我的笔记</Header>
+        <Typography>基本都是在 JupyterLab 上写的笔记，选择性地放在这里献丑。</Typography>
+        <Divider className={classes.divider} />
+        <GridWithRestriction>
+          {
+            noteIndexes.map((noteIndex, index) => {
+              return (
+                <Grid xs item key={`${noteIndex.link}-${noteIndex.title}`}>
+                  <InfoCard
+                    title={noteIndex.title}
+                    image={noteIndex.image}
+                    link={noteIndex.link}
+                    isRouteLink={noteIndex.isRouteLink}
+                  >
+                    {noteIndex.text}
+                  </InfoCard>
+                </Grid>
+              )
+            })
+          }
+        </GridWithRestriction>
+      </Div>
     );
 
   };

@@ -1,6 +1,6 @@
 import React from "react";
 
-import Helmet from "react-helmet";
+import Head from "next/head";
 
 import Divider from "@material-ui/core/Divider";
 
@@ -12,9 +12,9 @@ export default class Contact extends React.Component {
   render() {
     return (
       <Div>
-        <Helmet>
+        <Head>
           <title>RayAlto - 社交</title>
-        </Helmet>
+        </Head>
         <Header>社交</Header>
         <Divider />
       </Div>

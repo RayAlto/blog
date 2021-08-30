@@ -2,7 +2,7 @@ import React from "react";
 
 import PropTypes from "prop-types";
 
-import { Link } from "react-router-dom";
+import { NextComposed as Link } from "../../components/Link";
 
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -49,6 +49,7 @@ class BlogSlice extends React.Component {
   static propTypes = {
     blogData: PropTypes.object.isRequired,
     isRouteLink: PropTypes.bool.isRequired,
+    className: PropTypes.string,
   };
 
   static defaultProps = {
@@ -57,9 +58,12 @@ class BlogSlice extends React.Component {
 
   render() {
 
-    const classes = this.props.classes;
-    const blogData = this.props.blogData;
-    const isRouteLink = this.props.isRouteLink;
+    const {
+      classes,
+      blogData,
+      isRouteLink,
+      className,
+    } = this.props;
 
     const contentGrid = (
       <Card elevation={0} className={classes.contentCard}>
@@ -122,7 +126,13 @@ class BlogSlice extends React.Component {
     );
 
     return (
-      <Paper className={classes.root}>
+      <Paper
+        className={
+          className ?
+            `${className} ${classes.root}` :
+            classes.root
+        }
+      >
         <Hidden mdUp implementation="css">
           <Grid
             container

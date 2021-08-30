@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import Head from "next/head";
 
@@ -6,25 +6,27 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 
-import Div from "../../components/Div";
-import GridWithRestriction from "../../components/GridWithRestriction";
-import Header from "../../components/Header";
-import InfoArea from "../../components/InfoArea";
-import InfoCard from "../../components/InfoCard";
-import { NextComposed as Link } from "../../components/Link";
+import GridWithRestriction from "../components/GridWithRestriction";
+import Header from "../components/Header";
+import InfoArea from "../components/InfoArea";
+import InfoCard from "../components/InfoCard";
+import { NextComposed as Link } from "../components/Link";
 
-import Aria2Image500x300 from "../../images/aria2@500x300.png";
-import BannerImage1000x600 from "../../images/banner@1000x600.png";
-import DrawioImage500x300 from "../../images/drawio@500x300.png";
-import JupyterLabImage500x300 from "../../images/jupyter@500x300.png";
-import NoteImage500x300 from "../../images/note@500x300.png";
-import ScheduleImage500x300 from "../../images/schedule@500x300.png";
+import Aria2Image500x300 from "../images/aria2@500x300.png";
+import BannerImage1000x600 from "../images/banner@1000x600.png";
+import DrawioImage500x300 from "../images/drawio@500x300.png";
+import JupyterLabImage500x300 from "../images/jupyter@500x300.png";
+import NoteImage500x300 from "../images/note@500x300.png";
+import ScheduleImage500x300 from "../images/schedule@500x300.png";
 
-export default class Main extends React.Component {
+import GlobalFrame from '../layouts/GlobalFrame';
+
+class Home extends React.Component {
 
   render() {
+
     return (
-      <Div>
+      <GlobalFrame>
         <Head>
           <title>RayAlto - 主页</title>
         </Head>
@@ -100,8 +102,11 @@ export default class Main extends React.Component {
             </InfoCard>
           </Grid>
         </GridWithRestriction>
-      </Div>
+      </GlobalFrame>
     );
+
   };
 
 };
+
+export default Home;
