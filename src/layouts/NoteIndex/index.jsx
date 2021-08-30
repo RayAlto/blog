@@ -13,11 +13,11 @@ import GridWithRestriction from "../../components/GridWithRestriction";
 import InfoCard from "../../components/InfoCard";
 import Div from "../../components/Div";
 
-import javaImage500x300 from "../../images/java@500x300.png";
-import linuxImage500x300 from "../../images/linux@500x300.png";
-import cmakeImage500x300 from "../../images/cmake@500x300.png";
-import dotnetImage500x300 from "../../images/dotnet@500x300.png";
-import mariadbImage500x300 from "../../images/mariadb@500x300.png";
+import javaImage500x300 from "../../../public/images/java@500x300.png";
+import linuxImage500x300 from "../../../public/images/linux@500x300.png";
+import cmakeImage500x300 from "../../../public/images/cmake@500x300.png";
+import dotnetImage500x300 from "../../../public/images/dotnet@500x300.png";
+import mariadbImage500x300 from "../../../public/images/mariadb@500x300.png";
 
 class NoteIndex extends React.Component {
 

@@ -16,7 +16,7 @@ import Head from 'next/head';
 
 import InfoArea from "../../components/InfoArea";
 
-import ScheduleImage1000x600 from "../../images/schedule@1000x600.png"
+import ScheduleImage1000x600 from "../../../public/images/schedule@1000x600.png"
 
 class Schedule extends React.Component {
 

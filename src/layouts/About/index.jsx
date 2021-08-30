@@ -8,10 +8,10 @@ import Header from "../../components/Header";
 import InfoArea from "../../components/InfoArea";
 import InfoCard from "../../components/InfoCard";
 
-import BannerImage1000x600 from "../../images/banner@1000x600.png";
-import CppImage500x300 from "../../images/cpp@500x300.png";
-import JavaImage500x300 from "../../images/java_black@500x300.png";
-import PythonImage500x300 from "../../images/python@500x300.png";
+import BannerImage1000x600 from "../../../public/images/banner@1000x600.png";
+import CppImage500x300 from "../../../public/images/cpp@500x300.png";
+import JavaImage500x300 from "../../../public/images/java_black@500x300.png";
+import PythonImage500x300 from "../../../public/images/python@500x300.png";
 
 export default class About extends React.Component {
 
