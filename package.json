@@ -1,5 +1,5 @@
 {
-  "name": "next-blog",
+  "name": "blog",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "export": "next export",
-    "test": "next build && next export"
+    "test": "next build && next export",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.3",
@@ -29,5 +30,6 @@
   "devDependencies": {
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.0"
-  }
+  },
+  "homepage": "https://rayalto.github.io/blog"
 }
