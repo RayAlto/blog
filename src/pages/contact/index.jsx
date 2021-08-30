@@ -1,15 +1,24 @@
 import React from 'react';
 
-import GlobalFrame from '../../layouts/GlobalFrame';
-import Contact from '../../layouts/Contact';
+import Head from "next/head";
 
-class Home extends React.Component {
+import Divider from "@material-ui/core/Divider";
+
+import GlobalFrame from '../../layouts/GlobalFrame';
+
+import Header from "../../components/Header";
+
+class Contact extends React.Component {
 
   render() {
 
     return (
       <GlobalFrame>
-        <Contact />
+        <Head>
+          <title>RayAlto - 社交</title>
+        </Head>
+        <Header>社交</Header>
+        <Divider />
       </GlobalFrame>
     );
 
@@ -17,4 +26,4 @@ class Home extends React.Component {
 
 };
 
-export default Home;
+export default Contact;
