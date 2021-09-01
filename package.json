@@ -9,7 +9,7 @@
     "lint": "next lint",
     "export": "next export",
     "test": "next build && next export",
-    "deploy": "gh-pages -d out"
+    "deploy": "echo \"test.rayalto.top\" > out/CNAME && touch out/.nojekyll && gh-pages -d out -t"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.3",
