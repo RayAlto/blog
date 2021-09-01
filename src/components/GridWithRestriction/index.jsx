@@ -6,19 +6,46 @@ import withStyles from "@material-ui/core/styles/withStyles";
 
 class GridWithRestriction extends React.Component {
 
+  state = {
+    mounted: false,
+  };
+
+  componentDidMount() {
+    this.setState({ mounted: true });
+  };
+
   render() {
+
+    const {
+      mounted,
+    } = this.state;
+
+    const {
+      children,
+      classes,
+    } = this.props;
+
     return (
-      <Grid className={this.props.classes.blogCards} container spacing={3} alignItems="baseline" direction="row" justifyContent="space-around">
-        {this.props.children}
+
+      <Grid
+        className={classes.grids}
+        container
+        spacing={3}
+        alignItems="baseline"
+        direction="row"
+        justifyContent="space-around"
+      >
+        {mounted && this.props.children}
       </Grid>
     );
+
   };
 
 };
 
 export default withStyles(theme => ({
 
-  blogCards: {
+  grids: {
 
     "& > *": {
       maxWidth: 510,
