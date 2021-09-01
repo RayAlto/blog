@@ -31,12 +31,21 @@ export default class GlobalImageDialog extends React.Component {
   };
 
   render() {
+
+    const {
+      open,
+      title,
+      image,
+      alt,
+    } = this.state;
+
     return (
-      <Dialog open={this.state.open} onClose={this.handleClose} onClick={this.handleClose}>
-        <DialogTitle>{this.state.title}</DialogTitle>
-        <img src={this.state.image} alt={this.state.alt} />
+      <Dialog open={open} onClose={this.handleClose} onClick={this.handleClose}>
+        <DialogTitle>{title}</DialogTitle>
+        <img src={image?.src || image} alt={alt} />
       </Dialog>
     );
+
   };
 
 };
