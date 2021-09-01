@@ -5,13 +5,22 @@ import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import NextLink from 'next/link';
 import MuiLink from '@material-ui/core/Link';
+import PubSub from 'pubsub-js';
+
+import {
+  CLOSE_SIDEBAR
+} from '../../constants/events';
 
 export const NextComposed = React.forwardRef(function NextComposed(props, ref) {
   const { as, to, ...other } = props;
 
+  const closeSidebarOnClick = (_) => {
+    PubSub.publish(CLOSE_SIDEBAR);
+  }
+
   return (
     <NextLink href={to} as={as}>
-      <a ref={ref} {...other} />
+      <a ref={ref} {...other} onClick={closeSidebarOnClick} />
     </NextLink>
   );
 });
