@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react';
 
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 import Head from 'next/head';
 
-import Divider from "@material-ui/core/Divider";
-import Div from "../../components/Div";
-import InfoArea from "../../components/InfoArea";
-import MarkdownArticle from "../../components/MarkdownArticle";
+import Divider from '@material-ui/core/Divider';
+import Div from '../../components/Div';
+import InfoArea from '../../components/InfoArea';
+import MarkdownArticle from '../../components/MarkdownArticle';
 
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
 
-import Tag from "../../components/Tag";
-import Tags from "../../components/Tags";
+import Tag from '../../components/Tag';
+import Tags from '../../components/Tags';
 
 class Blog extends React.Component {
 

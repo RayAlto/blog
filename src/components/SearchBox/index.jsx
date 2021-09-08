@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-import InputBase from "@material-ui/core/InputBase";
-import SearchIcon from "@material-ui/icons/Search";
+import InputBase from '@material-ui/core/InputBase';
+import SearchIcon from '@material-ui/icons/Search';
 
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
 
-import { alpha } from "@material-ui/core/styles";
+import { alpha } from '@material-ui/core/styles';
 
 class SearchBox extends React.Component {
 

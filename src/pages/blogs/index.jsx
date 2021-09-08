@@ -2,11 +2,11 @@ import React from 'react';
 
 import Head from 'next/head';
 
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
 
 import GlobalFrame from '../../layouts/GlobalFrame';
 
-import BlogSlice from "../../components/BlogSlice";
+import BlogSlice from '../../components/BlogSlice';
 
 class Blogs extends React.Component {
 

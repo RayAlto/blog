@@ -2,24 +2,24 @@ import React from 'react';
 
 import Head from 'next/head';
 
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import Divider from "@material-ui/core/Divider";
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+import Divider from '@material-ui/core/Divider';
 
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
 
 import GlobalFrame from '../../layouts/GlobalFrame';
 
-import Header from "../../components/Header";
-import GridWithRestriction from "../../components/GridWithRestriction";
-import InfoCard from "../../components/InfoCard";
-import Div from "../../components/Div";
+import Header from '../../components/Header';
+import GridWithRestriction from '../../components/GridWithRestriction';
+import InfoCard from '../../components/InfoCard';
+import Div from '../../components/Div';
 
-import javaImage500x300 from "../../../public/images/java@500x300.png";
-import linuxImage500x300 from "../../../public/images/linux@500x300.png";
-import cmakeImage500x300 from "../../../public/images/cmake@500x300.png";
-import dotnetImage500x300 from "../../../public/images/dotnet@500x300.png";
-import mariadbImage500x300 from "../../../public/images/mariadb@500x300.png";
+import javaImage500x300 from '../../../public/images/java@500x300.png';
+import linuxImage500x300 from '../../../public/images/linux@500x300.png';
+import cmakeImage500x300 from '../../../public/images/cmake@500x300.png';
+import dotnetImage500x300 from '../../../public/images/dotnet@500x300.png';
+import mariadbImage500x300 from '../../../public/images/mariadb@500x300.png';
 
 class Notes extends React.Component {
 

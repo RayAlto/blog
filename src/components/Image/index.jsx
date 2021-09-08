@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react';
 
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-import PubSub from "pubsub-js";
+import PubSub from 'pubsub-js';
 
-import Paper from "@material-ui/core/Paper";
-import Tooltip from "@material-ui/core/Tooltip";
+import Paper from '@material-ui/core/Paper';
+import Tooltip from '@material-ui/core/Tooltip';
 
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
 
-import { OPEN_IMAGE_DIALOG } from "../../constants/events";
+import { OPEN_IMAGE_DIALOG } from '../../constants/events';
 
 class Image extends React.Component {
 

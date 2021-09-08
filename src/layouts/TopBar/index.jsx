@@ -1,32 +1,32 @@
-import React from "react";
+import React from 'react';
 
-import PubSub from "pubsub-js";
+import PubSub from 'pubsub-js';
 
-import AppBar from "@material-ui/core/AppBar";
-import IconButton from "@material-ui/core/IconButton";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
+import AppBar from '@material-ui/core/AppBar';
+import IconButton from '@material-ui/core/IconButton';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 
-import GithubIcon from "@material-ui/icons/GitHub";
+import GithubIcon from '@material-ui/icons/GitHub';
 import HomeIcon from '@material-ui/icons/Home';
-import MenuIcon from "@material-ui/icons/Menu";
-import TwitterIcon from "@material-ui/icons/Twitter";
+import MenuIcon from '@material-ui/icons/Menu';
+import TwitterIcon from '@material-ui/icons/Twitter';
 
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
 
-import { NextComposed as Link } from "../../components/Link";
-import HideOnScroll from "../../components/HideOnScroll";
+import { NextComposed as Link } from '../../components/Link';
+import HideOnScroll from '../../components/HideOnScroll';
 
-import BilibiliIcon from "../../icons/Bilibili";
-import WeiboIcon from "../../icons/Weibo";
+import BilibiliIcon from '../../icons/Bilibili';
+import WeiboIcon from '../../icons/Weibo';
 
 import {
   SIDEBAR_WIDTH
-} from "../../constants/sizes";
+} from '../../constants/sizes';
 
 import {
   OPEN_SIDEBAR
-} from "../../constants/events";
+} from '../../constants/events';
 
 class TopBar extends React.Component {
 

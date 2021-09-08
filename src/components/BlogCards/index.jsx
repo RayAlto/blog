@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-import Grid from "@material-ui/core/Grid";
+import Grid from '@material-ui/core/Grid';
 
-import BlogCard from "../../components/BlogCard";
-import GridWithRestriction from "../../components/GridWithRestriction";
+import BlogCard from '../../components/BlogCard';
+import GridWithRestriction from '../../components/GridWithRestriction';
 
 export default class BlogCards extends React.Component {
 

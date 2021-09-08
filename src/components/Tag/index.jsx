@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-import { NextComposed as Link } from "../../components/Link";
+import { NextComposed as Link } from '../../components/Link';
 
-import Chip from "@material-ui/core/Chip";
+import Chip from '@material-ui/core/Chip';
 
 export default class Tag extends React.Component {
 

@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import Button from "@material-ui/core/Button";
-import VerifiedUserRoundedIcon from "@material-ui/icons/VerifiedUserRounded";
+import Button from '@material-ui/core/Button';
+import VerifiedUserRoundedIcon from '@material-ui/icons/VerifiedUserRounded';
 
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
 
 class ICP extends React.Component {
 

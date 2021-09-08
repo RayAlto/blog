@@ -1,24 +1,24 @@
-import React from "react"
+import React from 'react'
 
-import Divider from "@material-ui/core/Divider";
-import Paper from "@material-ui/core/Paper";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Typography from "@material-ui/core/Typography";
+import Divider from '@material-ui/core/Divider';
+import Paper from '@material-ui/core/Paper';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Typography from '@material-ui/core/Typography';
 
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
 
 import Head from 'next/head';
 
-import InfoArea from "../../components/InfoArea";
+import InfoArea from '../../components/InfoArea';
 
 import GlobalFrame from '../../layouts/GlobalFrame';
 
-import ScheduleImage1000x600 from "../../../public/images/schedule@1000x600.png"
+import ScheduleImage1000x600 from '../../../public/images/schedule@1000x600.png'
 
 class Schedule extends React.Component {
 

@@ -1,20 +1,20 @@
-import React from "react";
+import React from 'react';
 
-import { Switch, Route, Redirect, Link } from "react-router-dom";
+import { Switch, Route, Redirect, Link } from 'react-router-dom';
 
-import Divider from "@material-ui/core/Divider";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import Typography from "@material-ui/core/Typography";
+import Divider from '@material-ui/core/Divider';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import Typography from '@material-ui/core/Typography';
 
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet';
 
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
 
-import Div from "../../components/Div";
-import Header from "../../components/Header";
-import Note from "../Note";
+import Div from '../../components/Div';
+import Header from '../../components/Header';
+import Note from '../Note';
 
 class Notes extends React.Component {
 

@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import PubSub from "pubsub-js";
+import PubSub from 'pubsub-js';
 
-import DialogTitle from "@material-ui/core/DialogTitle";
-import Dialog from "@material-ui/core/Dialog";
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Dialog from '@material-ui/core/Dialog';
 
 import {
   CLOSE_IMAGE_DIALOG,
   OPEN_IMAGE_DIALOG,
-} from "../../constants/events";
+} from '../../constants/events';
 
 export default class GlobalImageDialog extends React.Component {
 

@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import Grid from "@material-ui/core/Grid";
+import Grid from '@material-ui/core/Grid';
 
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
 
 class GridWithRestriction extends React.Component {
 

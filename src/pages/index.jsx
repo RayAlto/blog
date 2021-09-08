@@ -1,23 +1,23 @@
 import React from 'react';
 
-import Head from "next/head";
+import Head from 'next/head';
 
-import Button from "@material-ui/core/Button";
-import Grid from "@material-ui/core/Grid";
-import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
-import GridWithRestriction from "../components/GridWithRestriction";
-import Header from "../components/Header";
-import InfoArea from "../components/InfoArea";
-import InfoCard from "../components/InfoCard";
-import { NextComposed as Link } from "../components/Link";
+import GridWithRestriction from '../components/GridWithRestriction';
+import Header from '../components/Header';
+import InfoArea from '../components/InfoArea';
+import InfoCard from '../components/InfoCard';
+import { NextComposed as Link } from '../components/Link';
 
-import Aria2Image500x300 from "../../public/images/aria2@500x300.png";
-import BannerImage1000x600 from "../../public/images/banner@1000x600.png";
-import DrawioImage500x300 from "../../public/images/drawio@500x300.png";
-import JupyterLabImage500x300 from "../../public/images/jupyter@500x300.png";
-import NoteImage500x300 from "../../public/images/note@500x300.png";
-import ScheduleImage500x300 from "../../public/images/schedule@500x300.png";
+import Aria2Image500x300 from '../../public/images/aria2@500x300.png';
+import BannerImage1000x600 from '../../public/images/banner@1000x600.png';
+import DrawioImage500x300 from '../../public/images/drawio@500x300.png';
+import JupyterLabImage500x300 from '../../public/images/jupyter@500x300.png';
+import NoteImage500x300 from '../../public/images/note@500x300.png';
+import ScheduleImage500x300 from '../../public/images/schedule@500x300.png';
 
 import GlobalFrame from '../layouts/GlobalFrame';
 

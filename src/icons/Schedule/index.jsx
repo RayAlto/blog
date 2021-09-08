@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import SvgIcon from "@material-ui/core/SvgIcon";
+import SvgIcon from '@material-ui/core/SvgIcon';
 
 export default class Schedule extends React.Component {
 

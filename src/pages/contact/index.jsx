@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Head from "next/head";
+import Head from 'next/head';
 
-import Divider from "@material-ui/core/Divider";
+import Divider from '@material-ui/core/Divider';
 
 import GlobalFrame from '../../layouts/GlobalFrame';
 
-import Header from "../../components/Header";
+import Header from '../../components/Header';
 
 class Contact extends React.Component {
 

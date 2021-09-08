@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
 
-import BackToTopButton from "../../components/BackToTopButton";
-import GlobalImageDialog from "../../components/GlobalImageDialog";
+import BackToTopButton from '../../components/BackToTopButton';
+import GlobalImageDialog from '../../components/GlobalImageDialog';
 
-import SideBar from "../SideBar";
-import TopBar from "../TopBar";
+import SideBar from '../SideBar';
+import TopBar from '../TopBar';
 
 class App extends React.Component {
 
