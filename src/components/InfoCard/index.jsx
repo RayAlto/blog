@@ -30,6 +30,7 @@ class InfoCard extends React.Component {
     ]),
     title: PropTypes.string.isRequired,
     isRouteLink: PropTypes.bool.isRequired,
+    onClick: PropTypes.func,
   };
 
   static defaultProps = {
@@ -45,13 +46,14 @@ class InfoCard extends React.Component {
       classes,
       children,
       isRouteLink,
+      onClick,
     } = this.props;
 
     return (
       <Card>
         {
           isRouteLink ? (
-            <CardActionArea component={Link} to={link}>
+            <CardActionArea onClick={onClick} component={Link} to={link}>
               <CardMedia
                 className={classes.media}
                 image={image.src || image}
@@ -67,7 +69,7 @@ class InfoCard extends React.Component {
               </CardContent>
             </CardActionArea>
           ) : (
-            <CardActionArea href={link} target="_blank">
+            <CardActionArea onClick={onClick} href={link} target="_blank">
               <CardMedia
                 className={classes.media}
                 image={image.src || image}
@@ -91,6 +93,7 @@ class InfoCard extends React.Component {
                 size="small"
                 color="primary"
                 endIcon={<ArrowForwardIcon />}
+                onClick={onClick}
                 component={Link}
                 to={link}
               >
@@ -101,6 +104,7 @@ class InfoCard extends React.Component {
                 size="small"
                 color="primary"
                 endIcon={<ArrowForwardIcon />}
+                onClick={onClick}
                 href={link}
                 target="_blank"
               >
