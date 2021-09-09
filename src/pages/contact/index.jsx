@@ -7,6 +7,8 @@ import Head from 'next/head';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 
+import withStyles from '@material-ui/core/styles/withStyles';
+
 import GlobalFrame from '../../layouts/GlobalFrame';
 
 import GridWithRestriction from '../../components/GridWithRestriction';
@@ -48,13 +50,17 @@ class Contact extends React.Component {
 
   render() {
 
+    const {
+      classes
+    } = this.props;
+
     return (
       <GlobalFrame>
         <Head>
           <title>RayAlto - 社交</title>
         </Head>
         <Header>社交</Header>
-        <Divider />
+        <Divider className={classes.divider} />
         <GridWithRestriction>
           <Grid xs item>
             <InfoCard
@@ -136,4 +142,10 @@ class Contact extends React.Component {
 
 };
 
-export default Contact;
+export default withStyles(theme => ({
+
+  divider: {
+    marginBottom: theme.spacing(3),
+  },
+
+}))(Contact);
