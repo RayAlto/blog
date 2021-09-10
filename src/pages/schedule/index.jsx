@@ -20,40 +20,53 @@ import GlobalFrame from '../../layouts/GlobalFrame';
 
 import ScheduleImage1000x600 from '../../../public/images/schedule@1000x600.png'
 
+export async function getStaticProps(context) {
+
+  const scheduleData = {
+    dateStr: "2021-08-03，星期二",
+    updateTimeStr: "2021-08-03 01:00:03",
+    scheduleList: [
+      {
+        name: "摸鱼入门",
+        duration: "10:20 - 12:10",
+        classroom: "翠七教301",
+        teacher: "杨永信",
+        class: "摸鱼20-1班,摸鱼18-2班",
+      },
+      {
+        name: "躺平入门",
+        duration: "10:20 - 12:10",
+        classroom: "翠七教301",
+        teacher: "杨永信",
+        class: "摸鱼20-1班,摸鱼18-2班",
+      },
+    ],
+  };
+
+  const hitokotoResponse = await fetch("https://v1.hitokoto.cn/?encode=utf-8&c=a");
+  const hitokotoResponseData = await hitokotoResponse.json();
+
+  const hitokotoData = {
+    text: hitokotoResponseData.hitokoto,
+    from: hitokotoResponseData.from || "未知",
+    fromWho: hitokotoResponseData.from_who || "未知",
+  };
+
+  return {
+    props: { scheduleData, hitokotoData },
+  };
+
+};
+
 class Schedule extends React.Component {
 
   render() {
 
     const {
-      classes
+      scheduleData,
+      hitokotoData,
+      classes,
     } = this.props;
-
-    const scheduleData = {
-      dateStr: "2021-08-03，星期二",
-      updateTimeStr: "2021-08-03 01:00:03",
-      scheduleList: [
-        {
-          "name": "摸鱼入门",
-          "duration": "10:20 - 12:10",
-          "classroom": "翠七教301",
-          "teacher": "杨永信",
-          "class": "摸鱼20-1班,摸鱼18-2班",
-        },
-        {
-          "name": "躺平入门",
-          "duration": "10:20 - 12:10",
-          "classroom": "翠七教301",
-          "teacher": "杨永信",
-          "class": "摸鱼20-1班,摸鱼18-2班",
-        },
-      ]
-    };
-
-    const hitokotoData = {
-      text: "一举一动，都是承诺，会被另一个人看在眼里，记在心上的。",
-      from: "悬崖上的金鱼姬",
-      fromWho: "宫崎骏"
-    }
 
     return (
       <GlobalFrame>
@@ -69,47 +82,55 @@ class Schedule extends React.Component {
           noCardActions
         />
         <Divider className={classes.divider} />
-        <Typography component="h4" variant="h4" gutterBottom>今天是{scheduleData.dateStr}</Typography>
-        <Typography>今天也要以顺利毕业为目标努力奋斗:</Typography>
-        <TableContainer component={Paper} className={classes.table}>
-          <Table>
-            <TableHead>
-              <TableRow>
-                <TableCell>
-                  课程名称
-                </TableCell>
-                <TableCell>
-                  上课时间
-                </TableCell>
-                <TableCell>
-                  教室
-                </TableCell>
-                <TableCell>
-                  老师
-                </TableCell>
-                <TableCell>
-                  上课班级
-                </TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {scheduleData.scheduleList.map(schedule => (
-                <TableRow key={`${schedule.name}-${schedule.duration}-${schedule.classroom}-${schedule.teacher}`}>
-                  <TableCell>{schedule.name}</TableCell>
-                  <TableCell>{schedule.duration}</TableCell>
-                  <TableCell>{schedule.classroom}</TableCell>
-                  <TableCell>{schedule.teacher}</TableCell>
-                  <TableCell>{schedule.class}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-        <Typography>更新时间：{scheduleData.updateTimeStr}</Typography>
-        <Divider className={classes.divider} />
-        <Typography component="h4" variant="h4" gutterBottom>每日一句</Typography>
-        <Typography>{hitokotoData.text}</Typography>
-        <Typography align="right">{`${hitokotoData.fromWho} - 《${hitokotoData.from}》`}</Typography>
+        {scheduleData &&
+          <>
+            <Typography component="h4" variant="h4" gutterBottom>今天是{scheduleData.dateStr}</Typography>
+            <Typography>今天也要以顺利毕业为目标努力奋斗:</Typography>
+            <TableContainer component={Paper} className={classes.table}>
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>
+                      课程名称
+                    </TableCell>
+                    <TableCell>
+                      上课时间
+                    </TableCell>
+                    <TableCell>
+                      教室
+                    </TableCell>
+                    <TableCell>
+                      老师
+                    </TableCell>
+                    <TableCell>
+                      上课班级
+                    </TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {scheduleData.scheduleList.map(schedule => (
+                    <TableRow key={`${schedule.name}-${schedule.duration}-${schedule.classroom}-${schedule.teacher}`}>
+                      <TableCell>{schedule.name}</TableCell>
+                      <TableCell>{schedule.duration}</TableCell>
+                      <TableCell>{schedule.classroom}</TableCell>
+                      <TableCell>{schedule.teacher}</TableCell>
+                      <TableCell>{schedule.class}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+            <Typography>更新时间：{scheduleData.updateTimeStr}</Typography>
+            <Divider className={classes.divider} />
+          </>
+        }
+        {hitokotoData &&
+          <>
+            <Typography component="h4" variant="h4" gutterBottom>每日一句</Typography>
+            <Typography>{hitokotoData.text}</Typography>
+            <Typography align="right">{`${hitokotoData.fromWho} - 《${hitokotoData.from}》`}</Typography>
+          </>
+        }
       </GlobalFrame>
     );
 
