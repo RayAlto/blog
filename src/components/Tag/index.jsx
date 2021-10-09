@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { NextComposed as Link } from '../../components/Link';
 
-import Chip from '@material-ui/core/Chip';
+import Chip from '@mui/material/Chip';
 
 export default class Tag extends React.Component {
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SvgIcon from '@material-ui/core/SvgIcon';
+import SvgIcon from '@mui/material/SvgIcon';
 
 export default class QQ extends React.Component {
 

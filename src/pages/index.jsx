@@ -2,9 +2,9 @@ import React from 'react';
 
 import Head from 'next/head';
 
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 import GridWithRestriction from '../components/GridWithRestriction';
 import Header from '../components/Header';

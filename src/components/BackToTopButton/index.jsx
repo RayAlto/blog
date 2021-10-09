@@ -2,12 +2,12 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import Fab from '@material-ui/core/Fab';
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import Zoom from '@material-ui/core/Zoom';
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import Fab from '@mui/material/Fab';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+import Zoom from '@mui/material/Zoom';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
-import withStyles from '@material-ui/core/styles/withStyles';
+import withStyles from '@mui/styles/withStyles';
 
 function ScrollTop(props) {
 

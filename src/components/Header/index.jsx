@@ -2,10 +2,10 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import Divider from '@material-ui/core/Divider';
-import Typography from '@material-ui/core/Typography';
+import Divider from '@mui/material/Divider';
+import Typography from '@mui/material/Typography';
 
-import withStyles from '@material-ui/core/styles/withStyles';
+import withStyles from '@mui/styles/withStyles';
 
 import Div from '../Div';
 

@@ -2,11 +2,11 @@ import React from 'react';
 
 import Head from 'next/head';
 
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-import Divider from '@material-ui/core/Divider';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+import Divider from '@mui/material/Divider';
 
-import withStyles from '@material-ui/core/styles/withStyles';
+import withStyles from '@mui/styles/withStyles';
 
 import GlobalFrame from '../../layouts/GlobalFrame';
 

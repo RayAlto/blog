@@ -2,32 +2,32 @@ import React from 'react';
 
 import PubSub from 'pubsub-js';
 
-import Collapse from '@material-ui/core/Collapse';
-import Divider from '@material-ui/core/Divider';
-import Drawer from '@material-ui/core/Drawer';
-import Hidden from '@material-ui/core/Hidden';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import withStyles from '@material-ui/core/styles/withStyles';
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import Typography from '@material-ui/core/Typography';
+import Collapse from '@mui/material/Collapse';
+import Divider from '@mui/material/Divider';
+import Drawer from '@mui/material/Drawer';
+import Hidden from '@mui/material/Hidden';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import ListSubheader from '@mui/material/ListSubheader';
+import withStyles from '@mui/styles/withStyles';
+import SwipeableDrawer from '@mui/material/SwipeableDrawer';
+import Typography from '@mui/material/Typography';
 
-import LinkIcon from '@material-ui/icons/Attachment';
-import BlogIcon from '@material-ui/icons/Book';
-import DrawioIcon from '@material-ui/icons/Brush';
-import AriangIcon from '@material-ui/icons/CloudDownload';
-import CommunicationIcon from '@material-ui/icons/Contacts';
-import ScheduleIcon from '@material-ui/icons/DateRange';
-import GmailIcon from '@material-ui/icons/Email';
-import NoteIcon from '@material-ui/icons/EventNote';
-import ExpandLessIcon from '@material-ui/icons/ExpandLess';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import HomeIcon from '@material-ui/icons/Home';
-import AboutIcon from '@material-ui/icons/Info';
-import ToolsIcon from '@material-ui/icons/Widgets';
+import LinkIcon from '@mui/icons-material/Attachment';
+import BlogIcon from '@mui/icons-material/Book';
+import DrawioIcon from '@mui/icons-material/Brush';
+import AriangIcon from '@mui/icons-material/CloudDownload';
+import CommunicationIcon from '@mui/icons-material/Contacts';
+import ScheduleIcon from '@mui/icons-material/DateRange';
+import GmailIcon from '@mui/icons-material/Email';
+import NoteIcon from '@mui/icons-material/EventNote';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import HomeIcon from '@mui/icons-material/Home';
+import AboutIcon from '@mui/icons-material/Info';
+import ToolsIcon from '@mui/icons-material/Widgets';
 
 import Div from '../../components/Div';
 import ICP from '../../components/ICP';
@@ -201,7 +201,7 @@ class SideBar extends React.Component {
             {drawer}
           </SwipeableDrawer>
         </Hidden>
-        <Hidden xsDown implementation="css">
+        <Hidden smDown implementation="css">
           <Drawer
             classes={{
               paper: this.props.classes.drawerPaper,

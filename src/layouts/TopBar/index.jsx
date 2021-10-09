@@ -2,17 +2,17 @@ import React from 'react';
 
 import PubSub from 'pubsub-js';
 
-import AppBar from '@material-ui/core/AppBar';
-import IconButton from '@material-ui/core/IconButton';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import AppBar from '@mui/material/AppBar';
+import IconButton from '@mui/material/IconButton';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
 
-import GithubIcon from '@material-ui/icons/GitHub';
-import HomeIcon from '@material-ui/icons/Home';
-import MenuIcon from '@material-ui/icons/Menu';
-import TwitterIcon from '@material-ui/icons/Twitter';
+import GithubIcon from '@mui/icons-material/GitHub';
+import HomeIcon from '@mui/icons-material/Home';
+import MenuIcon from '@mui/icons-material/Menu';
+import TwitterIcon from '@mui/icons-material/Twitter';
 
-import withStyles from '@material-ui/core/styles/withStyles';
+import withStyles from '@mui/styles/withStyles';
 
 import { NextComposed as Link } from '../../components/Link';
 import HideOnScroll from '../../components/HideOnScroll';
@@ -41,7 +41,7 @@ class TopBar extends React.Component {
               aria-label="open drawer"
               edge="start"
               onClick={event => PubSub.publish(OPEN_SIDEBAR)}
-            >
+              size="large">
               <MenuIcon />
             </IconButton>
             <IconButton
@@ -51,7 +51,7 @@ class TopBar extends React.Component {
               edge="start"
               component={Link}
               to="/"
-            >
+              size="large">
               <HomeIcon />
             </IconButton>
             <Typography variant="h6" noWrap>
@@ -64,7 +64,7 @@ class TopBar extends React.Component {
               target="_blank"
               aria-label="This is an icon button"
               color="inherit"
-            >
+              size="large">
               <BilibiliIcon />
             </IconButton>
             <IconButton
@@ -73,7 +73,7 @@ class TopBar extends React.Component {
               target="_blank"
               aria-label="This is an icon button"
               color="inherit"
-            >
+              size="large">
               <WeiboIcon />
             </IconButton>
             <IconButton
@@ -82,7 +82,7 @@ class TopBar extends React.Component {
               target="_blank"
               aria-label="This is an icon button"
               color="inherit"
-            >
+              size="large">
               <TwitterIcon />
             </IconButton>
             <IconButton
@@ -91,7 +91,7 @@ class TopBar extends React.Component {
               rel="noopener noreferrer"
               aria-label="This is an icon button"
               color="inherit"
-            >
+              size="large">
               <GithubIcon />
             </IconButton>
           </Toolbar>

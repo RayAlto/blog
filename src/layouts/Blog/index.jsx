@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 
 import Head from 'next/head';
 
-import Divider from '@material-ui/core/Divider';
+import Divider from '@mui/material/Divider';
 import Div from '../../components/Div';
 import InfoArea from '../../components/InfoArea';
 import MarkdownArticle from '../../components/MarkdownArticle';
 
-import withStyles from '@material-ui/core/styles/withStyles';
+import withStyles from '@mui/styles/withStyles';
 
 import Tag from '../../components/Tag';
 import Tags from '../../components/Tags';

@@ -2,18 +2,18 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import Checkbox from '@material-ui/core/Checkbox';
-import Divider from '@material-ui/core/Divider';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Link from '@material-ui/core/Link';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Typography from '@material-ui/core/Typography';
+import Checkbox from '@mui/material/Checkbox';
+import Divider from '@mui/material/Divider';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Link from '@mui/material/Link';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Typography from '@mui/material/Typography';
 
-import withStyles from '@material-ui/core/styles/withStyles';
+import withStyles from '@mui/styles/withStyles';
 
 import ReactMarkdown from 'react-markdown';
 
@@ -55,7 +55,7 @@ class MarkdownArticle extends React.Component {
           />
         ) : (
           <code className={className} {...props}>{children}</code>
-        )
+        );
       },
       pre: ({ node, ...props }) => <div item className={classes.pre} {...props} />,
       table: ({ node, ...props }) => <Table {...props} />,
@@ -101,7 +101,7 @@ export default withStyles(theme => ({
       width: `calc(100vw - ${SIDEBAR_WIDTH + theme.spacing(8.1)}px)`,
     },
 
-    width: `calc(100vw - ${theme.spacing(6)}px)`,
+    width: `calc(100vw - ${theme.spacing(6)})`,
 
   },
 

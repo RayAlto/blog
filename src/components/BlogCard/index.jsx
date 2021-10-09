@@ -3,22 +3,22 @@ import PropTypes from 'prop-types';
 
 import { NextComposed as Link } from '../../components/Link';
 
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-import Checkbox from '@material-ui/core/Checkbox';
-import Tooltip from '@material-ui/core/Tooltip';
-import Typography from '@material-ui/core/Typography';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
+import CardMedia from '@mui/material/CardMedia';
+import Checkbox from '@mui/material/Checkbox';
+import Tooltip from '@mui/material/Tooltip';
+import Typography from '@mui/material/Typography';
 
-import withStyles from '@material-ui/core/styles/withStyles';
+import withStyles from '@mui/styles/withStyles';
 
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import FullscreenIcon from '@material-ui/icons/Fullscreen';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FullscreenIcon from '@mui/icons-material/Fullscreen';
 
 import Tags from '../../components/Tags';
 import Tag from '../../components/Tag';
@@ -146,7 +146,7 @@ export default withStyles(theme => ({
     transition: "transform 0.2s ease",
 
     "& : hover": {
-      transform: `translateY(-${theme.spacing(0.5)}px)`,
+      transform: `translateY(-${theme.spacing(0.5)})`,
     },
 
   },

@@ -1,11 +1,11 @@
 import React from 'react';
 
-import InputBase from '@material-ui/core/InputBase';
-import SearchIcon from '@material-ui/icons/Search';
+import InputBase from '@mui/material/InputBase';
+import SearchIcon from '@mui/icons-material/Search';
 
-import withStyles from '@material-ui/core/styles/withStyles';
+import { alpha } from '@mui/material/styles';
 
-import { alpha } from '@material-ui/core/styles';
+import withStyles from '@mui/styles/withStyles';
 
 class SearchBox extends React.Component {
 
@@ -27,7 +27,7 @@ class SearchBox extends React.Component {
     );
   };
 
-};
+}
 
 export default withStyles(theme => ({
 
@@ -70,7 +70,7 @@ export default withStyles(theme => ({
 
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     width: "100%",
 

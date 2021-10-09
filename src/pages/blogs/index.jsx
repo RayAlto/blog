@@ -2,7 +2,7 @@ import React from 'react';
 
 import Head from 'next/head';
 
-import withStyles from '@material-ui/core/styles/withStyles';
+import withStyles from '@mui/styles/withStyles';
 
 import GlobalFrame from '../../layouts/GlobalFrame';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import withStyles from '@material-ui/core/styles/withStyles';
+import withStyles from '@mui/styles/withStyles';
 
 import BackToTopButton from '../../components/BackToTopButton';
 import GlobalImageDialog from '../../components/GlobalImageDialog';

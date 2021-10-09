@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 
 import PubSub from 'pubsub-js';
 
-import Paper from '@material-ui/core/Paper';
-import Tooltip from '@material-ui/core/Tooltip';
+import Paper from '@mui/material/Paper';
+import Tooltip from '@mui/material/Tooltip';
 
-import withStyles from '@material-ui/core/styles/withStyles';
+import withStyles from '@mui/styles/withStyles';
 
 import { OPEN_IMAGE_DIALOG } from '../../constants/events';
 

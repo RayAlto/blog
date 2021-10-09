@@ -2,8 +2,8 @@ import React from 'react';
 
 import PubSub from 'pubsub-js';
 
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Dialog from '@material-ui/core/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import Dialog from '@mui/material/Dialog';
 
 import {
   CLOSE_IMAGE_DIALOG,

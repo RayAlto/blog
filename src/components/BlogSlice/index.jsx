@@ -4,25 +4,25 @@ import PropTypes from 'prop-types';
 
 import { NextComposed as Link } from '../../components/Link';
 
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardHeader from '@material-ui/core/CardHeader';
-import Checkbox from '@material-ui/core/Checkbox';
-import Divider from '@material-ui/core/Divider';
-import Grid from '@material-ui/core/Grid';
-import Hidden from '@material-ui/core/Hidden';
-import Paper from '@material-ui/core/Paper';
-import Tooltip from '@material-ui/core/Tooltip';
-import Typography from '@material-ui/core/Typography';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
+import Checkbox from '@mui/material/Checkbox';
+import Divider from '@mui/material/Divider';
+import Grid from '@mui/material/Grid';
+import Hidden from '@mui/material/Hidden';
+import Paper from '@mui/material/Paper';
+import Tooltip from '@mui/material/Tooltip';
+import Typography from '@mui/material/Typography';
 
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
-import withStyles from '@material-ui/core/styles/withStyles';
+import withStyles from '@mui/styles/withStyles';
 
 import Tag from '../../components/Tag';
 import Tags from '../../components/Tags';
@@ -148,7 +148,7 @@ class BlogSlice extends React.Component {
             </Grid>
           </Grid>
         </Hidden>
-        <Hidden smDown implementation="css">
+        <Hidden mdDown implementation="css">
           <Grid
             container
             direction="row"
@@ -192,7 +192,7 @@ export default withStyles(theme => ({
     transition: "transform 0.2s ease",
 
     "&:hover": {
-      transform: `translateY(-${theme.spacing(0.5)}px)`,
+      transform: `translateY(-${theme.spacing(0.5)})`,
     }
   },
 

@@ -4,10 +4,10 @@ import PubSub from 'pubsub-js';
 
 import Head from 'next/head';
 
-import Divider from '@material-ui/core/Divider';
-import Grid from '@material-ui/core/Grid';
+import Divider from '@mui/material/Divider';
+import Grid from '@mui/material/Grid';
 
-import withStyles from '@material-ui/core/styles/withStyles';
+import withStyles from '@mui/styles/withStyles';
 
 import GlobalFrame from '../../layouts/GlobalFrame';
 

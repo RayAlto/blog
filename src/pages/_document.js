@@ -1,10 +1,14 @@
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheets } from '@material-ui/core/styles';
-import theme from '@material-ui/core/styles/defaultTheme';
+import { createTheme } from '@mui/material/styles';
+
+import ServerStyleSheets from '@mui/styles/ServerStyleSheets';
 
 export default class MyDocument extends Document {
   render() {
+
+    const theme = createTheme();
+
     return (
       <Html lang="en">
         <Head>
