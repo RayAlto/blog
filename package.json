@@ -12,27 +12,27 @@
     "deploy": "echo \"test.rayalto.top\" > out/CNAME && touch out/.nojekyll && gh-pages -d out -t"
   },
   "dependencies": {
-    "@emotion/react": "^11.4.1",
-    "@emotion/styled": "^11.3.0",
-    "@mui/icons-material": "^5.0.3",
-    "@mui/material": "^5.0.3",
-    "@mui/styles": "^5.0.1",
+    "@emotion/react": "^11.7.0",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.1",
+    "@mui/material": "^5.2.3",
+    "@mui/styles": "^5.2.3",
     "gh-pages": "^3.2.3",
-    "next": "^11.1.2",
+    "next": "^12.0.7",
     "prop-types": "^15.7.2",
-    "pubsub-js": "^1.9.3",
+    "pubsub-js": "^1.9.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-markdown": "^7.0.1",
-    "react-syntax-highlighter": "^15.4.4",
-    "rehype-katex": "^6.0.1",
+    "react-markdown": "^7.1.1",
+    "react-syntax-highlighter": "^15.4.5",
+    "rehype-katex": "^6.0.2",
     "rehype-raw": "^6.1.0",
-    "remark-gfm": "^3.0.0",
-    "remark-math": "^5.1.0"
+    "remark-gfm": "^3.0.1",
+    "remark-math": "^5.1.1"
   },
   "devDependencies": {
-    "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2"
+    "eslint": "8.4.1",
+    "eslint-config-next": "12.0.7"
   },
   "homepage": "https://rayalto.github.io/blog"
 }
