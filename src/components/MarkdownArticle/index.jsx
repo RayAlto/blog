@@ -97,7 +97,7 @@ export default withStyles(theme => ({
   pre: {
 
     [theme.breakpoints.up("sm")]: {
-      width: `calc(100vw - ${SIDEBAR_WIDTH}px)`,
+      width: `calc(100vw - ${SIDEBAR_WIDTH}px - ${theme.spacing(8.1)})`,
     },
 
     width: `calc(100vw - ${theme.spacing(6)})`,
