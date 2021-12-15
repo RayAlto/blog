@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import Head from 'next/head';
 
@@ -10,7 +10,7 @@ import GridWithRestriction from '../components/GridWithRestriction';
 import Header from '../components/Header';
 import InfoArea from '../components/InfoArea';
 import InfoCard from '../components/InfoCard';
-import { NextComposed as Link } from '../components/Link';
+import { NextLinkComposed as Link } from '../components/Link';
 
 import Aria2Image500x300 from '../../public/images/aria2@500x300.png';
 import BannerImage1000x600 from '../../public/images/banner@1000x600.png';

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import PubSub from 'pubsub-js';
 
@@ -14,7 +14,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 
 import withStyles from '@mui/styles/withStyles';
 
-import { NextComposed as Link } from '../../components/Link';
+import { NextLinkComposed as Link } from '../../components/Link';
 import HideOnScroll from '../../components/HideOnScroll';
 
 import BilibiliIcon from '../../icons/Bilibili';

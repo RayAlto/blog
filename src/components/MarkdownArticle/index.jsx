@@ -1,10 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 
 import PropTypes from 'prop-types';
 
 import Checkbox from '@mui/material/Checkbox';
 import Divider from '@mui/material/Divider';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import Link from '@mui/material/Link';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -57,14 +56,14 @@ class MarkdownArticle extends React.Component {
           <code className={className} {...props}>{children}</code>
         );
       },
-      pre: ({ node, ...props }) => <div item className={classes.pre} {...props} />,
+      pre: ({ node, ...props }) => <div className={classes.pre} {...props} />,
       table: ({ node, ...props }) => <Table {...props} />,
       thead: ({ node, ...props }) => <TableHead {...props} />,
       tbody: ({ node, ...props }) => <TableBody {...props} />,
       tr: ({ node, ...props }) => <TableRow {...props} />,
       th: ({ node, style, isHeader, ...props }) => <TableCell align={style?.textAlign}><Typography {...props} /></TableCell>,
       td: ({ node, style, isHeader, ...props }) => <TableCell align={style?.textAlign}><Typography {...props} /></TableCell>,
-      input: ({ node, checked, disable, type, ...props }) => <FormControlLabel control={<Checkbox checked={checked} />} disabled label={props.children} />,
+      input: ({ node, checked, disable, type, ...props }) => <Checkbox checked={checked} disabled {...props} />,
       p: ({ node, ...props }) => <Typography {...props} />,
       a: ({ node, ...props }) => <Link {...props} />,
       hr: ({ node, ...props }) => <Divider {...props} />,
@@ -98,7 +97,7 @@ export default withStyles(theme => ({
   pre: {
 
     [theme.breakpoints.up("sm")]: {
-      width: `calc(100vw - ${SIDEBAR_WIDTH + theme.spacing(8.1)}px)`,
+      width: `calc(100vw - ${SIDEBAR_WIDTH}px)`,
     },
 
     width: `calc(100vw - ${theme.spacing(6)})`,

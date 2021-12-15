@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import PropTypes from 'prop-types';
 
@@ -13,7 +13,7 @@ import { styled } from '@mui/material/styles';
 // Add support for the sx prop for consistency with the other branches.
 const Anchor = styled('a')({});
 
-export const NextComposed = React.forwardRef(function NextLinkComposed(props, ref) {
+export const NextLinkComposed = React.forwardRef(function NextLinkComposed(props, ref) {
   const { to, linkAs, href, replace, scroll, shallow, prefetch, locale, ...other } = props;
 
   return (
@@ -32,7 +32,7 @@ export const NextComposed = React.forwardRef(function NextLinkComposed(props, re
   );
 });
 
-NextComposed.propTypes = {
+NextLinkComposed.propTypes = {
   href: PropTypes.any,
   linkAs: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   locale: PropTypes.string,
@@ -45,7 +45,7 @@ NextComposed.propTypes = {
 };
 
 // A styled version of the Next.js Link component:
-// https://nextjs.org/docs/#with-link
+// https://nextjs.org/docs/api-reference/next/link
 const Link = React.forwardRef(function Link(props, ref) {
   const {
     activeClassName = 'active',
@@ -75,12 +75,12 @@ const Link = React.forwardRef(function Link(props, ref) {
   }
 
   if (noLinkStyle) {
-    return <NextComposed className={className} ref={ref} to={href} {...other} />;
+    return <NextLinkComposed className={className} ref={ref} to={href} {...other} />;
   }
 
   return (
     <MuiLink
-      component={NextComposed}
+      component={NextLinkComposed}
       linkAs={linkAs}
       className={className}
       ref={ref}
@@ -95,6 +95,7 @@ Link.propTypes = {
   as: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   className: PropTypes.string,
   href: PropTypes.any,
+  linkAs: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   noLinkStyle: PropTypes.bool,
   role: PropTypes.string,
 };

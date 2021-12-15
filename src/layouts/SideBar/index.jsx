@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import PubSub from 'pubsub-js';
 
@@ -31,7 +31,7 @@ import ToolsIcon from '@mui/icons-material/Widgets';
 
 import Div from '../../components/Div';
 import ICP from '../../components/ICP';
-import { NextComposed as Link } from '../../components/Link';
+import { NextLinkComposed as Link } from '../../components/Link';
 
 import JupyterIcon from '../../icons/Jupyter';
 import QQIcon from '../../icons/QQ';

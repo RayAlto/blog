@@ -1,8 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 
 import PropTypes from 'prop-types';
 
-import { NextComposed as Link } from '../../components/Link';
+import { NextLinkComposed as Link } from '../../components/Link';
 
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';

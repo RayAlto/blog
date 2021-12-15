@@ -1,8 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 
 import PropTypes from 'prop-types';
 
-import { NextComposed as Link } from '../Link';
+import { NextLinkComposed as Link } from '../Link';
 
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
