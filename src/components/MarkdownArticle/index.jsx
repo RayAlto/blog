@@ -63,7 +63,7 @@ class MarkdownArticle extends React.Component {
       tr: ({ node, ...props }) => <TableRow {...props} />,
       th: ({ node, style, isHeader, ...props }) => <TableCell align={style?.textAlign}><Typography {...props} /></TableCell>,
       td: ({ node, style, isHeader, ...props }) => <TableCell align={style?.textAlign}><Typography {...props} /></TableCell>,
-      input: ({ node, checked, disable, type, ...props }) => <Checkbox checked={checked} disabled {...props} />,
+      input: ({ node, checked, disable, type, ...props }) => <Checkbox className={classes.checkbox} checked={checked} disabled {...props} />,
       p: ({ node, ...props }) => <Typography {...props} />,
       a: ({ node, ...props }) => <Link {...props} />,
       hr: ({ node, ...props }) => <Divider {...props} />,
@@ -101,6 +101,12 @@ export default withStyles(theme => ({
     },
 
     width: `calc(100vw - ${theme.spacing(6)})`,
+
+  },
+
+  checkbox: {
+
+    padding: 0,
 
   },
 
