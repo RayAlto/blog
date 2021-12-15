@@ -44,6 +44,8 @@ export default class Tag extends React.Component {
           size="small"
           label={title}
           component="a"
+          target="_blank"
+          rel="noopener noreferrer"
           clickable
           href={href}
         />
