@@ -2,8 +2,6 @@ import * as React from 'react';
 
 import PropTypes from 'prop-types';
 
-import Head from 'next/head';
-
 import Divider from '@mui/material/Divider';
 import Div from '../../components/Div';
 import InfoArea from '../../components/InfoArea';
@@ -18,94 +16,42 @@ class Blog extends React.Component {
 
   static propTypes = {
     title: PropTypes.string.isRequired,
-    detail: PropTypes.string.isRequired,
-    imageUrl: PropTypes.string.isRequired,
-    imageAlt: PropTypes.string.isRequired,
+    summary: PropTypes.string.isRequired,
+    image: PropTypes.object.isRequired,
     tags: PropTypes.array,
+    detail: PropTypes.string.isRequired,
   };
 
   render() {
 
-    const title = this.props.title;
-    const detail = this.props.detail;
-    const imageUrl = this.props.imageUrl;
-    const imageAlt = this.props.imageAlt;
-    const tags = this.props.tags;
-    const classes = this.props.classes;
+    const {
+      title,
+      summary,
+      image,
+      tags,
+      detail,
+      classes,
+    } = this.props;
 
     return (
 
       <Div>
-        <Head>
-          <title>😭我是彻底的失败者</title>
-        </Head>
         <InfoArea
           titleTypographyProps={{ variant: "h3", component: "h1" }}
           infoTitle={title}
-          infoDetail={detail}
-          infoImageUrl={imageUrl}
-          infoImageAlt={imageAlt}
+          infoDetail={summary}
+          infoImageUrl={image.url}
+          infoImageAlt={image.alt}
           infoActions={[
             <Tags key="tags">
               {tags?.map((tag, index) => {
-                return <Tag key={tag.text} href={tag.url} title={tag.text} />
+                return <Tag key={`${index}-${tag.title}`} href={tag.url} isRouteLink={tag.route} title={tag.title} />
               })}
             </Tags>
           ]}
         />
-
         <Divider className={classes.divider} />
-
-        <MarkdownArticle md={`
-# 😭我是彻底的失败者
-# 😭我是彻底的失败者
-# 😭我是彻底的失败者
-# 😭我是彻底的失败者
-# 😭我是彻底的失败者
-
-![music](https://www.rayalto.top/images/music.png "title text here")
-
-$$e=mc^2$$
-
-Emphasis, aka italics, with *asterisks* or _underscores_.
-
-Strong emphasis, aka bold, with **asterisks** or __underscores__.
-
-Combined emphasis with **asterisks and _underscores_**.
-
-Strikethrough uses two tildes. ~~Scratch this.~~
-
-1. First ordered list item
-2. Another item
-    1. Unordered sub-list. 
-1. Actual numbers don't matter, just that it's a number
-    1. Ordered sub-list
-4. And another item.
-
-* Unordered list can use asterisks
-- Or minuses
-+ Or pluses
-
-* [ ] to do
-* [x] done
-
-~~~c++
-#include "cpr/cpr.h"
-#include <iostream>
-
-int main(int argc, char const *argv[])
-{
-    cpr::Response r = cpr::Get(cpr::Url{"https://www.baidu.com"}, cpr::VerifySsl{false});
-    std::cout << r.url << std::endl;
-    std::cout << r.status_code << std::endl;
-    std::cout << r.header["content-type"] << std::endl;
-    std::cout << r.text << std::endl;
-    std::cout << r.error.message << std::endl;
-    return 0;
-}
-~~~
-
-`} />
+        <MarkdownArticle md={detail} />
       </Div>
     );
 
