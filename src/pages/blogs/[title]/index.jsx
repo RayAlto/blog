@@ -23,7 +23,7 @@ export async function getStaticPaths() {
     paths: [
       {
         params: {
-          title: "高斯GS78D键盘在Linux下功能键不正常工作的修复方法",
+          title: "2021-3-12-1",
         },
       },
     ],

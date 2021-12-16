@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import Head from 'next/head';
+import { withRouter } from 'next/router';
 
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
@@ -25,7 +26,7 @@ class Notes extends React.Component {
 
   render() {
 
-    const currentPath = "/notes";
+    const currentPath = this.props.router.asPath;
     const classes = this.props.classes;
 
     const noteIndexes = [
@@ -110,4 +111,4 @@ export default withStyles(theme => ({
     marginBottom: theme.spacing(3),
   },
 
-}))(Notes);
+}))(withRouter(Notes));

@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import Head from 'next/head';
+import { withRouter } from 'next/router';
 
 import withStyles from '@mui/styles/withStyles';
 
@@ -21,7 +22,7 @@ class Blogs extends React.Component {
       classes,
     } = this.props;
 
-    const currnetPath = "/blogs";
+    const currnetPath = this.props.router.asPath;
 
     const blogs = [
       {
@@ -386,4 +387,4 @@ export default withStyles(theme => ({
     marginBottom: theme.spacing(2),
   },
 
-}))(Blogs);
+}))(withRouter(Blogs));
