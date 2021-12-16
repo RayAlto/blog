@@ -6,19 +6,7 @@ import withStyles from '@mui/styles/withStyles';
 
 class GridWithRestriction extends React.Component {
 
-  state = {
-    mounted: false,
-  };
-
-  componentDidMount() {
-    this.setState({ mounted: true });
-  };
-
   render() {
-
-    const {
-      mounted,
-    } = this.state;
 
     const {
       children,
@@ -35,7 +23,7 @@ class GridWithRestriction extends React.Component {
         direction="row"
         justifyContent="space-around"
       >
-        {mounted && this.props.children}
+        {children}
       </Grid>
     );
 
