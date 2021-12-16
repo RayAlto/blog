@@ -22,7 +22,7 @@ class Notes extends React.Component {
 
     const notes = {
       title: "Java",
-      description: "Java 是一种广泛使用的计算机编程语言，拥有跨平台、面向对象、泛型编程的特性，广泛应用于企业级 Web 应用开发和移动应用开发。",
+      summary: "Java 是一种广泛使用的计算机编程语言，拥有跨平台、面向对象、泛型编程的特性，广泛应用于企业级 Web 应用开发和移动应用开发。",
       noteList: [
         {
           title: "数组",
@@ -55,7 +55,7 @@ class Notes extends React.Component {
           {routes}
           <Route exact path={currentPath}>
             <Header>{notes.title}</Header>
-            <Typography gutterBottom>{notes.description}</Typography>
+            <Typography gutterBottom>{notes.summary}</Typography>
             <Divider light />
             <List>
               {notes.noteList.map(note => {

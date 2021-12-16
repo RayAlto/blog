@@ -27,7 +27,7 @@ import Tag from '../../components/Tag';
 //   title: "How to poop",
 //     date: "September 14, 2016",
 //       url: "https://www.baidu.com",
-//         description: "This blog will show you the most morden way to poop.",
+//         summary: "This blog will show you the most morden way to poop.",
 //           image: {
 //     url: "https://www.rayalto.top/images/anime.png",
 //       title: "poop music"
@@ -86,7 +86,7 @@ class BlogCard extends React.Component {
         }
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
-            {blogData.description}
+            {blogData.summary}
           </Typography>
         </CardContent>
         <Tags className={this.props.classes.tags}>
