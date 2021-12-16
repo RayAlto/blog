@@ -27,27 +27,10 @@ import withStyles from '@mui/styles/withStyles';
 import Tag from '../../components/Tag';
 import Tags from '../../components/Tags';
 
-// {
-//   title: "How to poop",
-//   date: "September 14, 2016",
-//   url: "https://www.baidu.com",
-//   summary: "This blog will show you the most morden way to poop.",
-//     image: {
-//       url: "https://www.rayalto.top/images/anime.png",
-//       title: "poop music"
-//   },
-//   tags: [
-//     {
-//       url: "https://www.baidu.com",
-//       text: "midden"
-//     }
-//   ]
-// }
-
 class BlogSlice extends React.Component {
 
   static propTypes = {
-    blogData: PropTypes.object.isRequired,
+    blog: PropTypes.object.isRequired,
     isRouteLink: PropTypes.bool.isRequired,
     className: PropTypes.string,
   };
@@ -60,7 +43,7 @@ class BlogSlice extends React.Component {
 
     const {
       classes,
-      blogData,
+      blog,
       isRouteLink,
       className,
     } = this.props;
@@ -71,19 +54,19 @@ class BlogSlice extends React.Component {
           avatar={
             <Avatar alt="RayAlto" src="https://www.rayalto.top/images/favicon.png" />
           }
-          title={blogData.title}
-          subheader={blogData.date}
+          title={blog.title}
+          subheader={blog.date}
         />
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
-            {blogData.summary}
+            {blog.summary}
           </Typography>
         </CardContent>
         <div className={classes.grow} />
         <Tags className={classes.tags}>
-          {blogData.tags.map((tag, index) => {
+          {blog.tags.map((tag, index) => {
             return (
-              <Tag key={tag.text} href={tag.url} title={tag.text} />
+              <Tag key={tag.title} href={tag.url} title={tag.title} isRouteLink={tag.route} />
             )
           })}
         </Tags>
@@ -97,7 +80,7 @@ class BlogSlice extends React.Component {
                 variant="text"
                 size="large"
                 component={Link}
-                to={blogData.url}
+                to={blog.url}
               >
                 去看看
               </Button>
@@ -107,7 +90,7 @@ class BlogSlice extends React.Component {
                 endIcon={<ArrowForwardIcon />}
                 variant="text"
                 size="large"
-                href={blogData.url}
+                href={blog.url}
               >
                 去看看
               </Button>
@@ -122,7 +105,7 @@ class BlogSlice extends React.Component {
     );
 
     const imageGrid = (
-      <img className={classes.image} src={blogData.image.url} alt="anime" />
+      <img className={classes.image} src={blog.image.url} alt={blog.image.alt} title={blog.image.title} />
     );
 
     return (
@@ -143,7 +126,7 @@ class BlogSlice extends React.Component {
             <Grid item className={classes.mobileGrid}>
               {contentGrid}
             </Grid>
-            <Grid item component={Link} to={blogData.url} className={classes.mobileGrid}>
+            <Grid item component={Link} to={blog.url} className={classes.mobileGrid}>
               {imageGrid}
             </Grid>
           </Grid>
@@ -158,7 +141,7 @@ class BlogSlice extends React.Component {
             <Grid item xs={12} sm={6}>
               {contentGrid}
             </Grid>
-            <Grid item xs={12} sm={6} component={Link} to={blogData.url} >
+            <Grid item xs={12} sm={6} component={Link} to={blog.url} >
               {imageGrid}
             </Grid>
           </Grid>

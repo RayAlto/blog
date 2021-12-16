@@ -36,7 +36,7 @@ class Blogs extends React.Component {
         tags: [
           {
             url: "https://www.baidu.com",
-            text: "keyboard"
+            title: "keyboard"
           }
         ]
       },
@@ -52,7 +52,7 @@ class Blogs extends React.Component {
         tags: [
           {
             url: "https://www.baidu.com",
-            text: "samba"
+            title: "samba"
           }
         ]
       },
@@ -68,11 +68,11 @@ class Blogs extends React.Component {
         tags: [
           {
             url: "https://www.baidu.com",
-            text: "dlna"
+            title: "dlna"
           },
           {
             url: "https://www.baidu.com",
-            text: "upnp"
+            title: "upnp"
           }
         ]
       },
@@ -88,7 +88,7 @@ class Blogs extends React.Component {
         tags: [
           {
             url: "https://www.baidu.com",
-            text: "midden"
+            title: "midden"
           }
         ]
       },
@@ -104,7 +104,7 @@ class Blogs extends React.Component {
         tags: [
           {
             url: "https://www.baidu.com",
-            text: "cpdayly"
+            title: "cpdayly"
           }
         ]
       },
@@ -120,7 +120,7 @@ class Blogs extends React.Component {
         tags: [
           {
             url: "https://www.baidu.com",
-            text: "git"
+            title: "git"
           }
         ]
       },
@@ -136,11 +136,11 @@ class Blogs extends React.Component {
         tags: [
           {
             url: "https://www.baidu.com",
-            text: "java"
+            title: "java"
           },
           {
             url: "https://www.baidu.com",
-            text: "mysql"
+            title: "mysql"
           }
         ]
       },
@@ -156,7 +156,7 @@ class Blogs extends React.Component {
         tags: [
           {
             url: "https://www.baidu.com",
-            text: "mysql"
+            title: "mysql"
           }
         ]
       },
@@ -172,11 +172,11 @@ class Blogs extends React.Component {
         tags: [
           {
             url: "https://www.baidu.com",
-            text: "python"
+            title: "python"
           },
           {
             url: "https://www.baidu.com",
-            text: "mysql"
+            title: "mysql"
           }
         ]
       },
@@ -192,7 +192,7 @@ class Blogs extends React.Component {
         tags: [
           {
             url: "https://www.baidu.com",
-            text: "python"
+            title: "python"
           }
         ]
       },
@@ -208,7 +208,7 @@ class Blogs extends React.Component {
         tags: [
           {
             url: "https://www.baidu.com",
-            text: "unicode"
+            title: "unicode"
           }
         ]
       },
@@ -224,7 +224,7 @@ class Blogs extends React.Component {
         tags: [
           {
             url: "https://www.baidu.com",
-            text: "minecraft"
+            title: "minecraft"
           }
         ]
       },
@@ -240,7 +240,7 @@ class Blogs extends React.Component {
         tags: [
           {
             url: "https://www.baidu.com",
-            text: "c#"
+            title: "c#"
           }
         ]
       },
@@ -256,7 +256,7 @@ class Blogs extends React.Component {
         tags: [
           {
             url: "https://www.baidu.com",
-            text: "marco"
+            title: "marco"
           }
         ]
       },
@@ -272,7 +272,7 @@ class Blogs extends React.Component {
         tags: [
           {
             url: "https://www.baidu.com",
-            text: "douyin"
+            title: "douyin"
           }
         ]
       },
@@ -288,7 +288,7 @@ class Blogs extends React.Component {
         tags: [
           {
             url: "https://www.baidu.com",
-            text: "java-swing"
+            title: "java-swing"
           }
         ]
       },
@@ -304,7 +304,7 @@ class Blogs extends React.Component {
         tags: [
           {
             url: "https://www.baidu.com",
-            text: "windows"
+            title: "windows"
           }
         ]
       },
@@ -320,7 +320,7 @@ class Blogs extends React.Component {
         tags: [
           {
             url: "https://www.baidu.com",
-            text: "python"
+            title: "python"
           }
         ]
       },
@@ -336,7 +336,7 @@ class Blogs extends React.Component {
         tags: [
           {
             url: "https://www.baidu.com",
-            text: "ar"
+            title: "ar"
           }
         ]
       },
@@ -352,7 +352,7 @@ class Blogs extends React.Component {
         tags: [
           {
             url: "https://www.baidu.com",
-            text: "gcc"
+            title: "gcc"
           }
         ]
       },
@@ -370,7 +370,7 @@ class Blogs extends React.Component {
         </Head>
         {blogs.map((blog, index) => {
           return (
-            <BlogSlice className={classes.slices} blogData={blog} key={blog.title} isRouteLink />
+            <BlogSlice className={classes.slices} blog={blog} key={blog.title} isRouteLink />
           )
         })}
       </GlobalFrame>
