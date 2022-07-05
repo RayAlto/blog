@@ -1,16 +1,15 @@
-import * as React from 'react';
+import * as React from "react";
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import Divider from '@mui/material/Divider';
-import Typography from '@mui/material/Typography';
+import Divider from "@mui/material/Divider";
+import Typography from "@mui/material/Typography";
 
-import withStyles from '@mui/styles/withStyles';
+import withStyles from "@mui/styles/withStyles";
 
-import Div from '../Div';
+import Div from "../Div";
 
 class Header extends React.Component {
-
   static propTypes = {
     divider: PropTypes.bool.isRequired,
   };
@@ -20,15 +19,10 @@ class Header extends React.Component {
   };
 
   render() {
-
     const { divider, children, classes } = this.props;
 
     const text = (
-      <Typography
-        variant="h4"
-        component="header"
-        className={classes.text}
-      >
+      <Typography variant="h4" component="header" className={classes.text}>
         {children}
       </Typography>
     );
@@ -41,13 +35,10 @@ class Header extends React.Component {
     ) : (
       text
     );
+  }
+}
 
-  };
-
-};
-
-export default withStyles(theme => ({
-
+export default withStyles((theme) => ({
   divider: {
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(1),
@@ -61,6 +52,6 @@ export default withStyles(theme => ({
     borderBottomColor: theme.palette.primary.main,
     borderBottomStyle: "solid",
     borderBottomWidth: theme.spacing(0.4),
-  }
-
+  },
 }))(Header);
+

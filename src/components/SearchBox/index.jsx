@@ -1,14 +1,13 @@
-import * as React from 'react';
+import * as React from "react";
 
-import InputBase from '@mui/material/InputBase';
-import SearchIcon from '@mui/icons-material/Search';
+import InputBase from "@mui/material/InputBase";
+import SearchIcon from "@mui/icons-material/Search";
 
-import { alpha } from '@mui/material/styles';
+import { alpha } from "@mui/material/styles";
 
-import withStyles from '@mui/styles/withStyles';
+import withStyles from "@mui/styles/withStyles";
 
 class SearchBox extends React.Component {
-
   render() {
     return (
       <div className={this.props.classes.search}>
@@ -25,14 +24,11 @@ class SearchBox extends React.Component {
         />
       </div>
     );
-  };
-
+  }
 }
 
-export default withStyles(theme => ({
-
+export default withStyles((theme) => ({
   search: {
-
     position: "relative",
     borderRadius: theme.shape.borderRadius,
     backgroundColor: alpha(theme.palette.common.white, 0.15),
@@ -49,7 +45,6 @@ export default withStyles(theme => ({
       marginLeft: theme.spacing(3),
       width: "auto",
     },
-
   },
 
   searchIcon: {
@@ -67,7 +62,6 @@ export default withStyles(theme => ({
   },
 
   inputInput: {
-
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
@@ -77,7 +71,6 @@ export default withStyles(theme => ({
     [theme.breakpoints.up("md")]: {
       width: "100%",
     },
-
   },
-
 }))(SearchBox);
+

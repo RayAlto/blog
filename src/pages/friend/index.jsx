@@ -1,51 +1,43 @@
-import * as React from 'react';
+import * as React from "react";
 
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
-import Head from 'next/head';
+import Head from "next/head";
 
-import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/Grid';
+import Divider from "@mui/material/Divider";
+import Grid from "@mui/material/Grid";
 
-import withStyles from '@mui/styles/withStyles';
+import withStyles from "@mui/styles/withStyles";
 
-import GlobalFrame from '../../layouts/GlobalFrame';
+import GlobalFrame from "../../layouts/GlobalFrame";
 
-import GridWithRestriction from '../../components/GridWithRestriction';
-import Header from '../../components/Header';
-import InfoCard from '../../components/InfoCard';
+import GridWithRestriction from "../../components/GridWithRestriction";
+import Header from "../../components/Header";
+import InfoCard from "../../components/InfoCard";
 
-export async function getStaticProps(context) {
-
+export async function getStaticProps() {
   return {
     props: {
-
       friends: [
         {
           name: "轻音时雨",
           detail: "鹿友のKICO的小主页",
           link: "https://www.594594.xyz/",
-          image: "https://cdn.jsdelivr.net/gh/azmiao/picture-bed/img/%E5%A4%B4%E5%83%8F.jpg",
+          image:
+            "https://cdn.jsdelivr.net/gh/azmiao/picture-bed/img/%E5%A4%B4%E5%83%8F.jpg",
         },
       ],
-
     },
   };
-
-};
+}
 
 class Contact extends React.Component {
-
   static propTypes = {
     friends: PropTypes.array,
   };
 
   render() {
-
-    const {
-      friends,
-      classes,
-    } = this.props;
+    const { friends, classes } = this.props;
 
     return (
       <GlobalFrame>
@@ -71,15 +63,12 @@ class Contact extends React.Component {
         </GridWithRestriction>
       </GlobalFrame>
     );
+  }
+}
 
-  };
-
-};
-
-export default withStyles(theme => ({
-
+export default withStyles((theme) => ({
   divider: {
     marginBottom: theme.spacing(3),
   },
-
 }))(Contact);
+

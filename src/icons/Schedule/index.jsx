@@ -1,9 +1,8 @@
-import * as React from 'react';
+import * as React from "react";
 
-import SvgIcon from '@mui/material/SvgIcon';
+import SvgIcon from "@mui/material/SvgIcon";
 
 export default class Schedule extends React.Component {
-
   render() {
     return (
       <SvgIcon viewBox="0 0 1024 1024" {...this.props}>
@@ -13,6 +12,6 @@ export default class Schedule extends React.Component {
         <path d="M806.4 226.4v24H217.2v-24h589.2m50-50H167.2v124h689.2v-124z" />
       </SvgIcon>
     );
-  };
+  }
+}
 
-};

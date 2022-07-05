@@ -1,11 +1,11 @@
-import * as React from 'react';
+import * as React from "react";
 
-import Head from 'next/head';
+import Head from "next/head";
 
-import withStyles from '@mui/styles/withStyles';
+import withStyles from "@mui/styles/withStyles";
 
-import Blog from '../../../layouts/Blog';
-import GlobalFrame from '../../../layouts/GlobalFrame';
+import Blog from "../../../layouts/Blog";
+import GlobalFrame from "../../../layouts/GlobalFrame";
 
 export async function getStaticProps(context) {
   return {
@@ -16,7 +16,7 @@ export async function getStaticProps(context) {
       },
     },
   };
-};
+}
 
 export async function getStaticPaths() {
   return {
@@ -29,13 +29,11 @@ export async function getStaticPaths() {
     ],
     fallback: false,
   };
-};
+}
 
 class BlogPage extends React.Component {
-
   render() {
-
-    const { blog, classes } = this.props;
+    const { blog } = this.props;
     const testMarkdown = `
 # 😭我是彻底的失败者
 # 😭我是彻底的失败者
@@ -92,8 +90,8 @@ int main(int argc, char const *argv[])
           <title>{`${blog.title}`}</title>
         </Head>
         <Blog
-          title='😭我是彻底的失败者'
-          summary='😭我一直是彻底的失败者😭😭'
+          title="😭我是彻底的失败者"
+          summary="😭我一直是彻底的失败者😭😭"
           detail={testMarkdown}
           image={{
             url: "https://www.rayalto.top/images/banner.png",
@@ -105,14 +103,13 @@ int main(int argc, char const *argv[])
               url: "https://www.baidu.com",
               title: "垃圾桶",
               route: false,
-            }
+            },
           ]}
         />
       </GlobalFrame>
     );
-  };
+  }
+}
 
-};
+export default withStyles(() => ({}))(BlogPage);
 
-export default withStyles(theme => ({
-}))(BlogPage);

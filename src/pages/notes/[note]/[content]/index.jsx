@@ -1,11 +1,11 @@
-import * as React from 'react';
+import * as React from "react";
 
-import Head from 'next/head';
+import Head from "next/head";
 
-import withStyles from '@mui/styles/withStyles';
+import withStyles from "@mui/styles/withStyles";
 
-import GlobalFrame from '../../../../layouts/GlobalFrame';
-import MarkdownArticle from '../../../../components/MarkdownArticle';
+import GlobalFrame from "../../../../layouts/GlobalFrame";
+import MarkdownArticle from "../../../../components/MarkdownArticle";
 
 export async function getStaticProps(context) {
   return {
@@ -16,7 +16,7 @@ export async function getStaticProps(context) {
       },
     },
   };
-};
+}
 
 export async function getStaticPaths() {
   return {
@@ -30,23 +30,19 @@ export async function getStaticPaths() {
     ],
     fallback: false,
   };
-};
+}
 
 class NotePage extends React.Component {
-
   render() {
-
-    const {
-      notePage,
-      classes,
-    } = this.props;
+    const { notePage } = this.props;
 
     return (
       <GlobalFrame>
         <Head>
           <title>{`${notePage.note} - ${notePage.content}`}</title>
         </Head>
-        <MarkdownArticle md={`
+        <MarkdownArticle
+          md={`
 # 😭我是彻底的失败者
 # 😭我是彻底的失败者
 # 😭我是彻底的失败者
@@ -94,11 +90,11 @@ int main(int argc, char const *argv[])
     return 0;
 }
 \`\`\`
-    `} />
+    `}
+        />
       </GlobalFrame>
     );
-  };
+  }
+}
 
-};
-
-export default withStyles(theme => ({}))(NotePage);
+export default withStyles(() => ({}))(NotePage);

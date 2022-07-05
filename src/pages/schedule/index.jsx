@@ -1,27 +1,26 @@
-import * as React from 'react'
+import * as React from "react";
 
-import Divider from '@mui/material/Divider';
-import Paper from '@mui/material/Paper';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Typography from '@mui/material/Typography';
+import Divider from "@mui/material/Divider";
+import Paper from "@mui/material/Paper";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Typography from "@mui/material/Typography";
 
-import withStyles from '@mui/styles/withStyles';
+import withStyles from "@mui/styles/withStyles";
 
-import Head from 'next/head';
+import Head from "next/head";
 
-import InfoArea from '../../components/InfoArea';
+import InfoArea from "../../components/InfoArea";
 
-import GlobalFrame from '../../layouts/GlobalFrame';
+import GlobalFrame from "../../layouts/GlobalFrame";
 
-import ScheduleImage1000x600 from '../../../public/images/schedule@1000x600.png'
+import ScheduleImage1000x600 from "../../../public/images/schedule@1000x600.png";
 
-export async function getStaticProps(context) {
-
+export async function getStaticProps() {
   const scheduleData = {
     dateStr: "2021-08-03，星期二",
     updateTimeStr: "2021-08-03 01:00:03",
@@ -43,7 +42,9 @@ export async function getStaticProps(context) {
     ],
   };
 
-  const hitokotoResponse = await fetch("https://v1.hitokoto.cn/?encode=utf-8&c=a");
+  const hitokotoResponse = await fetch(
+    "https://v1.hitokoto.cn/?encode=utf-8&c=a"
+  );
   const hitokotoResponseData = await hitokotoResponse.json();
 
   const hitokotoData = {
@@ -55,18 +56,11 @@ export async function getStaticProps(context) {
   return {
     props: { scheduleData, hitokotoData },
   };
-
-};
+}
 
 class Schedule extends React.Component {
-
   render() {
-
-    const {
-      scheduleData,
-      hitokotoData,
-      classes,
-    } = this.props;
+    const { scheduleData, hitokotoData, classes } = this.props;
 
     return (
       <GlobalFrame>
@@ -74,7 +68,7 @@ class Schedule extends React.Component {
           <title>RayAlto - 课程表</title>
         </Head>
         <InfoArea
-          titleTypographyProps={{ variant: 'h3', component: 'h1' }}
+          titleTypographyProps={{ variant: "h3", component: "h1" }}
           infoTitle="课程表"
           infoDetail="作为大四老油条，却还有一大堆课要重修，实在是Bon不jour了。"
           infoImageUrl={ScheduleImage1000x600}
@@ -82,32 +76,26 @@ class Schedule extends React.Component {
           noCardActions
         />
         <Divider className={classes.divider} />
-        <Typography component="h4" variant="h4" gutterBottom>今天是{scheduleData.dateStr}</Typography>
+        <Typography component="h4" variant="h4" gutterBottom>
+          今天是{scheduleData.dateStr}
+        </Typography>
         <Typography>今天也要以顺利毕业为目标努力奋斗:</Typography>
         <TableContainer component={Paper} className={classes.table}>
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>
-                  课程名称
-                </TableCell>
-                <TableCell>
-                  上课时间
-                </TableCell>
-                <TableCell>
-                  教室
-                </TableCell>
-                <TableCell>
-                  老师
-                </TableCell>
-                <TableCell>
-                  上课班级
-                </TableCell>
+                <TableCell>课程名称</TableCell>
+                <TableCell>上课时间</TableCell>
+                <TableCell>教室</TableCell>
+                <TableCell>老师</TableCell>
+                <TableCell>上课班级</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {scheduleData.scheduleList.map(schedule => (
-                <TableRow key={`${schedule.name}-${schedule.duration}-${schedule.classroom}-${schedule.teacher}`}>
+              {scheduleData.scheduleList.map((schedule) => (
+                <TableRow
+                  key={`${schedule.name}-${schedule.duration}-${schedule.classroom}-${schedule.teacher}`}
+                >
                   <TableCell>{schedule.name}</TableCell>
                   <TableCell>{schedule.duration}</TableCell>
                   <TableCell>{schedule.classroom}</TableCell>
@@ -120,18 +108,17 @@ class Schedule extends React.Component {
         </TableContainer>
         <Typography>更新时间：{scheduleData.updateTimeStr}</Typography>
         <Divider className={classes.divider} />
-        <Typography component="h4" variant="h4" gutterBottom>每日一句</Typography>
+        <Typography component="h4" variant="h4" gutterBottom>
+          每日一句
+        </Typography>
         <Typography>{hitokotoData.text}</Typography>
         <Typography align="right">{`${hitokotoData.fromWho} - 《${hitokotoData.from}》`}</Typography>
       </GlobalFrame>
     );
+  }
+}
 
-  };
-
-};
-
-export default withStyles(theme => ({
-
+export default withStyles((theme) => ({
   divider: {
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(3),
@@ -141,5 +128,5 @@ export default withStyles(theme => ({
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(3),
   },
-
 }))(Schedule);
+

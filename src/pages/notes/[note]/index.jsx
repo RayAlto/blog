@@ -1,12 +1,12 @@
-import * as React from 'react';
+import * as React from "react";
 
-import Head from 'next/head';
-import { withRouter } from 'next/router';
+import Head from "next/head";
+import { withRouter } from "next/router";
 
-import withStyles from '@mui/styles/withStyles';
+import withStyles from "@mui/styles/withStyles";
 
-import GlobalFrame from '../../../layouts/GlobalFrame';
-import NoteContent from '../../../layouts/NoteContent';
+import GlobalFrame from "../../../layouts/GlobalFrame";
+import NoteContent from "../../../layouts/NoteContent";
 
 export async function getStaticProps(context) {
   return {
@@ -16,7 +16,7 @@ export async function getStaticProps(context) {
       },
     },
   };
-};
+}
 
 export async function getStaticPaths() {
   return {
@@ -29,13 +29,11 @@ export async function getStaticPaths() {
     ],
     fallback: false,
   };
-};
+}
 
 // url: /notes/java
 class NoteContentPage extends React.Component {
-
   render() {
-
     const { noteContent } = this.props;
 
     return (
@@ -55,13 +53,12 @@ class NoteContentPage extends React.Component {
             {
               url: `${this.props.router.asPath}/001`,
               title: "test",
-            }
+            },
           ]}
         />
       </GlobalFrame>
     );
-  };
+  }
+}
 
-};
-
-export default withStyles(theme => ({}))(withRouter(NoteContentPage));
+export default withStyles(() => ({}))(withRouter(NoteContentPage));

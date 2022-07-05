@@ -1,58 +1,52 @@
-import * as React from 'react';
+import * as React from "react";
 
-import PubSub from 'pubsub-js';
+import PubSub from "pubsub-js";
 
-import Head from 'next/head';
+import Head from "next/head";
 
-import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/Grid';
+import Divider from "@mui/material/Divider";
+import Grid from "@mui/material/Grid";
 
-import withStyles from '@mui/styles/withStyles';
+import withStyles from "@mui/styles/withStyles";
 
-import GlobalFrame from '../../layouts/GlobalFrame';
+import GlobalFrame from "../../layouts/GlobalFrame";
 
-import GridWithRestriction from '../../components/GridWithRestriction';
-import Header from '../../components/Header';
-import InfoCard from '../../components/InfoCard';
+import GridWithRestriction from "../../components/GridWithRestriction";
+import Header from "../../components/Header";
+import InfoCard from "../../components/InfoCard";
 
-import BilibiliImage500x300 from '../../../public/images/bilibili@500x300.png';
-import FacebookImage500x300 from '../../../public/images/facebook@500x300.png';
-import GithubImage500x300 from '../../../public/images/github@500x300.png';
-import GmailImage500x300 from '../../../public/images/gmail@500x300.png';
-import QQImage500x300 from '../../../public/images/qq@500x300.png';
-import QQQrImage from '../../../public/images/Qr-QQ.png';
-import TwitterImage500x300 from '../../../public/images/twitter@500x300.png';
-import WechatImage500x300 from '../../../public/images/wechat@500x300.png';
-import WechatQrImage from '../../../public/images/Qr-Wechat.png';
-import WeiboImage500x300 from '../../../public/images/weibo@500x300.png';
+import BilibiliImage500x300 from "../../../public/images/bilibili@500x300.png";
+import FacebookImage500x300 from "../../../public/images/facebook@500x300.png";
+import GithubImage500x300 from "../../../public/images/github@500x300.png";
+import GmailImage500x300 from "../../../public/images/gmail@500x300.png";
+import QQImage500x300 from "../../../public/images/qq@500x300.png";
+import QQQrImage from "../../../public/images/Qr-QQ.png";
+import TwitterImage500x300 from "../../../public/images/twitter@500x300.png";
+import WechatImage500x300 from "../../../public/images/wechat@500x300.png";
+import WechatQrImage from "../../../public/images/Qr-Wechat.png";
+import WeiboImage500x300 from "../../../public/images/weibo@500x300.png";
 
-import {
-  OPEN_IMAGE_DIALOG,
-} from '../../constants/events';
+import { OPEN_IMAGE_DIALOG } from "../../constants/events";
 
 class Contact extends React.Component {
-
-  wechatClicked = (event) => {
+  wechatClicked = () => {
     PubSub.publish(OPEN_IMAGE_DIALOG, {
       image: WechatQrImage,
       title: "扫描二维码",
-      alt: "微信二维码"
-    })
+      alt: "微信二维码",
+    });
   };
 
-  qqClicked = (event) => {
+  qqClicked = () => {
     PubSub.publish(OPEN_IMAGE_DIALOG, {
       image: QQQrImage,
       title: "扫描二维码",
       alt: "QQ二维码",
     });
-  }
+  };
 
   render() {
-
-    const {
-      classes
-    } = this.props;
+    const { classes } = this.props;
 
     return (
       <GlobalFrame>
@@ -137,15 +131,11 @@ class Contact extends React.Component {
         </GridWithRestriction>
       </GlobalFrame>
     );
+  }
+}
 
-  };
-
-};
-
-export default withStyles(theme => ({
-
+export default withStyles((theme) => ({
   divider: {
     marginBottom: theme.spacing(3),
   },
-
 }))(Contact);

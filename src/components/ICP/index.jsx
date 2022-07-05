@@ -1,13 +1,12 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
+import * as React from "react";
+import PropTypes from "prop-types";
 
-import Button from '@mui/material/Button';
-import VerifiedUserRoundedIcon from '@mui/icons-material/VerifiedUserRounded';
+import Button from "@mui/material/Button";
+import VerifiedUserRoundedIcon from "@mui/icons-material/VerifiedUserRounded";
 
-import withStyles from '@mui/styles/withStyles';
+import withStyles from "@mui/styles/withStyles";
 
 class ICP extends React.Component {
-
   static propTypes = {
     ipcLink: PropTypes.string.isRequired,
   };
@@ -25,14 +24,12 @@ class ICP extends React.Component {
         {this.props.children}
       </Button>
     );
-  };
+  }
+}
 
-};
-
-export default withStyles(theme => ({
-
+export default withStyles(() => ({
   button: {
     width: "100%",
   },
-
 }))(ICP);
+

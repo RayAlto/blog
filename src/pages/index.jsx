@@ -1,37 +1,35 @@
-import * as React from 'react';
+import * as React from "react";
 
-import Head from 'next/head';
+import Head from "next/head";
 
-import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
-import GridWithRestriction from '../components/GridWithRestriction';
-import Header from '../components/Header';
-import InfoArea from '../components/InfoArea';
-import InfoCard from '../components/InfoCard';
-import { NextLinkComposed as Link } from '../components/Link';
+import GridWithRestriction from "../components/GridWithRestriction";
+import Header from "../components/Header";
+import InfoArea from "../components/InfoArea";
+import InfoCard from "../components/InfoCard";
+import { NextLinkComposed as Link } from "../components/Link";
 
-import Aria2Image500x300 from '../../public/images/aria2@500x300.png';
-import BannerImage1000x600 from '../../public/images/banner@1000x600.png';
-import DrawioImage500x300 from '../../public/images/drawio@500x300.png';
-import JupyterLabImage500x300 from '../../public/images/jupyter@500x300.png';
-import NoteImage500x300 from '../../public/images/note@500x300.png';
-import ScheduleImage500x300 from '../../public/images/schedule@500x300.png';
+import Aria2Image500x300 from "../../public/images/aria2@500x300.png";
+import BannerImage1000x600 from "../../public/images/banner@1000x600.png";
+import DrawioImage500x300 from "../../public/images/drawio@500x300.png";
+import JupyterLabImage500x300 from "../../public/images/jupyter@500x300.png";
+import NoteImage500x300 from "../../public/images/note@500x300.png";
+import ScheduleImage500x300 from "../../public/images/schedule@500x300.png";
 
-import GlobalFrame from '../layouts/GlobalFrame';
+import GlobalFrame from "../layouts/GlobalFrame";
 
 class Home extends React.Component {
-
   render() {
-
     return (
       <GlobalFrame>
         <Head>
           <title>RayAlto - 主页</title>
         </Head>
         <InfoArea
-          titleTypographyProps={{ variant: 'h3', component: 'h1' }}
+          titleTypographyProps={{ variant: "h3", component: "h1" }}
           infoTitle="Ray_Alto 的个人主页"
           infoDetail="部署了一些有趣的小项目，不定时分享一些我最近正在研究的东西，自闭社恐，技不如人，大放厥词。努力成为一个有营养的网站。"
           infoImageUrl={BannerImage1000x600}
@@ -47,12 +45,10 @@ class Home extends React.Component {
               key="看看我的博客"
             >
               看看我的博客
-            </Button>
+            </Button>,
           ]}
         />
-        <Header divider>
-          有趣的项目
-        </Header>
+        <Header divider>有趣的项目</Header>
         <GridWithRestriction>
           <Grid item xs>
             <InfoCard
@@ -60,7 +56,8 @@ class Home extends React.Component {
               image={DrawioImage500x300}
               link="https://www.baidu.com"
             >
-              画图神器，基本上可以抛弃Microsoft Visio了。搭建在这里访问会比原网站快很多，但是只能使用本地文件。
+              画图神器，基本上可以抛弃Microsoft
+              Visio了。搭建在这里访问会比原网站快很多，但是只能使用本地文件。
             </InfoCard>
           </Grid>
           <Grid item xs>
@@ -78,7 +75,8 @@ class Home extends React.Component {
               image={Aria2Image500x300}
               link="https://www.baidu.com"
             >
-              24小时不关机，约等于离线下载器，迅雷可以去eat sh*t了。什么？你说你认证失败了？巧了我也是。
+              24小时不关机，约等于离线下载器，迅雷可以去eat
+              sh*t了。什么？你说你认证失败了？巧了我也是。
             </InfoCard>
           </Grid>
           <Grid item xs>
@@ -104,9 +102,8 @@ class Home extends React.Component {
         </GridWithRestriction>
       </GlobalFrame>
     );
-
-  };
-
-};
+  }
+}
 
 export default Home;
+

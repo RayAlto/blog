@@ -1,18 +1,18 @@
-import * as React from 'react';
+import * as React from "react";
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import Head from 'next/head';
+import Head from "next/head";
 
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-import CssBaseline from '@mui/material/CssBaseline';
+import CssBaseline from "@mui/material/CssBaseline";
 
-import { CacheProvider } from '@emotion/react';
-import createCache from '@emotion/cache';
+import { CacheProvider } from "@emotion/react";
+import createCache from "@emotion/cache";
 
 // Client-side cache, shared for the whole session of the user in the browser.
-const clientSideEmotionCache = createCache({ key: 'css' });
+const clientSideEmotionCache = createCache({ key: "css" });
 
 export default function MyApp(props) {
   const theme = createTheme();
@@ -37,3 +37,4 @@ MyApp.propTypes = {
   emotionCache: PropTypes.object,
   pageProps: PropTypes.object.isRequired,
 };
+

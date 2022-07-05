@@ -1,27 +1,26 @@
-import * as React from 'react';
+import * as React from "react";
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardHeader from '@mui/material/CardHeader';
-import Checkbox from '@mui/material/Checkbox';
-import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/Grid';
-import Hidden from '@mui/material/Hidden';
-import Paper from '@mui/material/Paper';
-import Tooltip from '@mui/material/Tooltip';
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardHeader from "@mui/material/CardHeader";
+import Checkbox from "@mui/material/Checkbox";
+import Divider from "@mui/material/Divider";
+import Grid from "@mui/material/Grid";
+import Hidden from "@mui/material/Hidden";
+import Paper from "@mui/material/Paper";
+import Tooltip from "@mui/material/Tooltip";
 
-import withStyles from '@mui/styles/withStyles';
+import withStyles from "@mui/styles/withStyles";
 
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
-import MarkdownArticle from '../MarkdownArticle';
+import MarkdownArticle from "../MarkdownArticle";
 
 class InfoArea extends React.Component {
-
   static propTypes = {
     infoTitle: PropTypes.string.isRequired,
     infoDetail: PropTypes.string.isRequired,
@@ -42,7 +41,6 @@ class InfoArea extends React.Component {
   };
 
   render() {
-
     const {
       infoTitle,
       infoDetail,
@@ -66,8 +64,7 @@ class InfoArea extends React.Component {
         </CardContent>
         <div className={classes.grow} />
         {divider && <Divider />}
-        {
-          !noCardActions &&
+        {!noCardActions && (
           <CardActions>
             {infoActions}
             <div className={classes.grow} />
@@ -79,12 +76,16 @@ class InfoArea extends React.Component {
               />
             </Tooltip>
           </CardActions>
-        }
+        )}
       </Card>
     );
 
     const imageGrid = (
-      <img className={classes.image} src={infoImageUrl.src || infoImageUrl} alt={infoImageAlt} />
+      <img
+        className={classes.image}
+        src={infoImageUrl.src || infoImageUrl}
+        alt={infoImageAlt}
+      />
     );
 
     return (
@@ -114,20 +115,17 @@ class InfoArea extends React.Component {
             <Grid item xs={12} sm={6}>
               {contentGrid}
             </Grid>
-            <Grid item xs={12} sm={6} >
+            <Grid item xs={12} sm={6}>
               {imageGrid}
             </Grid>
           </Grid>
         </Hidden>
       </Paper>
     );
+  }
+}
 
-  };
-
-};
-
-export default withStyles(theme => ({
-
+export default withStyles((theme) => ({
   root: {
     display: "block",
   },
@@ -155,5 +153,5 @@ export default withStyles(theme => ({
     marginLeft: theme.spacing(1),
     marginBottom: theme.spacing(1),
   },
-
 }))(InfoArea);
+

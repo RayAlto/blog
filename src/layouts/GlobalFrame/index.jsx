@@ -1,21 +1,16 @@
-import * as React from 'react';
+import * as React from "react";
 
-import withStyles from '@mui/styles/withStyles';
+import withStyles from "@mui/styles/withStyles";
 
-import BackToTopButton from '../../components/BackToTopButton';
-import GlobalImageDialog from '../../components/GlobalImageDialog';
+import BackToTopButton from "../../components/BackToTopButton";
+import GlobalImageDialog from "../../components/GlobalImageDialog";
 
-import SideBar from '../SideBar';
-import TopBar from '../TopBar';
+import SideBar from "../SideBar";
+import TopBar from "../TopBar";
 
 class App extends React.Component {
-
   render() {
-
-    const {
-      classes,
-      children,
-    } = this.props;
+    const { children } = this.props;
 
     return (
       <main className={this.props.classes.root}>
@@ -38,13 +33,10 @@ class App extends React.Component {
         <GlobalImageDialog />
       </main>
     );
+  }
+}
 
-  };
-
-};
-
-export default withStyles(theme => ({
-
+export default withStyles((theme) => ({
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
 
@@ -57,5 +49,5 @@ export default withStyles(theme => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
-
 }))(App);
+

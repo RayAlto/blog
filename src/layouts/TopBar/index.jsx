@@ -1,47 +1,43 @@
-import * as React from 'react';
+import * as React from "react";
 
-import PubSub from 'pubsub-js';
+import PubSub from "pubsub-js";
 
-import AppBar from '@mui/material/AppBar';
-import IconButton from '@mui/material/IconButton';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+import AppBar from "@mui/material/AppBar";
+import IconButton from "@mui/material/IconButton";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
 
-import GithubIcon from '@mui/icons-material/GitHub';
-import HomeIcon from '@mui/icons-material/Home';
-import MenuIcon from '@mui/icons-material/Menu';
-import TwitterIcon from '@mui/icons-material/Twitter';
+import GithubIcon from "@mui/icons-material/GitHub";
+import HomeIcon from "@mui/icons-material/Home";
+import MenuIcon from "@mui/icons-material/Menu";
+import TwitterIcon from "@mui/icons-material/Twitter";
 
-import withStyles from '@mui/styles/withStyles';
+import withStyles from "@mui/styles/withStyles";
 
-import { NextLinkComposed as Link } from '../../components/Link';
-import HideOnScroll from '../../components/HideOnScroll';
+import { NextLinkComposed as Link } from "../../components/Link";
+import HideOnScroll from "../../components/HideOnScroll";
 
-import BilibiliIcon from '../../icons/Bilibili';
-import WeiboIcon from '../../icons/Weibo';
+import BilibiliIcon from "../../icons/Bilibili";
+import WeiboIcon from "../../icons/Weibo";
 
-import {
-  SIDEBAR_WIDTH
-} from '../../constants/sizes';
+import { SIDEBAR_WIDTH } from "../../constants/sizes";
 
-import {
-  OPEN_SIDEBAR
-} from '../../constants/events';
+import { OPEN_SIDEBAR } from "../../constants/events";
 
 class TopBar extends React.Component {
-
   render() {
     return (
       <HideOnScroll>
-        <AppBar position="fixed" className={this.props.classes.appBar} >
+        <AppBar position="fixed" className={this.props.classes.appBar}>
           <Toolbar>
             <IconButton
               className={this.props.classes.menuButton}
               color="inherit"
               aria-label="open drawer"
               edge="start"
-              onClick={event => PubSub.publish(OPEN_SIDEBAR)}
-              size="large">
+              onClick={() => PubSub.publish(OPEN_SIDEBAR)}
+              size="large"
+            >
               <MenuIcon />
             </IconButton>
             <IconButton
@@ -51,7 +47,8 @@ class TopBar extends React.Component {
               edge="start"
               component={Link}
               to="/"
-              size="large">
+              size="large"
+            >
               <HomeIcon />
             </IconButton>
             <Typography variant="h6" noWrap>
@@ -64,7 +61,8 @@ class TopBar extends React.Component {
               target="_blank"
               aria-label="This is an icon button"
               color="inherit"
-              size="large">
+              size="large"
+            >
               <BilibiliIcon />
             </IconButton>
             <IconButton
@@ -73,7 +71,8 @@ class TopBar extends React.Component {
               target="_blank"
               aria-label="This is an icon button"
               color="inherit"
-              size="large">
+              size="large"
+            >
               <WeiboIcon />
             </IconButton>
             <IconButton
@@ -82,7 +81,8 @@ class TopBar extends React.Component {
               target="_blank"
               aria-label="This is an icon button"
               color="inherit"
-              size="large">
+              size="large"
+            >
               <TwitterIcon />
             </IconButton>
             <IconButton
@@ -91,51 +91,44 @@ class TopBar extends React.Component {
               rel="noopener noreferrer"
               aria-label="This is an icon button"
               color="inherit"
-              size="large">
+              size="large"
+            >
               <GithubIcon />
             </IconButton>
           </Toolbar>
         </AppBar>
       </HideOnScroll>
     );
-  };
+  }
+}
 
-};
-
-export default withStyles(theme => ({
-
+export default withStyles((theme) => ({
   grow: {
     flexGrow: 1,
   },
 
   appBar: {
-
     [theme.breakpoints.up("sm")]: {
       width: `calc(100% - ${SIDEBAR_WIDTH}px)`,
       marginLeft: SIDEBAR_WIDTH,
     },
-
   },
 
   menuButton: {
-
     marginRight: theme.spacing(2),
 
     [theme.breakpoints.up("sm")]: {
       display: "none",
     },
-
   },
 
   homeButton: {
-
     marginRight: theme.spacing(2),
     display: "none",
 
     [theme.breakpoints.up("sm")]: {
       display: "inline-flex",
     },
-
-  }
-
+  },
 }))(TopBar);
+

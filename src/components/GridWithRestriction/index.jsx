@@ -1,20 +1,14 @@
-import * as React from 'react';
+import * as React from "react";
 
-import Grid from '@mui/material/Grid';
+import Grid from "@mui/material/Grid";
 
-import withStyles from '@mui/styles/withStyles';
+import withStyles from "@mui/styles/withStyles";
 
 class GridWithRestriction extends React.Component {
-
   render() {
-
-    const {
-      children,
-      classes,
-    } = this.props;
+    const { children, classes } = this.props;
 
     return (
-
       <Grid
         className={classes.grids}
         container
@@ -26,20 +20,15 @@ class GridWithRestriction extends React.Component {
         {children}
       </Grid>
     );
+  }
+}
 
-  };
-
-};
-
-export default withStyles(theme => ({
-
+export default withStyles(() => ({
   grids: {
-
     "& > *": {
       maxWidth: 510,
       minWidth: 260,
     },
-
   },
-
 }))(GridWithRestriction);
+

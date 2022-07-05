@@ -1,9 +1,8 @@
-import Slide from '@mui/material/Slide';
+import Slide from "@mui/material/Slide";
 
-import useScrollTrigger from '@mui/material/useScrollTrigger';
+import useScrollTrigger from "@mui/material/useScrollTrigger";
 
 export default function HideOnScroll(props) {
-
   const hideTrigger = useScrollTrigger();
 
   return (
@@ -11,5 +10,5 @@ export default function HideOnScroll(props) {
       {props.children}
     </Slide>
   );
-
 }
+
