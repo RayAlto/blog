@@ -20,7 +20,7 @@ import FacebookImage500x300 from '../../../public/images/facebook@500x300.png';
 import GithubImage500x300 from '../../../public/images/github@500x300.png';
 import GmailImage500x300 from '../../../public/images/gmail@500x300.png';
 import QQImage500x300 from '../../../public/images/qq@500x300.png';
-import QQQrImage from '../../../public/images/Qr-QQ.jpg';
+import QQQrImage from '../../../public/images/Qr-QQ.png';
 import TwitterImage500x300 from '../../../public/images/twitter@500x300.png';
 import WechatImage500x300 from '../../../public/images/wechat@500x300.png';
 import WechatQrImage from '../../../public/images/Qr-Wechat.png';

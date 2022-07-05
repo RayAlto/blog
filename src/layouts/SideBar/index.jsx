@@ -37,7 +37,7 @@ import JupyterIcon from '../../icons/Jupyter';
 import QQIcon from '../../icons/QQ';
 import WechatIcon from '../../icons/Wechat';
 
-import QQQrImage from '../../../public/images/Qr-QQ.jpg';
+import QQQrImage from '../../../public/images/Qr-QQ.png';
 import WechatQrImage from '../../../public/images/Qr-Wechat.png';
 
 import {

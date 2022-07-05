@@ -8,33 +8,31 @@
     "start": "next start",
     "lint": "next lint",
     "export": "next export",
-    "test": "next build && next export",
-    "deploy": "echo \"test.rayalto.top\" > out/CNAME && touch out/.nojekyll && gh-pages -d out -t"
+    "test": "next build && next export"
   },
   "dependencies": {
-    "@emotion/cache": "^11.7.1",
-    "@emotion/react": "^11.7.0",
+    "@emotion/cache": "^11.9.3",
+    "@emotion/react": "^11.9.3",
     "@emotion/server": "^11.4.0",
-    "@emotion/styled": "^11.6.0",
-    "@mui/icons-material": "^5.2.1",
-    "@mui/material": "^5.2.3",
-    "@mui/styles": "^5.2.3",
-    "gh-pages": "^3.2.3",
-    "next": "^12.0.7",
-    "prop-types": "^15.7.2",
+    "@emotion/styled": "^11.9.3",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.8.7",
+    "@mui/styles": "^5.8.7",
+    "gh-pages": "^4.0.0",
+    "next": "^12.2.0",
+    "prop-types": "^15.8.1",
     "pubsub-js": "^1.9.4",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-markdown": "^7.1.1",
-    "react-syntax-highlighter": "^15.4.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^8.0.3",
+    "react-syntax-highlighter": "^15.5.0",
     "rehype-katex": "^6.0.2",
-    "rehype-raw": "^6.1.0",
+    "rehype-raw": "^6.1.1",
     "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1"
   },
   "devDependencies": {
-    "eslint": "8.4.1",
-    "eslint-config-next": "12.0.7"
-  },
-  "homepage": "https://rayalto.github.io/blog"
+    "eslint": "8.19.0",
+    "eslint-config-next": "12.2.0"
+  }
 }
