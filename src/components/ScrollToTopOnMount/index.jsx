@@ -8,4 +8,3 @@ export default class ScrollToTopOnMount extends React.Component {
     return null;
   }
 }
-

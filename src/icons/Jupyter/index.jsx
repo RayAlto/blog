@@ -11,4 +11,3 @@ export default class Jupyter extends React.Component {
     );
   }
 }
-

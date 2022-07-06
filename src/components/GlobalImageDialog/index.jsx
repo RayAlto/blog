@@ -37,4 +37,3 @@ export default class GlobalImageDialog extends React.Component {
     );
   }
 }
-

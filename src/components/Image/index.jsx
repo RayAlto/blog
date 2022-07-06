@@ -49,4 +49,3 @@ export default withStyles(() => ({
     width: "100%",
   },
 }))(Image);
-

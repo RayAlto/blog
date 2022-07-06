@@ -397,4 +397,3 @@ export default withStyles((theme) => ({
     marginBottom: theme.spacing(2),
   },
 }))(withRouter(Blogs));
-

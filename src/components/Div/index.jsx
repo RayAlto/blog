@@ -5,4 +5,3 @@ export default class Div extends React.Component {
     return this.props.children;
   }
 }
-

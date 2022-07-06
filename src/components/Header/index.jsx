@@ -54,4 +54,3 @@ export default withStyles((theme) => ({
     borderBottomWidth: theme.spacing(0.4),
   },
 }))(Header);
-

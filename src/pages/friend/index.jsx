@@ -71,4 +71,3 @@ export default withStyles((theme) => ({
     marginBottom: theme.spacing(3),
   },
 }))(Contact);
-

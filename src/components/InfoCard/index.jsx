@@ -123,4 +123,3 @@ export default withStyles(() => ({
     paddingTop: "60%",
   },
 }))(InfoCard);
-

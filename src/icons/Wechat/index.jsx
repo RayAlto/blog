@@ -11,4 +11,3 @@ export default class Wechat extends React.Component {
     );
   }
 }
-

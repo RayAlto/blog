@@ -28,4 +28,3 @@ export default class BlogCards extends React.Component {
     );
   }
 }
-

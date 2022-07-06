@@ -58,4 +58,3 @@ export default withStyles((theme) => ({
     right: theme.spacing(2),
   },
 }))(BackToTopButton);
-

@@ -154,4 +154,3 @@ export default withStyles((theme) => ({
     marginBottom: theme.spacing(1),
   },
 }))(InfoArea);
-

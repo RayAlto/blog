@@ -50,4 +50,3 @@ export default withStyles((theme) => ({
     padding: theme.spacing(3),
   },
 }))(App);
-

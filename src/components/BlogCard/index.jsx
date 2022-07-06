@@ -152,4 +152,3 @@ export default withStyles((theme) => ({
     marginLeft: theme.spacing(1),
   },
 }))(BlogCard);
-

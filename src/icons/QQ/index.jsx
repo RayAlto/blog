@@ -11,4 +11,3 @@ export default class QQ extends React.Component {
     );
   }
 }
-

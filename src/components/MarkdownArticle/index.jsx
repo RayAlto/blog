@@ -130,4 +130,3 @@ export default withStyles((theme) => ({
     padding: 0,
   },
 }))(MarkdownArticle);
-

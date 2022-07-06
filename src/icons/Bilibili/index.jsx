@@ -11,4 +11,3 @@ export default class Weibo extends React.Component {
     );
   }
 }
-

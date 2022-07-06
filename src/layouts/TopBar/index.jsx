@@ -131,4 +131,3 @@ export default withStyles((theme) => ({
     },
   },
 }))(TopBar);
-
