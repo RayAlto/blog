@@ -67,6 +67,7 @@ class BlogSlice extends React.Component {
                 href={tag.url}
                 title={tag.title}
                 isRouteLink={tag.route}
+                className={classes.tag}
               />
             );
           })}
@@ -192,5 +193,9 @@ export default withStyles((theme) => ({
   tags: {
     marginLeft: theme.spacing(1),
     marginBottom: theme.spacing(1),
+  },
+
+  tag: {
+    marginRight: theme.spacing(0.3),
   },
 }))(BlogSlice);

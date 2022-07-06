@@ -18,7 +18,7 @@ export default class Tag extends React.Component {
   };
 
   render() {
-    const { href, title, isRouteLink } = this.props;
+    const { href, title, isRouteLink, ...props } = this.props;
 
     return isRouteLink ? (
       <Chip
@@ -29,6 +29,7 @@ export default class Tag extends React.Component {
         component={Link}
         clickable
         to={href}
+        {...props}
       />
     ) : (
       <Chip
@@ -41,6 +42,7 @@ export default class Tag extends React.Component {
         rel="noopener noreferrer"
         clickable
         href={href}
+        {...props}
       />
     );
   }
