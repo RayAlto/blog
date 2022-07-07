@@ -18,7 +18,7 @@ import InfoArea from "../../components/InfoArea";
 
 import GlobalFrame from "../../layouts/GlobalFrame";
 
-import ScheduleImage1000x600 from "../../../public/images/schedule@1000x600.png";
+import SchedulePageBanner from "../../../public/images/svg/schedule.banner.svg";
 
 export async function getStaticProps() {
   const scheduleData = {
@@ -71,7 +71,7 @@ class Schedule extends React.Component {
           titleTypographyProps={{ variant: "h3", component: "h1" }}
           infoTitle="课程表"
           infoDetail="作为大四老油条，却还有一大堆课要重修，实在是Bon不jour了。"
-          infoImageUrl={ScheduleImage1000x600}
+          infoImageUrl={SchedulePageBanner}
           infoImageAlt=""
           noCardActions
         />

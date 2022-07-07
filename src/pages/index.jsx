@@ -12,12 +12,12 @@ import InfoArea from "../components/InfoArea";
 import InfoCard from "../components/InfoCard";
 import { NextLinkComposed as Link } from "../components/Link";
 
-import Aria2Image500x300 from "../../public/images/aria2@500x300.png";
-import BannerImage1000x600 from "../../public/images/banner@1000x600.png";
-import DrawioImage500x300 from "../../public/images/drawio@500x300.png";
-import JupyterLabImage500x300 from "../../public/images/jupyter@500x300.png";
-import NoteImage500x300 from "../../public/images/note@500x300.png";
-import ScheduleImage500x300 from "../../public/images/schedule@500x300.png";
+import Aria2Image from "../../public/images/svg/aria2.svg";
+import BannerImage from "../../public/images/svg/banner.svg";
+import DrawioImage from "../../public/images/svg/drawio.svg";
+import JupyterLabImage from "../../public/images/svg/jupyter.svg";
+import NoteImage from "../../public/images/svg/note.svg";
+import ScheduleImage from "../../public/images/svg/schedule.svg";
 
 import GlobalFrame from "../layouts/GlobalFrame";
 
@@ -33,7 +33,7 @@ class Home extends React.Component {
             titleTypographyProps={{ variant: "h3", component: "h1" }}
             infoTitle="Ray_Alto 的个人主页"
             infoDetail="部署了一些有趣的小项目，不定时分享一些我最近正在研究的东西，自闭社恐，技不如人，大放厥词。努力成为一个有营养的网站。"
-            infoImageUrl={BannerImage1000x600}
+            infoImageUrl={BannerImage}
             infoImageAlt=""
             infoActions={[
               <Button
@@ -54,7 +54,7 @@ class Home extends React.Component {
             <Grid item xs>
               <InfoCard
                 title="DrawIO"
-                image={DrawioImage500x300}
+                image={DrawioImage}
                 link="https://www.baidu.com"
               >
                 画图神器，基本上可以抛弃Microsoft
@@ -64,7 +64,7 @@ class Home extends React.Component {
             <Grid item xs>
               <InfoCard
                 title="JupyterLab"
-                image={JupyterLabImage500x300}
+                image={JupyterLabImage}
                 link="https://www.baidu.com"
               >
                 很牛逼的在线编辑环境，有了这个你甚至可以用手机写代码。什么？你说你不知道密码是什么？巧了我也不知道。
@@ -73,7 +73,7 @@ class Home extends React.Component {
             <Grid item xs>
               <InfoCard
                 title="Aria2"
-                image={Aria2Image500x300}
+                image={Aria2Image}
                 link="https://www.baidu.com"
               >
                 24小时不关机，约等于离线下载器，迅雷可以去eat
@@ -83,7 +83,7 @@ class Home extends React.Component {
             <Grid item xs>
               <InfoCard
                 title="课程表"
-                image={ScheduleImage500x300}
+                image={ScheduleImage}
                 link="/schedule"
                 isRouteLink
               >
@@ -93,7 +93,7 @@ class Home extends React.Component {
             <Grid item xs>
               <InfoCard
                 title="笔记本"
-                image={NoteImage500x300}
+                image={NoteImage}
                 link="/notes"
                 isRouteLink
               >

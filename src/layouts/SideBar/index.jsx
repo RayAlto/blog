@@ -37,8 +37,8 @@ import JupyterIcon from "../../icons/Jupyter";
 import QQIcon from "../../icons/QQ";
 import WechatIcon from "../../icons/Wechat";
 
-import QQQrImage from "../../../public/images/Qr-QQ.png";
-import WechatQrImage from "../../../public/images/Qr-Wechat.png";
+import QqQrImage from "../../../public/images/svg/qq.qr.svg";
+import WechatQrImage from "../../../public/images/svg/wechat.qr.svg";
 
 import {
   OPEN_IMAGE_DIALOG,
@@ -70,8 +70,8 @@ class SideBar extends React.Component {
 
   showQQ = () => {
     PubSub.publish(OPEN_IMAGE_DIALOG, {
-      image: QQQrImage,
-      title: "扫描二维码",
+      image: QqQrImage,
+      title: "扫描QQ二维码",
       alt: "QQ二维码",
       titleBar: true,
     });
@@ -79,7 +79,7 @@ class SideBar extends React.Component {
   showWechat = () => {
     PubSub.publish(OPEN_IMAGE_DIALOG, {
       image: WechatQrImage,
-      title: "扫描二维码",
+      title: "扫描微信二维码",
       alt: "微信二维码",
       titleBar: true,
     });
