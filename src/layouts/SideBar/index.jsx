@@ -73,6 +73,7 @@ class SideBar extends React.Component {
       image: QQQrImage,
       title: "扫描二维码",
       alt: "QQ二维码",
+      titleBar: true,
     });
   };
   showWechat = () => {
@@ -80,6 +81,7 @@ class SideBar extends React.Component {
       image: WechatQrImage,
       title: "扫描二维码",
       alt: "微信二维码",
+      titleBar: true,
     });
   };
 

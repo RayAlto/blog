@@ -12,6 +12,7 @@ export default class GlobalImageDialog extends React.Component {
     title: undefined,
     image: undefined,
     alt: undefined,
+    titleBar: false,
     open: false,
   };
 
@@ -27,12 +28,12 @@ export default class GlobalImageDialog extends React.Component {
   };
 
   render() {
-    const { open, title, image, alt } = this.state;
+    const { open, title, image, alt, titleBar } = this.state;
 
     return (
       <Dialog open={open} onClose={this.handleClose} onClick={this.handleClose}>
-        <DialogTitle>{title}</DialogTitle>
-        <img src={image?.src || image} alt={alt} />
+        {titleBar && <DialogTitle>{title}</DialogTitle>}
+        <img src={image?.src || image} alt={alt} title={title} />
       </Dialog>
     );
   }
