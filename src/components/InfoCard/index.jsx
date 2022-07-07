@@ -121,5 +121,6 @@ export default withStyles(() => ({
 
   media: {
     paddingTop: "60%",
+    backgroundSize: "contain",
   },
 }))(InfoCard);
