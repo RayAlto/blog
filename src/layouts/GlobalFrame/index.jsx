@@ -14,11 +14,12 @@ class App extends React.Component {
 
     return (
       <main className={this.props.classes.root}>
-        <TopBar />
-        <SideBar />
-        <div className={this.props.classes.content}>
-          <div className={this.props.classes.toolbar} id="top-anchor" />
-          {/* <Switch>
+        <React.StrictMode>
+          <TopBar />
+          <SideBar />
+          <div className={this.props.classes.content}>
+            <div className={this.props.classes.toolbar} id="top-anchor" />
+            {/* <Switch>
             <Route path="/blogs" component={Blogs} />
             <Route path="/note" component={NoteIndex} />
             <Route path="/schedule" component={Schedule} />
@@ -27,10 +28,11 @@ class App extends React.Component {
             <Route exact path="/" component={Main} />
             <Redirect to="/" />
           </Switch> */}
-          {children}
-        </div>
-        <BackToTopButton topElementId="top-anchor" />
-        <GlobalImageDialog />
+            {children}
+          </div>
+          <BackToTopButton topElementId="top-anchor" />
+          <GlobalImageDialog />
+        </React.StrictMode>
       </main>
     );
   }
